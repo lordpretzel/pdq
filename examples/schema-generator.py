@@ -322,6 +322,8 @@ def main():
     sqltoxml_parser.add_argument("--replace_dt", action='store_true', help='replace DTs not support by python sqlparse')
     sqltoxml_parser.set_defaults(func=translateSQLtoXMLfile)
 
+    # allow query to written plus specialized schema (add views)
+
     # call function for subcommand
     conf = parser.parse_args()
     conf.func(conf)
