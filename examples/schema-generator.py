@@ -54,7 +54,9 @@ class Table:
         access_method_counter += 1
         accm = f'm{access_method_counter}'
         attrStr = listConcat([ "             " + attrToXML(x[0], x[1]) for x in self.attrs])
-        pkStr = self.pkToXML()
+        pkStr = ""
+        if (addPK):
+            pkStr = self.pkToXML()
         return f"""     <relation name="{self.name}">
 {attrStr}{pkStr}
              <access-method name="{accm}"/>
