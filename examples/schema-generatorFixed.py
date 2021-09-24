@@ -3,7 +3,7 @@
 from functools import reduce
 import operator
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, List, Tuple
 import sqlparse as sp
 import argparse as ap
 import re
@@ -32,8 +32,8 @@ class IncludePKs(Enum):
 @dataclass
 class Table:
     name: str
-    attrs: list[tuple[str]]
-    pk: Optional[list[str]]
+    attrs: List[Tuple[str]]
+    pk: Optional[List[str]]
 
     def attrNames(self):
         return [ x[0] for x in self.attrs ]
@@ -82,8 +82,8 @@ class Counter:
 @dataclass
 class FD:
     table: Table
-    lhs: list[str]
-    rhs: list[str]
+    lhs: List[str]
+    rhs: List[str]
 
     @staticmethod
     def genVar(a, lhsToVar, rhsToVar, c):
@@ -112,7 +112,7 @@ class FD:
 @dataclass
 class atom:
     name: str
-    args: list[str]
+    args: List[str]
 
     def toXML(self, indent=3):
         varStrs = listConcat([ '\t' + varToXML(arg) for arg in self.args])
@@ -122,8 +122,8 @@ class atom:
 
 @dataclass
 class TGD:
-    lhs: list[atom]
-    rhs: list[atom]
+    lhs: List[atom]
+    rhs: List[atom]
 
     def toXML(self):
         return f"""<dependency type="TGD">
@@ -138,8 +138,8 @@ class TGD:
 
 @dataclass
 class EDG:
-    lhs: list[atom]
-    rhs: list[tuple[str,str]]
+    lhs: List[atom]
+    rhs: List[Tuple[str,str]]
 
     @staticmethod
     def equalityToXML(eq):
@@ -323,8 +323,6 @@ def main():
     sqltoxml_parser.add_argument("-f", action='store_true', help='output PK constraints as EGDs')
     sqltoxml_parser.add_argument("--replace_dt", action='store_true', help='replace DTs not support by python sqlparse')
     sqltoxml_parser.set_defaults(func=translateSQLtoXMLfile)
-
-    # allow query to written plus specialized schema (add views)
 
     # call function for subcommand
     conf = parser.parse_args()
