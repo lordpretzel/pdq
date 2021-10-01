@@ -79,6 +79,10 @@ class Counter:
         self.val += 1
         return self.val - 1
 
+# Address(zip,city,streetnumber): zip -> city -> FORALL x,y,z,a,b: Address(x,y,a) AND Address(x,z,b) -> y=z
+# zip, streetnumber -> city
+# Address(40414, A, 13)
+# Address(40413,A, 14)
 @dataclass
 class FD:
     table: Table
@@ -120,8 +124,10 @@ class atom:
 {varStrs}
 </atom>""".split("\n")])
 
+class Dependency:
+
 @dataclass
-class TGD:
+class TGD(Dependency):
     lhs: list[atom]
     rhs: list[atom]
 
@@ -137,7 +143,7 @@ class TGD:
 """
 
 @dataclass
-class EDG:
+class EDG(Dependency):
     lhs: list[atom]
     rhs: list[tuple[str,str]]
 
@@ -160,6 +166,13 @@ class EDG:
 	  </head>
     </dependency>
 """
+
+@dataclass
+class Schema:
+    tables: List[Table]
+    deps: List[Dependency]
+
+
 
 def replace_non_sqlparse_dts(s):
     for (rex, repl) in sql_dt_replacements.items():

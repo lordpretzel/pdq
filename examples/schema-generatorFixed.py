@@ -70,6 +70,18 @@ class Table:
 \t</view>
 """
 
+@dataclass
+class View:
+    name: str
+    attrs: List[Tuple[str]]
+
+    def toXML(self):
+        attrStr = listConcat([ "             " + attrToXML(x[0], x[1]) for x in self.attrs])
+        return f"""<view name="{'v' + self.name}">
+{attrStr}
+\t</view>
+"""
+
 
 @dataclass
 class Counter:
@@ -120,8 +132,11 @@ class atom:
 {varStrs}
 </atom>""".split("\n")])
 
+class Dependency:
+    pass
+
 @dataclass
-class TGD:
+class TGD(Dependency):
     lhs: List[atom]
     rhs: List[atom]
 
@@ -137,7 +152,7 @@ class TGD:
 """
 
 @dataclass
-class EDG:
+class EDG(Dependency):
     lhs: List[atom]
     rhs: List[Tuple[str,str]]
 
@@ -160,6 +175,34 @@ class EDG:
 	  </head>
     </dependency>
 """
+
+@dataclass
+class Schema:
+    tables: List[Table]
+    deps: List[Dependency]
+    views: List[View]
+
+    def toXML(self, pk=IncludePKs.NO):
+        strtable = [ t.toXML(pk is IncludePKs.AS_PK) for t in self.tables ]
+        strviews = [ t.viewXML() for t in self.tables ] + [ v.toXML() for v in self.views ]
+        strdeps = [ createTableViewDep(t) for t in self.tables ]
+        if pk is IncludePKs.AS_EGD:
+            strdeps += [ depToXML(t.pkToFD().toEDG()) for t in self.tables if t.pk ]
+            strdeps += [ depToXML(d) for d in self.deps ]
+
+            return f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema>
+<relations>
+{listConcat(strtable)}
+{listConcat(strviews)}
+</relations>
+<dependencies>
+{listConcat(strdeps)}
+</dependencies>
+</schema>
+"""
+
+
 
 def replace_non_sqlparse_dts(s):
     for (rex, repl) in sql_dt_replacements.items():
@@ -216,25 +259,6 @@ def listConcat(strl, delim='\n'):
 def depToXML(d):
     return d.toXML()
 
-def schemaToXML(tables, deps, pk=IncludePKs.NO):
-    strtable = [ t.toXML(pk is IncludePKs.AS_PK) for t in tables ]
-    strviews = [ t.viewXML() for t in tables ]
-    strdeps = [ createTableViewDep(t) for t in tables ]
-    if pk is IncludePKs.AS_EGD:
-        strdeps += [ depToXML(t.pkToFD().toEDG()) for t in tables if t.pk ]
-    strdeps += [ depToXML(d) for d in deps ]
-
-    return f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<schema>
-  <relations>
-    {listConcat(strtable)}
-    {listConcat(strviews)}
-  </relations>
-  <dependencies>
-    {listConcat(strdeps)}
-  </dependencies>
-</schema>
-"""
 
 def firstToken(lst, cls):
     return next(iter([ t for t in lst if  isinstance(t, cls)]))
@@ -293,11 +317,11 @@ def sqlToSchema(f, replaceDTs=True):
         if st.get_type() == 'CREATE':
             table = sqlCreateTableParseToTable(st)
             tables.append(table)
-    return tables
+    return Schema(tables, [], [])
 
-def writeXMLForSchema(sch, f, dep=[], pk=IncludePKs.NO):
+def writeXMLForSchema(sch, f, pk=IncludePKs.NO):
     with open (f, 'w') as xmlschema:
-        xmlschema.write(schemaToXML(sch, dep, pk))
+        xmlschema.write(sch.toXML(pk))
 
 def translateSQLtoXMLfile(conf):
     pk=IncludePKs.NO
@@ -309,7 +333,8 @@ def translateSQLtoXMLfile(conf):
     if conf.outfile:
         writeXMLForSchema(schema, conf.outfile, pk=pk)
     else:
-        print(schemaToXML(schema,'', pk))
+        print(schema.toXML(pk))
+
 
 def main():
     parser = ap.ArgumentParser(description='Create PDQs XML schemas.')

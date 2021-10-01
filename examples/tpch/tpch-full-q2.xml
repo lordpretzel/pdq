@@ -9,7 +9,7 @@ Q(X, Xi) :- R1(X1), ..., Rn(Xn)
 -->
 <query>
   <body>
-    <atom name="resprime_q2">
+    <atom name="vresprime_q2">
       <variable name="s_acctbal" />
       <variable name="s_name" />
       <variable name="n_name" />
@@ -76,8 +76,8 @@ Q(X, Xi) :- R1(X1), ..., Rn(Xn)
 		<variable name="p_name" />
 		<variable name="p_mfgr" />
 		<variable name="p_brand" />
-		<variable name="p_type" />
-		<variable name="p_size" />
+		<!-- <variable name="p_type" /> -->
+		<!-- <variable name="p_size" /> -->
 		<variable name="p_container" />
 		<variable name="p_retailprice" />
 		<variable name="p_comment" />
