@@ -34,6 +34,8 @@ sql_dt_replacements = {
 
 access_method_counter = 1
 
+userResultTable = 'RPrime'	# table that holds user selected rows
+
 class IncludePKs(Enum):
     NO = 0
     AS_PK = 1
@@ -368,6 +370,10 @@ class dlrule():
         return View(self.getViewName(),
                 [ (x, "VARCHAR") for x in self.head.args ]) #TODO actually take DTs
 
+    def getResultTableDef(self):
+        return Table(userResultTable,
+                [ (x, "VARCHAR") for x in self.head.args ], None) #TODO actually take DTs
+
     def toViewXML(self): #TODO need data types from schema
         attrStr = listConcat([ "             " + attrToXML(x[0], "VARCHAR") for x in self.head.args])
         return f"""<view name="{self.getViewName()}">
@@ -385,8 +391,12 @@ class dlrule():
         t = TGD(self.body, [rhs])
         return t.toXML()
 
-def addQueryConstraintsToSchema(schema, rule):
+def addQueryConstraintsToSchema(schema, rule):    
     schema.views += [rule.getViewDef()]
+    schema.deps += [rule.getICasTGD()]
+
+def addResultTableToSchema(schema, rule):
+    schema.tables += [rule.getResultTableDef()]
     schema.deps += [rule.getICasTGD()]
 
 
@@ -409,7 +419,7 @@ def translateSQLandQueryToXMLfile(conf):
     elif conf.f:
         pk=IncludePKs.AS_EGD
     schema = sqlToSchema(conf.infile, conf.replace_dt)
-    rule = eval(conf.query.strip())
+    rule = eval(conf.query.strip())	
     addQueryConstraintsToSchema(schema,rule)
     print(schema.toXML())
     if conf.outfile:
@@ -418,6 +428,35 @@ def translateSQLandQueryToXMLfile(conf):
         print(schema.toXML(pk))
     if conf.query_file:
         writeXMLForQuery(rule, conf.query_file)
+
+def translateSQLandQueryandProvToXMLfile(conf):
+    pk=IncludePKs.NO
+    if conf.p:
+        pk=IncludePKs.AS_PK
+    elif conf.f:
+        pk=IncludePKs.AS_EGD
+    schema = sqlToSchema(conf.infile, conf.replace_dt)	
+    rule = eval(conf.query.strip())
+    print(rule.head.name)
+    addQueryConstraintsToSchema(schema,rule)
+    addResultTableToSchema(schema,rule)			# add table for the user selected rows
+    print(schema.toXML())
+    if conf.outfile:
+        writeXMLForSchema(schema, conf.outfile, pk=pk)
+    else:
+        print(schema.toXML(pk))
+    if conf.query_file:
+        writeXMLForQuery(rule, conf.query_file)
+
+def test():
+	pk=IncludePKs.NO
+	schema = sqlToSchema('tpch/tpch.sql')
+	query = 'dlrule(head("Q",["x","y"]),[atom("R",["x","y"])])'
+	rule = eval(query.strip())
+	print(rule.head.name)
+	addResultTableToSchema(schema,rule)
+	print(schema.toXML())
+	
 
 def main():
     parser = ap.ArgumentParser(description='Create PDQs XML schemas.')
@@ -443,9 +482,22 @@ def main():
     sqlqtoxml_parser.add_argument("--replace_dt", action='store_true', help='replace DTs not support by python sqlparse')
     sqlqtoxml_parser.set_defaults(func=translateSQLandQueryToXMLfile)
 
+    # translate provenance, query and SQL schema to XML
+    sqlqtoxml_parser = subparsers.add_parser('translate_sql_and_query_and_prov')
+    sqlqtoxml_parser.add_argument("-i", "--infile", type=str, help='input SQL file (no newlines because of limitation of sqlparse library', required=True)
+    sqlqtoxml_parser.add_argument("-o", "--outfile", type=str, help='output XML file. If no file is provided write to stdout', required=False)
+    sqlqtoxml_parser.add_argument("--query_file", type=str, help='name of XML file output file for the query', required=False)
+    sqlqtoxml_parser.add_argument("-q", "--query", type=str, help='query as a python dlrule object', required=True)
+    sqlqtoxml_parser.add_argument("--prov", type=str, help='name of prov table', required=True)
+    sqlqtoxml_parser.add_argument("-p", action='store_true', help='output primary key constraints in relation elements')
+    sqlqtoxml_parser.add_argument("-f", action='store_true', help='output PK constraints as EGDs')
+    sqlqtoxml_parser.add_argument("--replace_dt", action='store_true', help='replace DTs not support by python sqlparse')
+    sqlqtoxml_parser.set_defaults(func=translateSQLandQueryandProvToXMLfile)
+	
     # call function for subcommand
     conf = parser.parse_args()
     conf.func(conf)
 
 if __name__ == '__main__':
     main()
+	#test()
