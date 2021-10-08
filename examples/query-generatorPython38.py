@@ -386,18 +386,26 @@ class dlrule():
         t = TGD(self.body, [rhs])
         return t
 
+
+    def getICasTGDReverse(self):
+        rhs = atom(self.getViewName(), self.head.args)
+        t = TGD([rhs],self.body)
+        return t
+
+
     def toICXML(self):
         rhs = atom(self.getViewName(), self.head.args)
         t = TGD(self.body, [rhs])
         return t.toXML()
 
-def addQueryConstraintsToSchema(schema, rule):    
+def addQueryConstraintsToSchema(schema, rule):
     schema.views += [rule.getViewDef()]
     schema.deps += [rule.getICasTGD()]
+    schema.deps += [rule.getICasTGDReverse()]
 
 def addResultTableToSchema(schema, rule):
     schema.tables += [rule.getResultTableDef()]
-    schema.deps += [rule.getICasTGD()]
+
 
 
 def translateSQLtoXMLfile(conf):
@@ -419,7 +427,7 @@ def translateSQLandQueryToXMLfile(conf):
     elif conf.f:
         pk=IncludePKs.AS_EGD
     schema = sqlToSchema(conf.infile, conf.replace_dt)
-    rule = eval(conf.query.strip())	
+    rule = eval(conf.query.strip())
     addQueryConstraintsToSchema(schema,rule)
     print(schema.toXML())
     if conf.outfile:
@@ -429,13 +437,20 @@ def translateSQLandQueryToXMLfile(conf):
     if conf.query_file:
         writeXMLForQuery(rule, conf.query_file)
 
+# Q(X) :- R(X,Y), S(Y,Z). tracking provenance for R, then we need to write R(X,Y) :- R(X,Y), S(Y,Z), Rprime(X) where Rprime <= Q
+def provRewriteQuery(conf,rule):
+    targetAtom = [ a for a in rule.body if a.name == conf.prov ][0]
+    rprime = atom(userResultTable, rule.head.args)
+    targetAtom = atom("prov_" + targetAtom.name, targetAtom.args)
+    return dlrule(targetAtom, rule.body + [rprime])
+
 def translateSQLandQueryandProvToXMLfile(conf):
     pk=IncludePKs.NO
     if conf.p:
         pk=IncludePKs.AS_PK
     elif conf.f:
         pk=IncludePKs.AS_EGD
-    schema = sqlToSchema(conf.infile, conf.replace_dt)	
+    schema = sqlToSchema(conf.infile, conf.replace_dt)
     rule = eval(conf.query.strip())
     print(rule.head.name)
     addQueryConstraintsToSchema(schema,rule)
@@ -446,7 +461,8 @@ def translateSQLandQueryandProvToXMLfile(conf):
     else:
         print(schema.toXML(pk))
     if conf.query_file:
-        writeXMLForQuery(rule, conf.query_file)
+        rewrule = provRewriteQuery(conf, rule)
+        writeXMLForQuery(rewrule, conf.query_file)
 
 def test():
 	pk=IncludePKs.NO
@@ -456,7 +472,7 @@ def test():
 	print(rule.head.name)
 	addResultTableToSchema(schema,rule)
 	print(schema.toXML())
-	
+
 
 def main():
     parser = ap.ArgumentParser(description='Create PDQs XML schemas.')
@@ -493,7 +509,7 @@ def main():
     sqlqtoxml_parser.add_argument("-f", action='store_true', help='output PK constraints as EGDs')
     sqlqtoxml_parser.add_argument("--replace_dt", action='store_true', help='replace DTs not support by python sqlparse')
     sqlqtoxml_parser.set_defaults(func=translateSQLandQueryandProvToXMLfile)
-	
+
     # call function for subcommand
     conf = parser.parse_args()
     conf.func(conf)
