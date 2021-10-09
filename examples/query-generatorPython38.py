@@ -36,6 +36,10 @@ access_method_counter = 1
 
 userResultTable = 'RPrime'	# table that holds user selected rows
 
+query = 'dlrule(head("Q",["x1","x2","y1","y2"]),[atom("customer",["x1","x2","x3","y1","x5","x6","x7","x8"]),atom("nation",["y1","y2","y3","y4"])])'
+pList = ["customer","nation"]
+#tpcq18_Q = 'dlrule(head("Q",["x","y"]),[atom("R",["x","y"])])'
+
 class IncludePKs(Enum):
     NO = 0
     AS_PK = 1
@@ -438,10 +442,11 @@ def translateSQLandQueryToXMLfile(conf):
         writeXMLForQuery(rule, conf.query_file)
 
 # Q(X) :- R(X,Y), S(Y,Z). tracking provenance for R, then we need to write R(X,Y) :- R(X,Y), S(Y,Z), Rprime(X) where Rprime <= Q
+# changing targetAtom to head -- MM
 def provRewriteQuery(conf,rule):
     targetAtom = [ a for a in rule.body if a.name == conf.prov ][0]
     rprime = atom(userResultTable, rule.head.args)
-    targetAtom = atom("prov_" + targetAtom.name, targetAtom.args)
+    targetAtom = head("prov_" + targetAtom.name, targetAtom.args)
     return dlrule(targetAtom, rule.body + [rprime])
 
 def translateSQLandQueryandProvToXMLfile(conf):
@@ -465,13 +470,24 @@ def translateSQLandQueryandProvToXMLfile(conf):
         writeXMLForQuery(rewrule, conf.query_file)
 
 def test():
-	pk=IncludePKs.NO
-	schema = sqlToSchema('tpch/tpch.sql')
-	query = 'dlrule(head("Q",["x","y"]),[atom("R",["x","y"])])'
-	rule = eval(query.strip())
-	print(rule.head.name)
-	addResultTableToSchema(schema,rule)
-	print(schema.toXML())
+    pk=IncludePKs.AS_EGD
+    infile = 'tpch/tpch.sql'
+    schema = sqlToSchema(infile, True)
+    rule = eval(query.strip())
+    #print(rule.head.name)
+    addQueryConstraintsToSchema(schema,rule)
+    addResultTableToSchema(schema,rule)			# add table for the user selected rows
+    print(schema.toXML())
+    outfile = 'testS.xml'
+    writeXMLForSchema(schema, outfile, pk=pk)
+    query_file = 'testQ.xml'
+    prov = pList[0]
+
+    targetAtom = [ a for a in rule.body if a.name == prov ][0]
+    rprime = atom(userResultTable, rule.head.args)
+    targetAtom = head("prov_" + targetAtom.name, targetAtom.args)
+    rewrule = dlrule(targetAtom, rule.body + [rprime])
+    writeXMLForQuery(rewrule, query_file)
 
 
 def main():
@@ -515,5 +531,5 @@ def main():
     conf.func(conf)
 
 if __name__ == '__main__':
-    main()
-	#test()
+    #main()
+    test()
