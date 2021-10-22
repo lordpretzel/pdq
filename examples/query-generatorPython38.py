@@ -409,8 +409,10 @@ def addQueryConstraintsToSchema(schema, rule):
 
 def addResultTableToSchema(schema, rule):
     schema.tables += [rule.getResultTableDef()]
-
-
+    #add TGD RPrime to the original query body
+    resultTGD = rule.getICasTGDReverse()
+    resultTGD.lhs[0].name = userResultTable
+    schema.deps += [resultTGD]
 
 def translateSQLtoXMLfile(conf):
     pk=IncludePKs.NO
@@ -483,6 +485,8 @@ def test():
     query_file = 'testQ.xml'
     prov = pList[0]
 
+    temp = [a.name for a in rule.body]
+    print(', '.join(temp))
     targetAtom = [ a for a in rule.body if a.name == prov ][0]
     rprime = atom(userResultTable, rule.head.args)
     targetAtom = head("prov_" + targetAtom.name, targetAtom.args)
