@@ -36,8 +36,15 @@ access_method_counter = 1
 
 userResultTable = 'RPrime'	# table that holds user selected rows
 
-query = 'dlrule(head("Q",["x1","x2","y1","y2"]),[atom("customer",["x1","x2","x3","y1","x5","x6","x7","x8"]),atom("nation",["y1","y2","y3","y4"])])'
-pList = ["customer","nation"]
+tpchTest = 'dlrule(head("Q",["x1","x2","y1","y2"]),[atom("customer",["x1","x2","x3","y1","x5","x6","x7","x8"]),atom("nation",["y1","y2","y3","y4"])])'
+pListTest = ["customer","nation"]
+
+tpchQ18 = 'dlrule(head("Q",["x2","x1","y1","y5","y4","a1"]),[atom("customer",["x1","x2","x3","x4","x5","x6","x7","x8"]),atom("orders",["y1","x1","y3","y4","y5","y6","y7","y8","y9"]),atom("lineitem",["y1","z2","z3","z4","z5","z6","z7","z8","z9","z10","z11","z12","z13","z14","z15","z16",]),atom("tempTab",["y1","a1"])])'
+pListQ18 = ["customer","orders","lineitem"]
+
+query = tpchQ18
+pList = pListQ18
+
 #tpcq18_Q = 'dlrule(head("Q",["x","y"]),[atom("R",["x","y"])])'
 
 class IncludePKs(Enum):
@@ -181,7 +188,7 @@ class EDG(Dependency):
             </atom>
 """
 
-    def toXML(self):
+    def toXMLSingle(self):
         return f"""    <dependency>
 	  <body>
 {listConcat([ a.toXML() for a in self.lhs])}
@@ -191,6 +198,29 @@ class EDG(Dependency):
 	  </head>
     </dependency>
 """
+
+    def toXML(self):
+        rhsSplit = []
+        count = 0
+        while (count < len(self.rhs)):
+            if (count % 3 == 0):
+                rhsSplit.append([])
+            rhsSplit[count // 3].append(self.rhs[count])
+            count += 1
+        s = ""
+        for x in rhsSplit:
+            s += f"""    <dependency>
+        <body>
+{listConcat([ a.toXML() for a in self.lhs])}
+	  </body>
+	  <head>
+{listConcat([ EDG.equalityToXML(e) for e in x])}
+	  </head>
+    </dependency>
+"""
+        return s
+
+
 
 @dataclass
 class Schema:
@@ -203,6 +233,9 @@ class Schema:
         strviews = [ t.viewXML() for t in self.tables ] + [ v.toXML() for v in self.views ]
         strdeps = [ createTableViewDep(t) for t in self.tables ]
         if pk is IncludePKs.AS_EGD:
+            '''for t in self.tables:
+                if t.pk:
+                    print(depToXML(t.pkToFD().toEDG())) '''
             strdeps += [ depToXML(t.pkToFD().toEDG()) for t in self.tables if t.pk ]
         strdeps += [ depToXML(d) for d in self.deps ]
 
@@ -274,7 +307,6 @@ def listConcat(strl, delim='\n'):
 
 def depToXML(d):
     return d.toXML()
-
 
 def firstToken(lst, cls):
     return next(iter([ t for t in lst if  isinstance(t, cls)]))
@@ -473,16 +505,17 @@ def translateSQLandQueryandProvToXMLfile(conf):
 
 def test():
     pk=IncludePKs.AS_EGD
-    infile = 'tpch/tpch.sql'
+    #infile = 'tpch/tpch.sql'
+    infile = 'tpchQ18/tpch.sql'
     schema = sqlToSchema(infile, True)
     rule = eval(query.strip())
     #print(rule.head.name)
     addQueryConstraintsToSchema(schema,rule)
     addResultTableToSchema(schema,rule)			# add table for the user selected rows
     print(schema.toXML())
-    outfile = 'testS.xml'
+    outfile = 'tpchQ18/testS.xml'
     writeXMLForSchema(schema, outfile, pk=pk)
-    query_file = 'testQ.xml'
+    query_file = 'tpchQ18/testQ.xml'
     prov = pList[0]
 
     temp = [a.name for a in rule.body]
@@ -533,6 +566,26 @@ def main():
     # call function for subcommand
     conf = parser.parse_args()
     conf.func(conf)
+
+def test1():
+        rhs = [(1,11)]
+        rhsSplit = []
+        count = 0
+        while (count < len(rhs)):
+            if (count // 3 == 0):
+                rhsSplit.append([])
+            rhsSplit[count // 3].append(rhs[count])
+            count += 1
+        s = ""
+        for x in rhsSplit:
+            s += f"""    <dependency>
+        <body>lhs</body>
+	  <head>
+{listConcat([ EDG.equalityToXML(e) for e in x])}
+	  </head>
+    </dependency>
+"""
+        print(s)
 
 if __name__ == '__main__':
     #main()
