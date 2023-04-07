@@ -18,6 +18,108 @@ import sqlparse as sp
 import argparse as ap
 import re
 from enum import Enum
+from lark import Lark, Transformer
+
+dl_parser = Lark('''
+// A bunch of words
+start: rule+
+
+rule: headatom DLIMP atom ("," atom)* "."
+
+atom: relatom | compatom
+
+headatom: WORD "(" expr_list? ")"
+
+expr_list: expr ("," expr)*
+
+relatom: WORD "(" arg ("," arg)* ")"
+
+compatom: expr COMPOP expr | "(" expr COMPOP expr ")"
+
+expr: var | const | aexpr | pexpr | fcall
+
+fcall: WORD "(" expr_list? ")"
+
+pexpr: "(" expr ")"
+
+aexpr: expr AOP expr
+
+AOP: "+" | "*" | "/"
+
+COMPOP: "<" | ">" | "!=" | "=" | "<=" | ">="
+
+var: WORD
+
+arg: var | const
+
+const: NUMBER | STRCONST
+
+STRCONST: /["][^"]*["]/
+NUMBER: /[0-9]+([.][0-9]*)?/
+DLIMP: ":-"
+
+// imports WORD from library
+%import common.WORD
+%import common.WS
+
+// Disregard spaces in text
+%ignore WS
+''')
+
+class DLTransformer(Transformer):
+
+    def start(self, args):
+        return args
+
+    def rule(self,args):
+        head = args[0]
+        body = list(args[1:])
+        return dlrule(head, body)
+
+    def headatom(self,args):
+        relname = args[0]
+        aargs = list(args[1:])
+        return atom(relname,aargs)
+
+    def expr_list(self,args):
+        return args
+
+    def relatom(self,args):
+        relname = args[0]
+        aargs = list(args[1:])
+        return atom(relname, aargs)
+
+    def compatom(self,args):
+        pass
+
+    def expr(self,args):
+        return args[0]
+
+    def fcall(self,args): #TODO
+        fname = args[0]
+        fargs = list(args[1:])
+        return (fname) + fargs
+
+    def pexpr(self,args):
+        return args[0] #TODO
+
+    def aexpr(self,args):
+        return args #TODO
+
+    AOP = str
+    COMPOP = str
+
+    var = str
+
+    def arg(self,args):
+        return args[0]
+
+    def const(self,args):
+        return args[0]
+
+    STRCONST = str
+    NUMBER = str
+    DLIMP = str
 
 datatype_to_java = {
     'INT8' : 'java.lang.Integer',
@@ -588,5 +690,5 @@ def test1():
         print(s)
 
 if __name__ == '__main__':
-    #main()
-    test()
+    main()
+    #test()
