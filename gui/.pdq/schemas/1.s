@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<schema>
+<schema name="1">
     <relations>
         <view name="region_nation">
             <attribute name="nation_key" type="java.lang.Integer"/>
@@ -40,8 +40,8 @@
             <access-method name="m6" inputs="0,1"/>
         </relation>
         <relation name="nation">
-            <attribute name="n_nationkey" type="java.lang.Integer"/>
             <attribute name="n_name" type="java.lang.String"/>
+            <attribute name="n_nationkey" type="java.lang.Integer"/>
             <attribute name="n_regionkey" type="java.lang.Integer"/>
             <attribute name="n_comment" type="java.lang.String"/>
             <access-method name="m7" inputs="2"/>

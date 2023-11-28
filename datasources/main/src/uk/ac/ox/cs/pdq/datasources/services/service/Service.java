@@ -15,10 +15,10 @@ import javax.xml.bind.annotation.XmlType;
 // ServiceRoot is the XML element which corresponds to the <service> tag.
 // It is the root level object for the $service.xml file.
 // It represents the in-memory results of parsing the XML file for the Service object.
-// It contains policy, static-attribute and access-method elements
+// It contains static-attribute and access-method elements
 // It also has attributes for url, documentation, media-type and ressult-delimiter
 @XmlRootElement (name="service")
-@XmlType (propOrder= {"name", "url", "documentation", "mediaType", "resultDelimiter", "serviceGroup", "serviceUsagePolicy", "staticAttribute", "accessMethod"})
+@XmlType (propOrder= {"name", "url", "documentation", "mediaType", "resultDelimiter", "serviceGroup", "staticAttribute", "accessMethod"})
 public class Service {
 	
 	private String name;
@@ -27,7 +27,6 @@ public class Service {
 	private String mediaType;
 	private String resultDelimiter;
 	private String serviceGroup;
-	private ServiceUsagePolicy[] serviceUsagePolicy;
 	private StaticAttribute[] staticAttribute;
 	private RESTExecutableAccessMethodSpecification[] accessMethod;
 	
@@ -83,15 +82,6 @@ public class Service {
 
 	public void setServiceGroup(String serviceGroup) {
 		this.serviceGroup = serviceGroup;
-	}
-
-	@XmlElement (name = "policy", required=false)
-	public ServiceUsagePolicy[] getServiceUsagePolicy() {
-		return serviceUsagePolicy;
-	}
-
-	public void setServiceUsagePolicy(ServiceUsagePolicy[] serviceUsagePolicy) {
-		this.serviceUsagePolicy = serviceUsagePolicy;
 	}
 
 	@XmlElement (name = "static-attribute", required=false)
