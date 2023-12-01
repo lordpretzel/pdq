@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema>
+  <relations>
+    <relation name="customer">
+      <attribute name="a" type="java.lang.Integer" />
+      <attribute name="b" type="java.lang.Integer" />
+      <access-method name="m5" />
+    </relation>
+
+    <relation name="nation">
+      <attribute name="c" type="java.lang.Integer" />
+      <attribute name="d" type="java.lang.Integer" />
+      <access-method name="m6" />
+    </relation>
+
+    <relation name="RPrime">
+      <attribute name="x1" type="java.lang.Integer" />
+      <access-method name="m7" />
+    </relation>
+
+    <view name="vcustomer">
+      <attribute name="a" type="java.lang.Integer" />
+      <attribute name="b" type="java.lang.Integer" />
+    </view>
+
+    <view name="vnation">
+      <attribute name="c" type="java.lang.Integer" />
+      <attribute name="d" type="java.lang.Integer" />      
+    </view>
+
+    <view name="vRPrime">
+      <attribute name="x1" type="java.lang.Integer" />
+    </view>
+
+    <view name="qv_Q">
+      <attribute name="x1" type="java.lang.Integer" />
+    </view>
+
+  </relations>
+  <dependencies>
+
+    <dependency type="TGD">
+      <body>
+        <atom name="customer">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </body>
+      <head>
+        <atom name="vcustomer">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </head>
+    </dependency>
+    <dependency type="TGD">
+      <body>
+        <atom name="vcustomer">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </body>
+      <head>
+        <atom name="customer">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </head>
+    </dependency>
+
+
+    <dependency type="TGD">
+      <body>
+        <atom name="nation">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </body>
+      <head>
+        <atom name="vnation">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </head>
+    </dependency>
+    <dependency type="TGD">
+      <body>
+        <atom name="vnation">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </body>
+      <head>
+        <atom name="nation">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+      </head>
+    </dependency>
+
+
+    <dependency type="TGD">
+      <body>
+        <atom name="RPrime">
+          <variable name="x0" />
+        </atom>
+      </body>
+      <head>
+        <atom name="vRPrime">
+          <variable name="x0" />
+        </atom>
+      </head>
+    </dependency>
+    <dependency type="TGD">
+      <body>
+        <atom name="vRPrime">
+          <variable name="x0" />
+        </atom>
+      </body>
+      <head>
+        <atom name="RPrime">
+          <variable name="x0" />
+        </atom>
+      </head>
+    </dependency>
+
+    <dependency>
+      <body>
+        <atom name="customer">
+          <variable name="x0" />
+          <variable name="x1" />
+
+        </atom>
+        <atom name="customer">
+          <variable name="x0" />
+          <variable name="x2" />
+          >
+        </atom>
+      </body>
+      <head>
+        <atom name="EQUALITY">
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+      </head>
+    </dependency>
+    <dependency>
+      <body>
+        <atom name="nation">
+          <variable name="x0" />
+          <variable name="x1" />
+        </atom>
+        <atom name="nation">
+          <variable name="x0" />
+          <variable name="x2" />
+        </atom>
+      </body>
+      <head>
+
+        <atom name="EQUALITY">
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+      </head>
+    </dependency>
+
+    <dependency type="TGD">
+      <body>
+        <atom name="customer">
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+        <atom name="nation">
+          <variable name="x2" />
+          <variable name="x3" />
+        </atom>
+      </body>
+      <head>
+        <atom name="qv_Q">
+          <variable name="x1" />
+        </atom>
+      </head>
+    </dependency>
+
+    <dependency type="TGD">
+      <body>
+        <atom name="qv_Q">
+          <variable name="x1" />
+        </atom>
+      </body>
+      <head>
+        <atom name="customer">
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+        <atom name="nation">
+          <variable name="x2" />
+          <variable name="x3" />
+        </atom>
+      </head>
+    </dependency>
+
+    <dependency type="TGD">
+      <body>
+        <atom name="RPrime">
+          <variable name="x1" />
+        </atom>
+      </body>
+      <head>
+        <atom name="customer">
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+        <atom name="nation">
+          <variable name="x2" />
+          <variable name="x3" />
+        </atom>
+      </head>
+    </dependency>
+
+  </dependencies>
+</schema>

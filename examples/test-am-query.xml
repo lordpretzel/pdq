@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<query>
+  <body>
+	<atom name="r">
+	  <variable name="x" />
+	  <variable name="y" />
+	  <variable name="z" />
+	</atom>
+    <atom name="s">
+      <variable name="z" />
+    </atom>
+    <atom name="q">
+      <variable name="x" />
+      <variable name="dummy" />
+    </atom>        
+  </body>
+  <head name="q2">
+	<variable name="x" />
+	<variable name="y" />
+	<variable name="z" />
+    <variable name="dummy" />
+  </head>
+</query>

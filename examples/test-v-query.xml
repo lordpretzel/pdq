@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    <atom name="customer">
+      <variable name="x1" />
+      <variable name="x2" />
+    </atom>
+    <atom name="nation">
+      <variable name="x2" />
+      <variable name="x3" />
+    </atom>
+    <atom name="RPrime">
+      <variable name="x1" />
+    </atom>
+  </body>
+  <head name="prov_customer">
+    <variable name="x1" />
+    <variable name="x2" />
+  </head>
+</query>

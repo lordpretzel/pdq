@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema>
+  <relations>
+    <relation name="r">
+      <attribute name="a" type="java.lang.Integer" />
+      <attribute name="b" type="java.lang.Integer" />
+      <attribute name="c" type="java.lang.Integer" />
+      <access-method name="m1" />
+    </relation>
+    <relation name="s">
+      <attribute name="d" type="java.lang.Integer" />
+      <access-method name="m2" />
+    </relation>
+    <relation name="q">
+      <attribute name="f" type="java.lang.Integer" />
+      <attribute name="g" type="java.lang.Integer" />
+      <access-method name="m3" type="LIMITED" inputs="0" />
+    </relation>
+  </relations>
+  <dependencies>
+    <dependency type="TGD">
+      <body>
+        <atom name="q">
+          <variable name="x0" />
+          <variable name="x3" />
+        </atom>
+      </body>
+      <head>
+        <atom name="r">
+          <variable name="x0" />
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+        <atom name="s">
+          <variable name="x2" />
+        </atom>
+      </head>
+    </dependency>
+    <dependency>
+      <body>
+        <atom name="r">
+          <variable name="x0" />
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+        <atom name="r">
+          <variable name="x0" />
+          <variable name="x3" />
+          <variable name="x4" />
+        </atom>
+      </body>
+      <head>
+        <atom name="EQUALITY">
+          <variable name="x1" />
+          <variable name="x3" />
+        </atom>
+        <atom name="EQUALITY">
+          <variable name="x2" />
+          <variable name="x4" />
+        </atom>
+      </head>
+    </dependency>
+  </dependencies>
+</schema>
