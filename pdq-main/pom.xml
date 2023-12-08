@@ -112,9 +112,9 @@
 			<groupId>uk.ac.ox.cs.pdq</groupId>
 			<artifactId>pdq-regression</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>uk.ac.ox.cs.pdq</groupId>
-			<artifactId>pdq-gui</artifactId>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- 	<groupId>uk.ac.ox.cs.pdq</groupId> -->
+		<!-- 	<artifactId>pdq-gui</artifactId> -->
+		<!-- </dependency> -->
 	</dependencies>
 </project>

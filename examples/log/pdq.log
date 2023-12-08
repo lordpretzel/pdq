@@ -1,29 +1,46 @@
-2021-08-23 11:09:43,370 WARN  [main] (AdaptedConstant.java:84) - Constant EUROPE does not specify a type and could not be inferred to be numeric.Should a type have been specified in a query.xml file or similar?
-2021-08-23 11:09:43,385 WARN  [main] (AdaptedConstant.java:84) - Constant BRASS does not specify a type and could not be inferred to be numeric.Should a type have been specified in a query.xml file or similar?
-2021-08-23 11:09:43,386 WARN  [main] (AdaptedConstant.java:75) - Constant 15 does not specify a type but is numeric. Should a type have been specified in a query.xml file or similar? Interpreting as type: java.lang.Integer
-2021-08-23 11:09:43,388 ERROR [main] (Planner.java:178) - Planning aborted: null
-java.lang.AssertionError: null
-	at org.junit.Assert.fail(Assert.java:86) ~[pdq-main-1.0.0-executable.jar:?]
-	at org.junit.Assert.assertTrue(Assert.java:41) ~[pdq-main-1.0.0-executable.jar:?]
-	at org.junit.Assert.assertTrue(Assert.java:52) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.ConjunctiveQuery.<init>(ConjunctiveQuery.java:67) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.ConjunctiveQuery.create(ConjunctiveQuery.java:133) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.io.jaxb.adapted.AdaptedQuery.toQuery(AdaptedQuery.java:61) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.io.jaxb.IOManager.importQuery(IOManager.java:106) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:161) [pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:134) [pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:197) [pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:32) [pdq-main-1.0.0-executable.jar:?]
-2021-08-23 11:10:36,938 ERROR [main] (Planner.java:178) - Planning aborted: null
-java.lang.AssertionError: null
-	at org.junit.Assert.fail(Assert.java:86) ~[pdq-main-1.0.0-executable.jar:?]
-	at org.junit.Assert.assertTrue(Assert.java:41) ~[pdq-main-1.0.0-executable.jar:?]
-	at org.junit.Assert.assertTrue(Assert.java:52) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.ConjunctiveQuery.<init>(ConjunctiveQuery.java:67) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.ConjunctiveQuery.create(ConjunctiveQuery.java:133) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.io.jaxb.adapted.AdaptedQuery.toQuery(AdaptedQuery.java:61) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.io.jaxb.IOManager.importQuery(IOManager.java:106) ~[pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:161) [pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:134) [pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:197) [pdq-main-1.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:32) [pdq-main-1.0.0-executable.jar:?]
+2023-12-08 16:39:49,638 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2023-12-08 16:39:49,664 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2023-12-08 16:41:16,404 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(q(){q(fv_x2039984535)}),APPLYRULE(s(){s(fv_z2039984535)})),APPLYRULE(r(){r(fv_x2039984535,fv_y2039984535,fv_z2039984535)}))	3.0
+2023-12-08 16:43:14,713 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(s(){s(fv_z1958592872)}),APPLYRULE(r(){r(fv_x1958592872,fv_y1958592872,fv_z1958592872)}))	2.0
+2023-12-08 16:44:24,936 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(q(){q(fv_x1264674474,fv_dummy1264674474)}),APPLYRULE(s(){s(fv_z1264674474)})),APPLYRULE(r(){r(fv_x1264674474,fv_y1264674474,fv_z1264674474)}))	3.0
+2023-12-08 16:55:58,587 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x11777745301,fv_x21777745301,fv_x31777745301,fv_y11777745301,fv_x51777745301,fv_x61777745301,fv_x71777745301,fv_x81777745301)}),APPLYRULE(RPrime(){RPrime(fv_x11777745301,fv_x21777745301,fv_y11777745301,v_y21777745301)}))	2.0
+2023-12-08 16:58:54,293 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(fv_x152451302)}),APPLYRULE(customer(){customer(fv_x152451302,fv_x252451302)})),APPLYRULE(nation(){nation(fv_x252451302,v_x352451302)}))	3.0

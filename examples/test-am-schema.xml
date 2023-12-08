@@ -13,6 +13,7 @@
     </relation>
     <relation name="q">
       <attribute name="f" type="java.lang.Integer" />
+      <access-method name="m3" />
       <attribute name="g" type="java.lang.Integer" />
       <access-method name="m3" type="LIMITED" inputs="0" />
     </relation>
@@ -33,6 +34,24 @@
         </atom>
         <atom name="s">
           <variable name="x2" />
+        </atom>
+      </head>
+    </dependency>
+    <dependency type="TGD">
+      <body>
+        <atom name="r">
+          <variable name="x0" />
+          <variable name="x1" />
+          <variable name="x2" />
+        </atom>
+        <atom name="s">
+          <variable name="x2" />
+        </atom>
+      </body>
+      <head>
+        <atom name="q">
+          <variable name="x0" />
+          <variable name="x3" />
         </atom>
       </head>
     </dependency>

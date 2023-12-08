@@ -3,12 +3,12 @@
 
 package uk.ac.ox.cs.pdq.main;
 
-import uk.ac.ox.cs.pdq.regression.PdqRegression;
+// import uk.ac.ox.cs.pdq.regression.PdqRegression;
 import uk.ac.ox.cs.pdq.cost.CostMain;
 import uk.ac.ox.cs.pdq.planner.Planner;
 import uk.ac.ox.cs.pdq.reasoning.Reason;
 import uk.ac.ox.cs.pdq.runtime.Runtime;
-import uk.ac.ox.cs.pdq.ui.PDQApplication;
+// import uk.ac.ox.cs.pdq.ui.PDQApplication;
 
 import java.util.Arrays;
 
@@ -23,7 +23,7 @@ public class PdqMain {
     public static void main(String[] args) {
 
         if (args.length == 0) {
-            PDQApplication.main(args);
+//            PDQApplication.main(args);
         }
         else {
             String[] new_args = Arrays.copyOfRange(args, 1, args.length);
@@ -37,15 +37,15 @@ public class PdqMain {
             case "runtime":
                 Runtime.main(new_args);
                 break;
-            case "regression":
-                PdqRegression.main(new_args);
-                break;
+            // case "regression":
+            //     PdqRegression.main(new_args);
+            //     break;
             case "reasoning":
                 Reason.main(new_args);
                 break;
-            case "gui":
-                PDQApplication.main(new_args);
-                break;
+            // case "gui":
+            //     PDQApplication.main(new_args);
+            //     break;
             default:
                 printHelp();
                 break;
