@@ -45,17 +45,17 @@ pexpr: "(" expr ")"
 
 aexpr: expr AOP expr
 
-AOP: "+" | "*" | "/"
+AOP: "+" | "*" | "/" | "-"
 
 COMPOP: "<" | ">" | "!=" | "=" | "<=" | ">="
 
-var: WORD
+var: WORD | WORD? "_" WORD? | WORD NUMBER
 
 arg: var | const
 
 const: NUMBER | STRCONST
 
-STRCONST: /["][^"]*["]/
+STRCONST: /["][^"]*["]/ | /['][^']*[']/
 NUMBER: /[0-9]+([.][0-9]*)?/
 DLIMP: ":-"
 
