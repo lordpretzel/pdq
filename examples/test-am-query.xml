@@ -12,12 +12,12 @@
     <atom name="q">
       <variable name="x" />
       <variable name="dummy" />
-    </atom>        
+    </atom>
   </body>
   <head name="q2">
 	<variable name="x" />
 	<variable name="y" />
 	<variable name="z" />
-    <variable name="dummy" />
+    <variable name="dummy" />   
   </head>
 </query>

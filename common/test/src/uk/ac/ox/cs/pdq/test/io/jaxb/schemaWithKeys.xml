@@ -9,9 +9,15 @@
             <primaryKey>r1_1</primaryKey>
             <primaryKey>r1_2</primaryKey>
             <foreign-key autoIndexPresent="false" foreignRelationName="r2" name="ForeignKey1">
+                <autoIndexPresent>false</autoIndexPresent>
+                <foreignRelationName>r2</foreignRelationName>
+                <name>ForeignKey1</name>
                 <References ForeignAttributeName="r1_F" LocalAttributeName="r1_1"/>
             </foreign-key>
-            <foreign-key autoIndexPresent="false" name="ForeignKey2"/>
+            <foreign-key autoIndexPresent="false" name="ForeignKey2">
+                <autoIndexPresent>false</autoIndexPresent>
+                <name>ForeignKey2</name>
+            </foreign-key>
         </relation>
     </relations>
     <dependencies/>

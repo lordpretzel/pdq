@@ -21,10 +21,11 @@ from enum import Enum
 from lark import Lark, Transformer
 
 dl_parser = Lark('''
-// A bunch of words
 start: rule+
 
-rule: headatom DLIMP atom ("," atom)* "."
+rule: headatom DLIMP body "."
+
+body: atom ("," atom)*
 
 atom: relatom | compatom
 
@@ -73,20 +74,26 @@ class DLTransformer(Transformer):
 
     def rule(self,args):
         head = args[0]
-        body = list(args[1:])
+        body = args[2]
         return dlrule(head, body)
 
     def headatom(self,args):
         relname = args[0]
-        aargs = list(args[1:])
+        aargs = args[1]
         return atom(relname,aargs)
+
+    def body(self,args):
+        return args
 
     def expr_list(self,args):
         return args
 
+    def atom(self,args):
+        return args[0]
+
     def relatom(self,args):
         relname = args[0]
-        aargs = list(args[1:])
+        aargs = args[1:]
         return atom(relname, aargs)
 
     def compatom(self,args):
@@ -108,10 +115,13 @@ class DLTransformer(Transformer):
 
     AOP = str
     COMPOP = str
+    WORD = str
 
-    var = str
+    def var(self,args):
+        return args[0]
 
     def arg(self,args):
+        #print(f"[[arg]]: args: {args}, return {args[0]}")
         return args[0]
 
     def const(self,args):
@@ -567,7 +577,7 @@ def translateSQLandQueryToXMLfile(conf):
     elif conf.f:
         pk=IncludePKs.AS_EGD
     schema = sqlToSchema(conf.infile, conf.replace_dt)
-    rule = eval(conf.query.strip())
+    rule = conf.query
     addQueryConstraintsToSchema(schema,rule)
     print(schema.toXML())
     if conf.outfile:
@@ -592,10 +602,11 @@ def translateSQLandQueryandProvToXMLfile(conf):
     elif conf.f:
         pk=IncludePKs.AS_EGD
     schema = sqlToSchema(conf.infile, conf.replace_dt)
-    rule = eval(conf.query.strip())
+    rule = conf.query
     print(rule.head.name)
     addQueryConstraintsToSchema(schema,rule)
     addResultTableToSchema(schema,rule)			# add table for the user selected rows
+    print(f"{schema}")
     print(schema.toXML())
     if conf.outfile:
         writeXMLForSchema(schema, conf.outfile, pk=pk)
@@ -628,14 +639,20 @@ def test():
     rewrule = dlrule(targetAtom, rule.body + [rprime])
     writeXMLForQuery(rewrule, query_file)
 
+def parse_dl_query(q):
+    dlt = DLTransformer()
+    p = dl_parser.parse(q)
+    return dlt.transform(p)[0]
 
 def main():
     parser = ap.ArgumentParser(description='Create PDQs XML schemas.')
     subparsers = parser.add_subparsers()
 
+
     # translate SQL to XML
     sqltoxml_parser = subparsers.add_parser('translate_sql')
     sqltoxml_parser.add_argument("-i", "--infile", type=str, help='input SQL file (no newlines because of limitation of sqlparse library', required=True)
+    sqltoxml_parser.add_argument("-P", action='store_true', help='parse query instead of eval it', default=False)
     sqltoxml_parser.add_argument("-o", "--outfile", type=str, help='output XML file. If no file is provided write to stdout', required=False)
     sqltoxml_parser.add_argument("-p", action='store_true', help='output primary key constraints in relation elements')
     sqltoxml_parser.add_argument("-f", action='store_true', help='output PK constraints as EGDs')
@@ -645,6 +662,7 @@ def main():
     # translate query and SQL schema to XML
     sqlqtoxml_parser = subparsers.add_parser('translate_sql_and_query')
     sqlqtoxml_parser.add_argument("-i", "--infile", type=str, help='input SQL file (no newlines because of limitation of sqlparse library', required=True)
+    sqlqtoxml_parser.add_argument("-P", action='store_true', help='parse query instead of eval it', default=False)
     sqlqtoxml_parser.add_argument("-o", "--outfile", type=str, help='output XML file. If no file is provided write to stdout', required=False)
     sqlqtoxml_parser.add_argument("--query_file", type=str, help='name of XML file output file for the query', required=False)
     sqlqtoxml_parser.add_argument("-q", "--query", type=str, help='query as a python dlrule object', required=True)
@@ -655,6 +673,7 @@ def main():
 
     # translate provenance, query and SQL schema to XML
     sqlqtoxml_parser = subparsers.add_parser('translate_sql_and_query_and_prov')
+    sqlqtoxml_parser.add_argument("-P", action='store_true', help='parse query instead of eval it', default=False)
     sqlqtoxml_parser.add_argument("-i", "--infile", type=str, help='input SQL file (no newlines because of limitation of sqlparse library', required=True)
     sqlqtoxml_parser.add_argument("-o", "--outfile", type=str, help='output XML file. If no file is provided write to stdout', required=False)
     sqlqtoxml_parser.add_argument("--query_file", type=str, help='name of XML file output file for the query', required=False)
@@ -667,6 +686,10 @@ def main():
 
     # call function for subcommand
     conf = parser.parse_args()
+    if isinstance(conf.query, str):
+        conf.query = parse_dl_query(conf.query)
+    else:
+        conf.query = eval(conf.query.strip())
     conf.func(conf)
 
 def test1():

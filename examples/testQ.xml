@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <query>
   <body>
-    			<atom name="customer">
-				<variable name="x1" />
-				<variable name="x2" />
-				<variable name="x3" />
-				<variable name="y1" />
-				<variable name="x5" />
-				<variable name="x6" />
-				<variable name="x7" />
-				<variable name="x8" />
-			</atom>
-			<atom name="nation">
-				<variable name="y1" />
-				<variable name="y2" />
-				<variable name="y3" />
-				<variable name="y4" />
-			</atom>
-			<atom name="RPrime">
-				<variable name="x1" />
-				<variable name="x2" />
-				<variable name="y1" />
-				<variable name="y2" />
-			</atom>
+    <atom name="customer">
+	  <variable name="x1" />
+	  <variable name="x2" />
+	  <variable name="x3" />
+	  <variable name="y1" />
+	  <variable name="x5" />
+	  <variable name="x6" />
+	  <variable name="x7" />
+	  <variable name="x8" />
+	</atom>
+	<atom name="nation">
+	  <variable name="y1" />
+	  <variable name="y2" />
+	  <variable name="y3" />
+	  <variable name="y4" />
+	</atom>
+	<atom name="RPrime">
+	  <variable name="x1" />
+	  <variable name="x2" />
+	  <variable name="y1" />
+	  <variable name="y2" />
+	</atom>
   </body>
-  	<head name="prov_customer">
-		<variable name="x1" />
-		<variable name="x2" />
-		<variable name="x3" />
-		<variable name="y1" />
-		<variable name="x5" />
-		<variable name="x6" />
-		<variable name="x7" />
-		<variable name="x8" />
-	</head>
+  <head name="prov_customer">
+	<variable name="x1" />
+	<variable name="x2" />
+	<variable name="x3" />
+	<variable name="y1" />
+	<variable name="x5" />
+	<variable name="x6" />
+	<variable name="x7" />
+	<variable name="x8" />
+  </head>
 </query>
