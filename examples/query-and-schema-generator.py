@@ -97,7 +97,7 @@ class DLTransformer(Transformer):
         return atom(relname, aargs)
 
     def compatom(self,args):
-        pass
+        return Operator(args[1],[args[0], args[2]])
 
     def expr(self,args):
         return args[0]
@@ -105,13 +105,14 @@ class DLTransformer(Transformer):
     def fcall(self,args): #TODO
         fname = args[0]
         fargs = list(args[1:])
-        return (fname) + fargs
+        return FunctionCall(fname, fargs) # [fname] + fargs
 
     def pexpr(self,args):
         return args[0] #TODO
 
     def aexpr(self,args):
-        return args #TODO
+        return Operator(args[1],[args[0], args[2]])
+        # return args #TODO
 
     AOP = str
     COMPOP = str
@@ -255,6 +256,37 @@ class FD:
 
     def toXML(self):
         return self.toEDG().toXML()
+
+@dataclass
+class Expr:
+    def toXML(self, indent=3):
+        return ""
+
+@dataclass
+class Operator(Expr):
+    name: str
+    args: List[Expr]
+    def toXML(self, indent=3):
+        return ""
+
+@dataclass
+class FunctionCall(Expr):
+    name: str
+    args: List[Expr]
+    def toXML(self, indent=3):
+        return ""
+
+@dataclass
+class Const(Expr):
+    val: str
+    def toXML(self, indent=3):
+        return ""
+
+@dataclass
+class Var(Expr):
+    name: str
+    def toXML(self, indent=3):
+        return ""
 
 @dataclass
 class atom:
