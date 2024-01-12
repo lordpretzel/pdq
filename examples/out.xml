@@ -1,59 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <RelationalTermWithCost type="ProjectionTerm">
-    <projections name="fv_x1696739588" type="java.lang.Integer"/>
-    <projections name="fv_x2696739588" type="java.lang.String"/>
-    <projections name="fv_x3696739588" type="java.lang.String"/>
-    <projections name="fv_y1696739588" type="java.lang.Integer"/>
-    <projections name="fv_x5696739588" type="java.lang.String"/>
-    <projections name="fv_x6696739588" type="java.lang.Double"/>
-    <projections name="fv_x7696739588" type="java.lang.String"/>
-    <projections name="fv_x8696739588" type="java.lang.String"/>
-    <projections name="fv_dummy696739588" type="java.lang.String"/>
-    <RelationalTerm type="DependentJoinTerm">
-        <RelationalTerm type="RenameTerm">
-            <renamings name="fv_x1696739588" type="java.lang.Integer"/>
-            <renamings name="fv_x2696739588" type="java.lang.String"/>
-            <renamings name="fv_x3696739588" type="java.lang.String"/>
-            <renamings name="fv_y1696739588" type="java.lang.Integer"/>
-            <renamings name="fv_x5696739588" type="java.lang.String"/>
-            <renamings name="fv_x6696739588" type="java.lang.Double"/>
-            <renamings name="fv_x7696739588" type="java.lang.String"/>
-            <renamings name="fv_x8696739588" type="java.lang.String"/>
-            <RelationalTerm type="AccessTerm">
-                <accessMethod name="m5"/>
-                <inputConstants/>
-                <relation name="customer">
-                    <attribute name="c_custkey" type="java.lang.Integer"/>
-                    <attribute name="c_name" type="java.lang.String"/>
-                    <attribute name="c_address" type="java.lang.String"/>
-                    <attribute name="c_nationkey" type="java.lang.Integer"/>
-                    <attribute name="c_phone" type="java.lang.String"/>
-                    <attribute name="c_acctbal" type="java.lang.Double"/>
-                    <attribute name="c_mktsegment" type="java.lang.String"/>
-                    <attribute name="c_comment" type="java.lang.String"/>
-                    <access-method name="m5"/>
-                </relation>
+    <projections name="fv_x1264674474" type="java.lang.Integer"/>
+    <projections name="fv_y1264674474" type="java.lang.Integer"/>
+    <projections name="fv_z1264674474" type="java.lang.Integer"/>
+    <projections name="fv_dummy1264674474" type="java.lang.Integer"/>
+    <RelationalTerm type="JoinTerm">
+        <RelationalTerm type="JoinTerm">
+            <RelationalTerm type="RenameTerm">
+                <renamings name="fv_x1264674474" type="java.lang.Integer"/>
+                <renamings name="fv_dummy1264674474" type="java.lang.Integer"/>
+                <RelationalTerm type="AccessTerm">
+                    <accessMethod name="m3"/>
+                    <inputConstants/>
+                    <relation name="q">
+                        <attribute name="f" type="java.lang.Integer"/>
+                        <attribute name="g" type="java.lang.Integer"/>
+                        <access-method name="m3"/>
+                        <access-method name="m3" inputs="0"/>
+                    </relation>
+                </RelationalTerm>
+            </RelationalTerm>
+            <RelationalTerm type="RenameTerm">
+                <renamings name="fv_z1264674474" type="java.lang.Integer"/>
+                <RelationalTerm type="AccessTerm">
+                    <accessMethod name="m2"/>
+                    <inputConstants/>
+                    <relation name="s">
+                        <attribute name="d" type="java.lang.Integer"/>
+                        <access-method name="m2"/>
+                    </relation>
+                </RelationalTerm>
             </RelationalTerm>
         </RelationalTerm>
         <RelationalTerm type="RenameTerm">
-            <renamings name="fv_x1696739588" type="java.lang.String"/>
-            <renamings name="fv_x2696739588" type="java.lang.String"/>
-            <renamings name="fv_y1696739588" type="java.lang.String"/>
-            <renamings name="v_y2696739588" type="java.lang.String"/>
-            <renamings name="fv_dummy696739588" type="java.lang.String"/>
+            <renamings name="fv_x1264674474" type="java.lang.Integer"/>
+            <renamings name="fv_y1264674474" type="java.lang.Integer"/>
+            <renamings name="fv_z1264674474" type="java.lang.Integer"/>
             <RelationalTerm type="AccessTerm">
-                <accessMethod name="m7" inputs="0,1"/>
+                <accessMethod name="m1"/>
                 <inputConstants/>
-                <relation name="RPrime">
-                    <attribute name="x1" type="java.lang.String"/>
-                    <attribute name="x2" type="java.lang.String"/>
-                    <attribute name="y1" type="java.lang.String"/>
-                    <attribute name="y2" type="java.lang.String"/>
-                    <attribute name="dummy" type="java.lang.String"/>
-                    <access-method name="m7" inputs="0,1"/>
+                <relation name="r">
+                    <attribute name="a" type="java.lang.Integer"/>
+                    <attribute name="b" type="java.lang.Integer"/>
+                    <attribute name="c" type="java.lang.Integer"/>
+                    <access-method name="m1"/>
                 </relation>
             </RelationalTerm>
         </RelationalTerm>
     </RelationalTerm>
-    <cost value="2.0" type="DoubleCost"/>
+    <cost value="3.0" type="DoubleCost"/>
 </RelationalTermWithCost>
