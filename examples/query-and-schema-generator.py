@@ -29,17 +29,17 @@ body: atom ("," atom)*
 
 atom: relatom | compatom
 
-headatom: WORD "(" expr_list? ")"
+headatom: var "(" expr_list? ")"
 
 expr_list: expr ("," expr)*
 
-relatom: WORD "(" arg ("," arg)* ")"
+relatom: var "(" arg ("," arg)* ")"
 
 compatom: expr COMPOP expr | "(" expr COMPOP expr ")"
 
 expr: var | const | aexpr | pexpr | fcall
 
-fcall: WORD "(" expr_list? ")"
+fcall: var "(" expr_list? ")"
 
 pexpr: "(" expr ")"
 
@@ -49,7 +49,7 @@ AOP: "+" | "*" | "/" | "-"
 
 COMPOP: "<" | ">" | "!=" | "=" | "<=" | ">="
 
-var: WORD | WORD? "_" WORD? | WORD NUMBER
+var: CNAME
 
 arg: var | const
 
@@ -60,7 +60,7 @@ NUMBER: /[0-9]+([.][0-9]*)?/
 DLIMP: ":-"
 
 // imports WORD from library
-%import common.WORD
+%import common.CNAME
 %import common.WS
 
 // Disregard spaces in text
@@ -119,6 +119,7 @@ class DLTransformer(Transformer):
     WORD = str
 
     def var(self,args):
+        print(args)
         return args[0]
 
     def arg(self,args):

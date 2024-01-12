@@ -1,12 +1,199 @@
-2024-01-05 16:18:13,147 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(q(){q(fv_x1264674474,fv_dummy1264674474)}),APPLYRULE(s(){s(fv_z1264674474)})),APPLYRULE(r(){r(fv_x1264674474,fv_y1264674474,fv_z1264674474)}))	3.0
-2024-01-05 16:20:55,438 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(fv_x152451302)}),APPLYRULE(customer(){customer(fv_x152451302,fv_x252451302)})),APPLYRULE(nation(){nation(fv_x252451302,v_x352451302)}))	3.0
-2024-01-05 16:25:03,798 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x11777745301,fv_x21777745301,fv_x31777745301,fv_y11777745301,fv_x51777745301,fv_x61777745301,fv_x71777745301,fv_x81777745301)}),APPLYRULE(RPrime(){RPrime(fv_x11777745301,fv_x21777745301,fv_y11777745301,v_y21777745301)}))	2.0
-2024-01-05 16:31:31,200 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x11777745301,fv_x21777745301,fv_x31777745301,fv_y11777745301,fv_x51777745301,fv_x61777745301,fv_x71777745301,fv_x81777745301)}),APPLYRULE(RPrime(){RPrime(fv_x11777745301,fv_x21777745301,fv_y11777745301,v_y21777745301)}))	2.0
-2024-01-05 16:33:10,634 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(fv_x152451302)}),APPLYRULE(customer(){customer(fv_x152451302,fv_x252451302)})),APPLYRULE(nation(){nation(fv_x252451302,v_x352451302)}))	3.0
-2024-01-05 16:39:27,861 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x11163088324,fv_x21163088324,fv_x31163088324,fv_y11163088324,fv_x51163088324,fv_x61163088324,fv_x71163088324,fv_x81163088324)}),APPLYRULE(RPrime(){RPrime(fv_x11163088324,fv_x21163088324,fv_y11163088324,v_y21163088324)}))	2.0
-2024-01-05 16:40:03,460 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x11163088324,fv_x21163088324,fv_x31163088324,fv_y11163088324,fv_x51163088324,fv_x61163088324,fv_x71163088324,fv_x81163088324)}),APPLYRULE(RPrime(){RPrime(fv_x11163088324,fv_x21163088324,fv_y11163088324,v_y21163088324)}))	2.0
-2024-01-05 16:40:58,644 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x1328197868,fv_x2328197868,fv_x3328197868,fv_y1328197868,fv_x5328197868,fv_x6328197868,fv_x7328197868,fv_x8328197868)}),APPLYRULE(RPrime(){RPrime(fv_x1328197868,fv_x2328197868,fv_y1328197868,v_y2328197868)}))	2.0
-2024-01-05 16:44:23,660 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+2024-01-12 12:48:14,672 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 12:48:14,679 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 12:49:19,092 ERROR [main] (Planner.java:182) - Planning aborted: unexpected element (uri:"", local:"query"). Expected elements are <{}schema>
+javax.xml.bind.UnmarshalException: unexpected element (uri:"", local:"query"). Expected elements are <{}schema>
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallingContext.handleEvent(UnmarshallingContext.java:712) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.Loader.reportError(Loader.java:232) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.Loader.reportError(Loader.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.Loader.reportUnexpectedChildElement(Loader.java:94) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallingContext$DefaultRootLoader.childElement(UnmarshallingContext.java:1117) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallingContext._startElement(UnmarshallingContext.java:542) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallingContext.startElement(UnmarshallingContext.java:524) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.SAXConnector.startElement(SAXConnector.java:137) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:376) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:615) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:114) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224) ~[?:?]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637) ~[?:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:228) ~[pdq-main-2.0.0-executable.jar:?]
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:199) ~[pdq-main-2.0.0-executable.jar:?]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(AbstractUnmarshallerImpl.java:140) ~[pdq-main-2.0.0-executable.jar:?]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(AbstractUnmarshallerImpl.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(AbstractUnmarshallerImpl.java:164) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.io.jaxb.IOManager.importSchema(IOManager.java:84) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:164) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 12:51:18,117 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 12:51:18,121 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 12:52:19,824 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 12:52:19,828 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 12:52:45,106 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 12:52:45,111 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 12:56:29,687 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 12:56:29,692 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 12:58:47,078 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 12:58:47,082 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 12:59:14,909 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
 java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
@@ -25,7 +212,7 @@ java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-05 16:44:23,683 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+2024-01-12 12:59:14,913 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
@@ -47,7 +234,7 @@ Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to numb
 	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
 	... 4 more
-2024-01-05 16:45:39,200 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+2024-01-12 13:00:28,327 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
 java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
@@ -66,7 +253,7 @@ java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-05 16:45:39,228 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+2024-01-12 13:00:28,332 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
@@ -88,7 +275,7 @@ Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to numb
 	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
 	... 4 more
-2024-01-05 16:46:21,831 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+2024-01-12 13:06:56,241 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
 java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
@@ -107,7 +294,7 @@ java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-05 16:46:21,853 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+2024-01-12 13:06:56,246 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
 	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
@@ -129,5 +316,424 @@ Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to numb
 	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
 	... 4 more
-2024-01-05 16:48:59,877 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x1696739588,fv_x2696739588,fv_x3696739588,fv_y1696739588,fv_x5696739588,fv_x6696739588,fv_x7696739588,fv_x8696739588)}),BINARY(APPLYRULE(nation(){nation(fv_y1696739588,v_y2696739588,v_y3696739588,v_y4696739588)}),APPLYRULE(RPrime(0,1,2,3){RPrime(fv_x1696739588,fv_x2696739588,fv_y1696739588,v_y2696739588,fv_dummy696739588)})))	3.0
-2024-01-05 16:49:55,429 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(customer(){customer(fv_x1696739588,fv_x2696739588,fv_x3696739588,fv_y1696739588,fv_x5696739588,fv_x6696739588,fv_x7696739588,fv_x8696739588)}),APPLYRULE(RPrime(0,1){RPrime(fv_x1696739588,fv_x2696739588,fv_y1696739588,v_y2696739588,fv_dummy696739588)}))	2.0
+2024-01-12 13:09:26,219 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:09:26,223 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:10:12,065 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:10:12,069 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:10:43,714 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:10:43,719 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:12:12,269 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:12:12,273 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:13:26,010 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
+java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:13:26,014 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:13:40,838 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:13:40,843 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:16:34,703 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:16:34,708 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:16:42,646 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:16:42,650 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:17:55,651 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:17:55,656 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:25:06,000 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:25:06,005 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:26:56,302 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:26:56,307 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:45:29,922 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:45:29,926 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
+2024-01-12 13:47:31,987 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 13:47:31,992 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more
