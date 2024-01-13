@@ -1,88 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <query>
   <body>
-    			<atom name="customer">
-				<variable name="c_custkey" />
-				<variable name="c1" />
-				<variable name="c2" />
-				<variable name="c3" />
-				<variable name="c4" />
-				<variable name="c5" />
-				<variable name="BUILDING" />
-				<variable name="c6" />
-			</atom>
-			<atom name="orders">
-				<variable name="l_orderkey" />
-				<variable name="c_custkey" />
-				<variable name="o1" />
-				<variable name="o2" />
-				<variable name="o_orderdate" />
-				<variable name="o3" />
-				<variable name="o4" />
-				<variable name="o_shippriority" />
-				<variable name="o5" />
-			</atom>
-			<atom name="lineitem">
-				<variable name="l_orderkey" />
+    			<atom name="lineitem">
 				<variable name="x1" />
 				<variable name="x2" />
 				<variable name="x3" />
 				<variable name="x4" />
-				<variable name="l_extendedprice" />
-				<variable name="l_discount" />
+				<variable name="l_quant" />
+				<variable name="l_extp" />
+				<variable name="l_disc" />
+				<variable name="l_tax" />
+				<variable name="l_return" />
+				<variable name="l_linestat" />
+				<variable name="l_shipdate" />
 				<variable name="x5" />
 				<variable name="x6" />
 				<variable name="x7" />
-				<variable name="l_shipdate" />
 				<variable name="x8" />
 				<variable name="x9" />
-				<variable name="x10" />
-				<variable name="x11" />
-				<variable name="x12" />
 			</atom>
-
 
 			<atom name="rp">
-				<variable name="l_orderkey" />
-				<variable name="o_orderdate" />
-				<variable name="o_shippriority" />
-				<variable name="v1" />
+				<variable name="l_return" />
+				<variable name="l_linestat" />
+				<variable name="v8" />
+				<variable name="v9" />
+				<variable name="v10" />
+				<variable name="v11" />
+				<variable name="v12" />
+				<variable name="v13" />
+				<variable name="v14" />
+				<variable name="v15" />
 			</atom>
 			<atom name="RPrime">
-				<variable name="l_orderkey" />
 				<variable name="x1" />
 				<variable name="x2" />
 				<variable name="x3" />
 				<variable name="x4" />
-				<variable name="l_extendedprice" />
-				<variable name="l_discount" />
+				<variable name="l_quant" />
+				<variable name="l_extp" />
+				<variable name="l_disc" />
+				<variable name="l_tax" />
+				<variable name="l_return" />
+				<variable name="l_linestat" />
+				<variable name="l_shipdate" />
 				<variable name="x5" />
 				<variable name="x6" />
 				<variable name="x7" />
-				<variable name="l_shipdate" />
 				<variable name="x8" />
 				<variable name="x9" />
-				<variable name="x10" />
-				<variable name="x11" />
-				<variable name="x12" />
 			</atom>
   </body>
   	<head name="prov_lineitem">
-		<variable name="l_orderkey" />
 		<variable name="x1" />
 		<variable name="x2" />
 		<variable name="x3" />
 		<variable name="x4" />
-		<variable name="l_extendedprice" />
-		<variable name="l_discount" />
+		<variable name="l_quant" />
+		<variable name="l_extp" />
+		<variable name="l_disc" />
+		<variable name="l_tax" />
+		<variable name="l_return" />
+		<variable name="l_linestat" />
+		<variable name="l_shipdate" />
 		<variable name="x5" />
 		<variable name="x6" />
 		<variable name="x7" />
-		<variable name="l_shipdate" />
 		<variable name="x8" />
 		<variable name="x9" />
-		<variable name="x10" />
-		<variable name="x11" />
-		<variable name="x12" />
 	</head>
 </query>

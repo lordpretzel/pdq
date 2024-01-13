@@ -28,7 +28,7 @@
       <attribute name="y2" type="java.lang.String"/>
       <attribute name="dummy" type="java.lang.String"/>
       <access-method name="m7" 
-                     type="LIMITED" inputs="0,1"/>
+                     type="LIMITED"/>
     </relation>
 
   </relations>
