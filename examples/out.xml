@@ -1,56 +1,89 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <RelationalTermWithCost type="ProjectionTerm">
-    <projections name="fv_x1472991420" type="java.lang.Integer"/>
-    <projections name="fv_x2472991420" type="java.lang.String"/>
-    <projections name="fv_x3472991420" type="java.lang.String"/>
-    <projections name="fv_y1472991420" type="java.lang.Integer"/>
-    <projections name="fv_x5472991420" type="java.lang.String"/>
-    <projections name="fv_x6472991420" type="java.lang.Double"/>
-    <projections name="fv_x7472991420" type="java.lang.String"/>
-    <projections name="fv_x8472991420" type="java.lang.String"/>
-    <projections name="fv_dummy472991420" type="java.lang.String"/>
+    <projections name="fv_x1879311295" type="java.lang.Integer"/>
+    <projections name="fv_x2879311295" type="java.lang.Integer"/>
+    <projections name="fv_x3879311295" type="java.lang.Integer"/>
+    <projections name="fv_x4879311295" type="java.lang.Integer"/>
+    <projections name="fv_l_quant879311295" type="java.lang.Double"/>
+    <projections name="fv_l_extp879311295" type="java.lang.Double"/>
+    <projections name="fv_l_disc879311295" type="java.lang.Double"/>
+    <projections name="fv_l_tax879311295" type="java.lang.Double"/>
+    <projections name="fv_l_return879311295" type="java.lang.String"/>
+    <projections name="fv_l_linestat879311295" type="java.lang.String"/>
+    <projections name="fv_l_shipdate879311295" type="java.util.Date"/>
+    <projections name="fv_x5879311295" type="java.util.Date"/>
+    <projections name="fv_x6879311295" type="java.util.Date"/>
+    <projections name="fv_x7879311295" type="java.lang.String"/>
+    <projections name="fv_x8879311295" type="java.lang.String"/>
+    <projections name="fv_x9879311295" type="java.lang.String"/>
     <RelationalTerm type="JoinTerm">
         <RelationalTerm type="RenameTerm">
-            <renamings name="fv_x1472991420" type="java.lang.String"/>
-            <renamings name="fv_x2472991420" type="java.lang.String"/>
-            <renamings name="fv_y1472991420" type="java.lang.String"/>
-            <renamings name="v_y2472991420" type="java.lang.String"/>
-            <renamings name="fv_dummy472991420" type="java.lang.String"/>
+            <renamings name="fv_l_return879311295" type="java.lang.String"/>
+            <renamings name="fv_l_linestat879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])879311295" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])879311295" type="java.lang.String"/>
             <RelationalTerm type="AccessTerm">
-                <accessMethod name="m7"/>
+                <accessMethod name="m19"/>
                 <inputConstants/>
                 <relation name="RPrime">
-                    <attribute name="x1" type="java.lang.String"/>
-                    <attribute name="x2" type="java.lang.String"/>
-                    <attribute name="y1" type="java.lang.String"/>
-                    <attribute name="y2" type="java.lang.String"/>
-                    <attribute name="dummy" type="java.lang.String"/>
-                    <access-method name="m7"/>
+                    <attribute name="l_return" type="java.lang.String"/>
+                    <attribute name="l_linestat" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])" type="java.lang.String"/>
+                    <access-method name="m19"/>
                 </relation>
             </RelationalTerm>
         </RelationalTerm>
         <RelationalTerm type="RenameTerm">
-            <renamings name="fv_x1472991420" type="java.lang.Integer"/>
-            <renamings name="fv_x2472991420" type="java.lang.String"/>
-            <renamings name="fv_x3472991420" type="java.lang.String"/>
-            <renamings name="fv_y1472991420" type="java.lang.Integer"/>
-            <renamings name="fv_x5472991420" type="java.lang.String"/>
-            <renamings name="fv_x6472991420" type="java.lang.Double"/>
-            <renamings name="fv_x7472991420" type="java.lang.String"/>
-            <renamings name="fv_x8472991420" type="java.lang.String"/>
+            <renamings name="fv_x1879311295" type="java.lang.Integer"/>
+            <renamings name="fv_x2879311295" type="java.lang.Integer"/>
+            <renamings name="fv_x3879311295" type="java.lang.Integer"/>
+            <renamings name="fv_x4879311295" type="java.lang.Integer"/>
+            <renamings name="fv_l_quant879311295" type="java.lang.Double"/>
+            <renamings name="fv_l_extp879311295" type="java.lang.Double"/>
+            <renamings name="fv_l_disc879311295" type="java.lang.Double"/>
+            <renamings name="fv_l_tax879311295" type="java.lang.Double"/>
+            <renamings name="fv_l_return879311295" type="java.lang.String"/>
+            <renamings name="fv_l_linestat879311295" type="java.lang.String"/>
+            <renamings name="fv_l_shipdate879311295" type="java.util.Date"/>
+            <renamings name="fv_x5879311295" type="java.util.Date"/>
+            <renamings name="fv_x6879311295" type="java.util.Date"/>
+            <renamings name="fv_x7879311295" type="java.lang.String"/>
+            <renamings name="fv_x8879311295" type="java.lang.String"/>
+            <renamings name="fv_x9879311295" type="java.lang.String"/>
             <RelationalTerm type="AccessTerm">
-                <accessMethod name="m5"/>
+                <accessMethod name="m16"/>
                 <inputConstants/>
-                <relation name="customer">
-                    <attribute name="c_custkey" type="java.lang.Integer"/>
-                    <attribute name="c_name" type="java.lang.String"/>
-                    <attribute name="c_address" type="java.lang.String"/>
-                    <attribute name="c_nationkey" type="java.lang.Integer"/>
-                    <attribute name="c_phone" type="java.lang.String"/>
-                    <attribute name="c_acctbal" type="java.lang.Double"/>
-                    <attribute name="c_mktsegment" type="java.lang.String"/>
-                    <attribute name="c_comment" type="java.lang.String"/>
-                    <access-method name="m5"/>
+                <relation name="lineitem">
+                    <attribute name="l_orderkey" type="java.lang.Integer"/>
+                    <attribute name="l_partkey" type="java.lang.Integer"/>
+                    <attribute name="l_suppkey" type="java.lang.Integer"/>
+                    <attribute name="l_linenumber" type="java.lang.Integer"/>
+                    <attribute name="l_quantity" type="java.lang.Double"/>
+                    <attribute name="l_extendedprice" type="java.lang.Double"/>
+                    <attribute name="l_discount" type="java.lang.Double"/>
+                    <attribute name="l_tax" type="java.lang.Double"/>
+                    <attribute name="l_returnflag" type="java.lang.String"/>
+                    <attribute name="l_linestatus" type="java.lang.String"/>
+                    <attribute name="l_shipdate" type="java.util.Date"/>
+                    <attribute name="l_commitdate" type="java.util.Date"/>
+                    <attribute name="l_receiptdate" type="java.util.Date"/>
+                    <attribute name="l_shipinstruct" type="java.lang.String"/>
+                    <attribute name="l_shipmode" type="java.lang.String"/>
+                    <attribute name="l_comment" type="java.lang.String"/>
+                    <access-method name="m16"/>
                 </relation>
             </RelationalTerm>
         </RelationalTerm>

@@ -95,22 +95,16 @@
      </relation>
 
      <relation name="RPrime">
-             <attribute name="x1" type="java.lang.String"/>
-             <attribute name="x2" type="java.lang.String"/>
-             <attribute name="x3" type="java.lang.String"/>
-             <attribute name="x4" type="java.lang.String"/>
-             <attribute name="l_quant" type="java.lang.String"/>
-             <attribute name="l_extp" type="java.lang.String"/>
-             <attribute name="l_disc" type="java.lang.String"/>
-             <attribute name="l_tax" type="java.lang.String"/>
              <attribute name="l_return" type="java.lang.String"/>
              <attribute name="l_linestat" type="java.lang.String"/>
-             <attribute name="l_shipdate" type="java.lang.String"/>
-             <attribute name="x5" type="java.lang.String"/>
-             <attribute name="x6" type="java.lang.String"/>
-             <attribute name="x7" type="java.lang.String"/>
-             <attribute name="x8" type="java.lang.String"/>
-             <attribute name="x9" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])" type="java.lang.String"/>
              <access-method name="m19" type="LIMITED"/>
     </relation>
     
@@ -992,22 +986,16 @@
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="x1" />
-				<variable name="x2" />
-				<variable name="x3" />
-				<variable name="x4" />
-				<variable name="l_quant" />
-				<variable name="l_extp" />
-				<variable name="l_disc" />
-				<variable name="l_tax" />
 				<variable name="l_return" />
 				<variable name="l_linestat" />
-				<variable name="l_shipdate" />
-				<variable name="x5" />
-				<variable name="x6" />
-				<variable name="x7" />
-				<variable name="x8" />
-				<variable name="x9" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])" />
 			</atom>
       </body>
       <head>
@@ -1030,18 +1018,6 @@
 				<variable name="x9" />
 			</atom>
 
-			<atom name="rp">
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="v8" />
-				<variable name="v9" />
-				<variable name="v10" />
-				<variable name="v11" />
-				<variable name="v12" />
-				<variable name="v13" />
-				<variable name="v14" />
-				<variable name="v15" />
-			</atom>
       </head>
     </dependency>
 
