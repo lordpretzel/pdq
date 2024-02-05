@@ -95,16 +95,9 @@
      </relation>
 
      <relation name="RPrime">
-             <attribute name="l_return" type="java.lang.String"/>
-             <attribute name="l_linestat" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])" type="java.lang.String"/>
+             <attribute name="l_partkey" type="java.lang.String"/>
+             <attribute name="l_suppkey" type="java.lang.String"/>
+             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=['0.5', Token('CNAME', 'l_quantity')])]])" type="java.lang.String"/>
              <access-method name="m19" type="LIMITED"/>
     </relation>
     
@@ -986,37 +979,31 @@
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])" />
+				<variable name="l_partkey" />
+				<variable name="l_suppkey" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=['0.5', Token('CNAME', 'l_quantity')])]])" />
 			</atom>
       </body>
       <head>
 			<atom name="lineitem">
-				<variable name="x1" />
-				<variable name="x2" />
-				<variable name="x3" />
-				<variable name="x4" />
-				<variable name="l_quant" />
-				<variable name="l_extp" />
-				<variable name="l_disc" />
-				<variable name="l_tax" />
-				<variable name="l_return" />
-				<variable name="l_linestat" />
+				<variable name="l1" />
+				<variable name="l_partkey" />
+				<variable name="l_suppkey" />
+				<variable name="l2" />
+				<variable name="l_quantity" />
+				<variable name="l3" />
+				<variable name="l4" />
+				<variable name="l5" />
+				<variable name="l6" />
+				<variable name="l7" />
 				<variable name="l_shipdate" />
-				<variable name="x5" />
-				<variable name="x6" />
-				<variable name="x7" />
-				<variable name="x8" />
-				<variable name="x9" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
 			</atom>
+
 
       </head>
     </dependency>

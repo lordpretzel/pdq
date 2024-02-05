@@ -1,317 +1,33 @@
-2024-01-27 00:59:42,355 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_okey1115013644)}),APPLYRULE(lineitem(){lineitem(fv_l_okey1115013644,fv_x11115013644,fv_x21115013644,fv_x31115013644,fv_x41115013644,fv_x51115013644,fv_x61115013644,fv_x71115013644,fv_x81115013644,fv_x91115013644,fv_x101115013644,fv_l_comm_date1115013644,fv_l_receipt_date1115013644,fv_x111115013644,fv_x121115013644,fv_x131115013644)}))	2.0
-2024-01-27 01:00:26,082 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_okey1115013644)}),APPLYRULE(lineitem(){lineitem(fv_l_okey1115013644,fv_x11115013644,fv_x21115013644,fv_x31115013644,fv_x41115013644,fv_x51115013644,fv_x61115013644,fv_x71115013644,fv_x81115013644,fv_x91115013644,fv_x101115013644,fv_l_comm_date1115013644,fv_l_receipt_date1115013644,fv_x111115013644,fv_x121115013644,fv_x131115013644)}))	2.0
-2024-01-27 01:00:45,491 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_okey1115013644)}),APPLYRULE(lineitem(){lineitem(fv_l_okey1115013644,fv_x11115013644,fv_x21115013644,fv_x31115013644,fv_x41115013644,fv_x51115013644,fv_x61115013644,fv_x71115013644,fv_x81115013644,fv_x91115013644,fv_x101115013644,fv_l_comm_date1115013644,fv_l_receipt_date1115013644,fv_x111115013644,fv_x121115013644,fv_x131115013644)}))	2.0
-2024-01-27 01:41:59,703 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
-java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+2024-02-04 18:34:15,545 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_return500885941,fv_l_linestat500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='*', args=[Operator(name='-', args=['1', Token('CNAME', 'l_disc')]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])])]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])500885941,v_FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])500885941)}),APPLYRULE(lineitem(){lineitem(fv_x1500885941,fv_x2500885941,fv_x3500885941,fv_x4500885941,fv_l_quant500885941,fv_l_extp500885941,fv_l_disc500885941,fv_l_tax500885941,fv_l_return500885941,fv_l_linestat500885941,fv_l_shipdate500885941,fv_x5500885941,fv_x6500885941,fv_x7500885941,fv_x8500885941,fv_x9500885941)}))	2.0
+2024-02-04 18:45:54,735 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_return500885941,fv_l_linestat500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='*', args=[Operator(name='-', args=['1', Token('CNAME', 'l_disc')]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])])]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])500885941,v_FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])500885941)}),APPLYRULE(lineitem(){lineitem(fv_x1500885941,fv_x2500885941,fv_x3500885941,fv_x4500885941,fv_l_quant500885941,fv_l_extp500885941,fv_l_disc500885941,fv_l_tax500885941,fv_l_return500885941,fv_l_linestat500885941,fv_l_shipdate500885941,fv_x5500885941,fv_x6500885941,fv_x7500885941,fv_x8500885941,fv_x9500885941)}))	2.0
+2024-02-04 18:47:41,162 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_return500885941,fv_l_linestat500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])500885941,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='*', args=[Operator(name='-', args=['1', Token('CNAME', 'l_disc')]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])])]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])500885941,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])500885941,v_FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])500885941)}),APPLYRULE(lineitem(){lineitem(fv_x1500885941,fv_x2500885941,fv_x3500885941,fv_x4500885941,fv_l_quant500885941,fv_l_extp500885941,fv_l_disc500885941,fv_l_tax500885941,fv_l_return500885941,fv_l_linestat500885941,fv_l_shipdate500885941,fv_x5500885941,fv_x6500885941,fv_x7500885941,fv_x8500885941,fv_x9500885941)}))	2.0
+2024-02-04 18:49:44,303 ERROR [main] (Planner.java:182) - Planning aborted: Worker thread read error (probably timeout) at createBinaryConfigurations. 
+uk.ac.ox.cs.pdq.planner.PlannerException: Worker thread read error (probably timeout) at createBinaryConfigurations. 
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread$CreateBinaryConfigurationsTask.getReturnValue(DAGOptimizedMultiThread.java:292) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:147) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:41:59,708 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+2024-02-04 18:51:47,572 ERROR [main] (Planner.java:182) - Planning aborted: Worker thread read error (probably timeout) at createBinaryConfigurations. 
+uk.ac.ox.cs.pdq.planner.PlannerException: Worker thread read error (probably timeout) at createBinaryConfigurations. 
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread$CreateBinaryConfigurationsTask.getReturnValue(DAGOptimizedMultiThread.java:292) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:147) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:44:33,699 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
-java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
+2024-02-04 18:57:14,674 ERROR [main] (Planner.java:182) - Planning aborted: Worker thread read error (probably timeout) at createBinaryConfigurations. 
+uk.ac.ox.cs.pdq.planner.PlannerException: Worker thread read error (probably timeout) at createBinaryConfigurations. 
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread$CreateBinaryConfigurationsTask.getReturnValue(DAGOptimizedMultiThread.java:292) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:147) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:44:33,704 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:44:49,336 ERROR [main] (ExplorationSetUp.java:206) - Index 3 out of bounds for length 3
-java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.convertToMatch(InternalDatabaseManager.java:559) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:178) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:44:49,341 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.convertToMatch(InternalDatabaseManager.java:559) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:178) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:45:15,124 ERROR [main] (ExplorationSetUp.java:206) - Index 3 out of bounds for length 3
-java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.convertToMatch(InternalDatabaseManager.java:559) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:178) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:45:15,129 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.convertToMatch(InternalDatabaseManager.java:559) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:178) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:50:19,643 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey1313960293,v_p11313960293,v_p21313960293,v_p_brand1313960293,v_p_type1313960293,v_p_size1313960293,v_p31313960293,v_p41313960293,v_p51313960293)}),APPLYRULE(partsupp(){partsupp(fv_p_partkey1313960293,fv_ps_suppkey1313960293,fv_ps11313960293,fv_ps21313960293,fv_ps31313960293)})),APPLYRULE(RPrime(){RPrime(v_p_brand1313960293,v_p_type1313960293,v_p_size1313960293,fv_ps_suppkey1313960293)}))	3.0
-2024-01-27 01:50:57,135 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
-java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:50:57,140 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:51:24,606 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
-java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:51:24,611 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:51:59,114 ERROR [main] (ExplorationSetUp.java:206) - Predicate arity not equal to number of terms
-java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:51:59,119 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.IllegalArgumentException: Predicate arity not equal to number of terms
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.<init>(Atom.java:46) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.fol.Atom.create(Atom.java:183) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.computeCrossJoin(InternalDatabaseManager.java:371) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerConjunctiveQueryRecursively(InternalDatabaseManager.java:355) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:174) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:52:55,547 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey1313960293,v_p11313960293,v_p21313960293,v_p_brand1313960293,v_p_type1313960293,v_p_size1313960293,v_p31313960293,v_p41313960293,v_p51313960293)}),APPLYRULE(partsupp(){partsupp(fv_p_partkey1313960293,fv_ps_suppkey1313960293,fv_ps11313960293,fv_ps21313960293,fv_ps31313960293)})),APPLYRULE(RPrime(){RPrime(v_p_brand1313960293,v_p_type1313960293,v_p_size1313960293,fv_ps_suppkey1313960293)}))	3.0
-2024-01-27 01:54:16,749 ERROR [main] (ExplorationSetUp.java:206) - Index 8 out of bounds for length 4
-java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 4
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.convertToMatch(InternalDatabaseManager.java:559) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:178) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-2024-01-27 01:54:16,753 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 4
-uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 4
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 4
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.convertToMatch(InternalDatabaseManager.java:559) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoningdatabase.InternalDatabaseManager.answerQueryDifferences(InternalDatabaseManager.java:178) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.state.DatabaseChaseInstance.getTriggers(DatabaseChaseInstance.java:672) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.reasoning.chase.ParallelChaser.reasonUntilTermination(ParallelChaser.java:54) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.ApplyRule.createInitialApplyRuleConfigurations(ApplyRule.java:173) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimized.<init>(DAGOptimized.java:109) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.<init>(DAGOptimizedMultiThread.java:71) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorerFactory.createExplorer(ExplorerFactory.java:142) ~[pdq-main-2.0.0-executable.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:179) ~[pdq-main-2.0.0-executable.jar:?]
-	... 4 more
-2024-01-27 01:56:06,299 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey1313960293,fv_p11313960293,fv_p21313960293,fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,fv_p31313960293,fv_p41313960293,fv_p51313960293)}),APPLYRULE(partsupp(){partsupp(fv_p_partkey1313960293,v_ps_suppkey1313960293,v_ps11313960293,v_ps21313960293,v_ps31313960293)})),APPLYRULE(RPrime(){RPrime(fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,v_ps_suppkey1313960293)}))	3.0
-2024-01-27 01:56:48,749 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey1313960293,fv_p11313960293,fv_p21313960293,fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,fv_p31313960293,fv_p41313960293,fv_p51313960293)}),APPLYRULE(partsupp(){partsupp(fv_p_partkey1313960293,v_ps_suppkey1313960293,v_ps11313960293,v_ps21313960293,v_ps31313960293)})),APPLYRULE(RPrime(){RPrime(fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,v_ps_suppkey1313960293)}))	3.0
-2024-01-27 01:57:26,613 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey1313960293,fv_p11313960293,fv_p21313960293,fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,fv_p31313960293,fv_p41313960293,fv_p51313960293)}),APPLYRULE(partsupp(){partsupp(fv_p_partkey1313960293,v_ps_suppkey1313960293,v_ps11313960293,v_ps21313960293,v_ps31313960293)})),APPLYRULE(RPrime(){RPrime(fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,v_ps_suppkey1313960293)}))	3.0
-2024-01-27 01:58:35,976 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey1313960293,fv_p11313960293,fv_p21313960293,fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,fv_p31313960293,fv_p41313960293,fv_p51313960293)}),APPLYRULE(partsupp(){partsupp(fv_p_partkey1313960293,v_ps_suppkey1313960293,v_ps11313960293,v_ps21313960293,v_ps31313960293)})),APPLYRULE(RPrime(){RPrime(fv_p_brand1313960293,fv_p_type1313960293,fv_p_size1313960293,v_ps_suppkey1313960293)}))	3.0
-2024-01-27 01:58:58,768 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_pk749486981,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])749486981)}),APPLYRULE(lineitem(){lineitem(fv_l1749486981,fv_l_pk749486981,fv_l2749486981,fv_l3749486981,fv_l_q749486981,fv_l_ep749486981,fv_l4749486981,fv_l5749486981,fv_l6749486981,fv_l7749486981,fv_l8749486981,fv_l9749486981,fv_l10749486981,fv_l11749486981,fv_l12749486981,fv_l13749486981)}))	2.0
-2024-01-27 01:59:52,901 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l_orderkey1076202543,fv_X11076202543,fv_X21076202543,fv_X31076202543,fv_l_quantity1076202543,fv_X41076202543,fv_X51076202543,fv_X61076202543,fv_X71076202543,fv_X81076202543,fv_X91076202543,fv_X101076202543,fv_X111076202543,fv_X121076202543,fv_X131076202543,fv_X141076202543)}),APPLYRULE(RPrime(){RPrime(fv_l_orderkey1076202543,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quantity')]])1076202543)}))	2.0
-2024-01-27 02:05:57,602 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l1385332399,fv_l_partkey385332399,fv_l_suppkey385332399,fv_l2385332399,fv_l_quantity385332399,fv_l3385332399,fv_l4385332399,fv_l5385332399,fv_l6385332399,fv_l7385332399,fv_l_shipdate385332399,fv_l8385332399,fv_l9385332399,fv_l10385332399,fv_l11385332399,fv_l12385332399)}),APPLYRULE(RPrime(){RPrime(fv_l_partkey385332399,fv_l_suppkey385332399,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=['0.5', Token('CNAME', 'l_quantity')])]])385332399)}))	2.0
-2024-01-27 13:44:45,807 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_return879311295,fv_l_linestat879311295,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])879311295,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])879311295,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])879311295,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])879311295,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])879311295,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])879311295,v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])879311295,v_FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])879311295)}),APPLYRULE(lineitem(){lineitem(fv_x1879311295,fv_x2879311295,fv_x3879311295,fv_x4879311295,fv_l_quant879311295,fv_l_extp879311295,fv_l_disc879311295,fv_l_tax879311295,fv_l_return879311295,fv_l_linestat879311295,fv_l_shipdate879311295,fv_x5879311295,fv_x6879311295,fv_x7879311295,fv_x8879311295,fv_x9879311295)}))	2.0
