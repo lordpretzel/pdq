@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="lineitem">
+				<variable name="l_okey" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="l_linenumber" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+				<variable name="x16" />
+				<variable name="l_shipdate" />
+				<variable name="l_commitdate" />
+				<variable name="l_receiptdate" />
+				<variable name="x17" />
+				<variable name="l_shipmode" />
+				<variable name="x18" />
+			</atom>
+
+
+
+
+			<atom name="RPrime">
+				<variable name="l_okey" />
+				<variable name="l_linenumber" />
+				<variable name="l_shipmode" />
+			</atom>
+  </body>
+  	<head name="prov_lineitem">
+		<variable name="l_okey" />
+		<variable name="x8" />
+		<variable name="x9" />
+		<variable name="l_linenumber" />
+		<variable name="x11" />
+		<variable name="x12" />
+		<variable name="x13" />
+		<variable name="x14" />
+		<variable name="x15" />
+		<variable name="x16" />
+		<variable name="l_shipdate" />
+		<variable name="l_commitdate" />
+		<variable name="l_receiptdate" />
+		<variable name="x17" />
+		<variable name="l_shipmode" />
+		<variable name="x18" />
+	</head>
+</query>

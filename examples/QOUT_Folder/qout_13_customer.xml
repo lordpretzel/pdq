@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="customer">
+				<variable name="c_custkey" />
+				<variable name="c1" />
+				<variable name="c2" />
+				<variable name="c3" />
+				<variable name="c4" />
+				<variable name="c5" />
+				<variable name="c6" />
+				<variable name="c7" />
+			</atom>
+			<atom name="orders">
+				<variable name="o_orderkey" />
+				<variable name="c_custkey" />
+				<variable name="o1" />
+				<variable name="o2" />
+				<variable name="o3" />
+				<variable name="o4" />
+				<variable name="o5" />
+				<variable name="o6" />
+				<variable name="o_comment" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="c_custkey" />
+				<variable name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'o_orderkey')]])" />
+			</atom>
+  </body>
+  	<head name="prov_customer">
+		<variable name="c_custkey" />
+		<variable name="c1" />
+		<variable name="c2" />
+		<variable name="c3" />
+		<variable name="c4" />
+		<variable name="c5" />
+		<variable name="c6" />
+		<variable name="c7" />
+	</head>
+</query>
