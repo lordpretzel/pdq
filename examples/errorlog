@@ -1,0 +1,28 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+2024-01-12 21:00:58,969 ERROR [main] (ExplorationSetUp.java:206) - null
+java.lang.IllegalArgumentException: null
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+2024-01-12 21:00:58,974 ERROR [main] (Planner.java:182) - Planning aborted: java.lang.IllegalArgumentException
+uk.ac.ox.cs.pdq.planner.PlannerException: java.lang.IllegalArgumentException
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:207) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
+Caused by: java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:128) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.plancreation.PlanCreationUtility.createFinalProjection(PlanCreationUtility.java:227) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGExplorer.setBestPlan(DAGExplorer.java:125) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:110) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-executable.jar:?]
+	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-executable.jar:?]
+	... 4 more

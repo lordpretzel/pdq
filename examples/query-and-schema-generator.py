@@ -20,6 +20,8 @@ import re
 from enum import Enum
 from lark import Lark, Transformer
 
+provtable = "RPrime"
+
 dl_parser = Lark('''
 start: rule+
 
@@ -29,17 +31,17 @@ body: atom ("," atom)*
 
 atom: relatom | compatom
 
-headatom: WORD "(" expr_list? ")"
+headatom: var "(" expr_list? ")"
 
 expr_list: expr ("," expr)*
 
-relatom: WORD "(" arg ("," arg)* ")"
+relatom: var "(" arg ("," arg)* ")"
 
 compatom: expr COMPOP expr | "(" expr COMPOP expr ")"
 
 expr: var | const | aexpr | pexpr | fcall
 
-fcall: WORD "(" expr_list? ")"
+fcall: var "(" expr_list? ")"
 
 pexpr: "(" expr ")"
 
@@ -49,7 +51,7 @@ AOP: "+" | "*" | "/" | "-"
 
 COMPOP: "<" | ">" | "!=" | "=" | "<=" | ">="
 
-var: WORD | WORD? "_" WORD? | WORD NUMBER
+var: CNAME
 
 arg: var | const
 
@@ -60,7 +62,7 @@ NUMBER: /[0-9]+([.][0-9]*)?/
 DLIMP: ":-"
 
 // imports WORD from library
-%import common.WORD
+%import common.CNAME
 %import common.WS
 
 // Disregard spaces in text
@@ -193,6 +195,12 @@ class Table:
         pkStr = ""
         if (addPK):
             pkStr = self.pkToXML()
+        if self.name == provtable:
+                    return f"""     <relation name="{self.name}">
+{attrStr}{pkStr}
+             <access-method name="{accm}" type="LIMITED"/>
+    </relation>
+    """
         return f"""     <relation name="{self.name}">
 {attrStr}{pkStr}
              <access-method name="{accm}"/>
@@ -374,8 +382,10 @@ class Schema:
 
     def toXML(self, pk=IncludePKs.NO):
         strtable = [ t.toXML(pk is IncludePKs.AS_PK) for t in self.tables ]
-        strviews = [ t.viewXML() for t in self.tables ] + [ v.toXML() for v in self.views ]
-        strdeps = [ createTableViewDep(t) for t in self.tables ]
+#        strviews = [ t.viewXML() for t in self.tables ] + [ v.toXML() for v in self.views ]
+#        strdeps = [ createTableViewDep(t) for t in self.tables ]
+        strviews = []
+        strdeps = []
         if pk is IncludePKs.AS_EGD:
             '''for t in self.tables:
                 if t.pk:
@@ -610,7 +620,7 @@ def translateSQLandQueryToXMLfile(conf):
         pk=IncludePKs.AS_EGD
     schema = sqlToSchema(conf.infile, conf.replace_dt)
     rule = conf.query
-    addQueryConstraintsToSchema(schema,rule)
+#    addQueryConstraintsToSchema(schema,rule)
     print(schema.toXML())
     if conf.outfile:
         writeXMLForSchema(schema, conf.outfile, pk=pk)
@@ -636,7 +646,7 @@ def translateSQLandQueryandProvToXMLfile(conf):
     schema = sqlToSchema(conf.infile, conf.replace_dt)
     rule = conf.query
     print(rule.head.name)
-    addQueryConstraintsToSchema(schema,rule)
+#    addQueryConstraintsToSchema(schema,rule)
     addResultTableToSchema(schema,rule)			# add table for the user selected rows
     print(f"{schema}")
     print(schema.toXML())
