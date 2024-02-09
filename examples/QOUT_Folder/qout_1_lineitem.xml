@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="lineitem">
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="l_quant" />
+				<variable name="l_extp" />
+				<variable name="l_disc" />
+				<variable name="l_tax" />
+				<variable name="l_return" />
+				<variable name="l_linestat" />
+				<variable name="l_shipdate" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+			</atom>
+
+			<atom name="RPrime">
+				<variable name="l_return" />
+				<variable name="l_linestat" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='*', args=[Operator(name='-', args=['1', Token('CNAME', 'l_disc')]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])])]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])" />
+			</atom>
+  </body>
+  	<head name="prov_lineitem">
+		<variable name="x1" />
+		<variable name="x2" />
+		<variable name="x3" />
+		<variable name="x4" />
+		<variable name="l_quant" />
+		<variable name="l_extp" />
+		<variable name="l_disc" />
+		<variable name="l_tax" />
+		<variable name="l_return" />
+		<variable name="l_linestat" />
+		<variable name="l_shipdate" />
+		<variable name="x5" />
+		<variable name="x6" />
+		<variable name="x7" />
+		<variable name="x8" />
+		<variable name="x9" />
+	</head>
+</query>
