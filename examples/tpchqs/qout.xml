@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <query>
   <body>
-    			<atom name="lineitem">
+    			<atom name="nation">
+				<variable name="n_key" />
+				<variable name="n_name" />
+				<variable name="r_key" />
 				<variable name="x1" />
-				<variable name="x2" />
+			</atom>
+			<atom name="supplier">
+				<variable name="s_key" />
+				<variable name="s_name" />
+				<variable name="s_addr" />
+				<variable name="n_key" />
+				<variable name="s_phone" />
+				<variable name="s_account_bal" />
+				<variable name="s_comment" />
+			</atom>
+			<atom name="part">
+				<variable name="p_key" />
 				<variable name="x3" />
+				<variable name="p_manu" />
 				<variable name="x4" />
-				<variable name="l_quant" />
-				<variable name="l_extp" />
-				<variable name="l_disc" />
-				<variable name="l_tax" />
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="l_shipdate" />
+				<variable name="p_type" />
+				<variable name="15" />
 				<variable name="x5" />
 				<variable name="x6" />
 				<variable name="x7" />
+			</atom>
+			<atom name="partsupp">
+				<variable name="p_key" />
+				<variable name="s_key" />
 				<variable name="x8" />
+				<variable name="s_cost" />
 				<variable name="x9" />
 			</atom>
-
 			<atom name="RPrime">
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quant')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_extp')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])])]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_disc')])]), Operator(name='+', args=['1', Token('CNAME', 'l_tax')])])]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_quant')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_extp')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Token('CNAME', 'l_disc')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'x1')]])" />
+				<variable name="s_account_bal" />
+				<variable name="s_name" />
+				<variable name="n_name" />
+				<variable name="p_key" />
+				<variable name="s_cost" />
+				<variable name="p_manu" />
+				<variable name="s_addr" />
+				<variable name="s_phone" />
+				<variable name="s_comment" />
 			</atom>
   </body>
-  	<head name="prov_lineitem">
+  	<head name="prov_nation">
+		<variable name="n_key" />
+		<variable name="n_name" />
+		<variable name="r_key" />
 		<variable name="x1" />
-		<variable name="x2" />
-		<variable name="x3" />
-		<variable name="x4" />
-		<variable name="l_quant" />
-		<variable name="l_extp" />
-		<variable name="l_disc" />
-		<variable name="l_tax" />
-		<variable name="l_return" />
-		<variable name="l_linestat" />
-		<variable name="l_shipdate" />
-		<variable name="x5" />
-		<variable name="x6" />
-		<variable name="x7" />
-		<variable name="x8" />
-		<variable name="x9" />
 	</head>
 </query>
