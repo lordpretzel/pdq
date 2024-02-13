@@ -1,0 +1,4 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+2024-02-09 16:29:44,769 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(nation(){nation(fv_s_nk1942356772,fv_'GERMANY'1942356772,fv_n11942356772,fv_n21942356772)}),APPLYRULE(RPrime(){RPrime(v_ps_pk1942356772,v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'ps_sc'), Token('CNAME', 'ps_aq')])]])1942356772)})),BINARY(APPLYRULE(supplier(){supplier(v_ps_sk1942356772,v_s11942356772,v_s21942356772,fv_s_nk1942356772,v_s31942356772,v_s41942356772,v_s51942356772)}),APPLYRULE(partsupp(){partsupp(v_ps_pk1942356772,v_ps_sk1942356772,v_ps_aq1942356772,v_ps_sc1942356772,v_ps21942356772)})))	4.0
+Plan found with cost: 4.0
+Plan written to /Users/subramanyaganesh/Desktop/summerProject/New_Validation/pdq/examples/out.xml

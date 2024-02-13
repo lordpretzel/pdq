@@ -1,62 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <RelationalTermWithCost type="ProjectionTerm">
-    <projections name="fv_x11115381650" type="java.lang.Integer"/>
-    <projections name="fv_x21115381650" type="java.lang.Integer"/>
-    <projections name="fv_x31115381650" type="java.lang.Integer"/>
-    <projections name="fv_x41115381650" type="java.lang.Integer"/>
-    <projections name="fv_l_quant1115381650" type="java.lang.Double"/>
-    <projections name="fv_l_extp1115381650" type="java.lang.Double"/>
-    <projections name="fv_l_disc1115381650" type="java.lang.Double"/>
-    <projections name="fv_l_tax1115381650" type="java.lang.Double"/>
-    <projections name="fv_l_return1115381650" type="java.lang.String"/>
-    <projections name="fv_l_linestat1115381650" type="java.lang.String"/>
-    <projections name="fv_l_shipdate1115381650" type="java.util.Date"/>
-    <projections name="fv_x51115381650" type="java.util.Date"/>
-    <projections name="fv_x61115381650" type="java.util.Date"/>
-    <projections name="fv_x71115381650" type="java.lang.String"/>
-    <projections name="fv_x81115381650" type="java.lang.String"/>
-    <projections name="fv_x91115381650" type="java.lang.String"/>
+    <projections name="fv_l11822434669" type="java.lang.Integer"/>
+    <projections name="fv_l_pk1822434669" type="java.lang.Integer"/>
+    <projections name="fv_l21822434669" type="java.lang.Integer"/>
+    <projections name="fv_l31822434669" type="java.lang.Integer"/>
+    <projections name="fv_l_q1822434669" type="java.lang.Double"/>
+    <projections name="fv_l_ep1822434669" type="java.lang.Double"/>
+    <projections name="fv_l41822434669" type="java.lang.Double"/>
+    <projections name="fv_l51822434669" type="java.lang.Double"/>
+    <projections name="fv_l61822434669" type="java.lang.String"/>
+    <projections name="fv_l71822434669" type="java.lang.String"/>
+    <projections name="fv_l81822434669" type="java.util.Date"/>
+    <projections name="fv_l91822434669" type="java.util.Date"/>
+    <projections name="fv_l101822434669" type="java.util.Date"/>
+    <projections name="fv_l111822434669" type="java.lang.String"/>
+    <projections name="fv_l121822434669" type="java.lang.String"/>
+    <projections name="fv_l131822434669" type="java.lang.String"/>
     <RelationalTerm type="JoinTerm">
         <RelationalTerm type="RenameTerm">
-            <renamings name="fv_l_return1115381650" type="java.lang.String"/>
-            <renamings name="fv_l_linestat1115381650" type="java.lang.String"/>
-            <renamings name="fv_l_quant1115381650" type="java.lang.String"/>
-            <renamings name="fv_l_extp1115381650" type="java.lang.String"/>
-            <renamings name="fv_l_disc1115381650" type="java.lang.String"/>
-            <renamings name="fv_l_tax1115381650" type="java.lang.String"/>
-            <renamings name="fv_x11115381650" type="java.lang.String"/>
+            <renamings name="fv_l_pk1822434669" type="java.lang.String"/>
+            <renamings name="v_FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])1822434669" type="java.lang.String"/>
             <RelationalTerm type="AccessTerm">
                 <accessMethod name="m19"/>
                 <inputConstants/>
                 <relation name="RPrime">
-                    <attribute name="l_return" type="java.lang.String"/>
-                    <attribute name="l_linestat" type="java.lang.String"/>
-                    <attribute name="l_quant" type="java.lang.String"/>
-                    <attribute name="l_extp" type="java.lang.String"/>
-                    <attribute name="l_disc" type="java.lang.String"/>
-                    <attribute name="l_tax" type="java.lang.String"/>
-                    <attribute name="x1" type="java.lang.String"/>
+                    <attribute name="l_pk" type="java.lang.String"/>
+                    <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])" type="java.lang.String"/>
                     <access-method name="m19"/>
                 </relation>
             </RelationalTerm>
         </RelationalTerm>
         <RelationalTerm type="RenameTerm">
-            <renamings name="fv_x11115381650" type="java.lang.Integer"/>
-            <renamings name="fv_x21115381650" type="java.lang.Integer"/>
-            <renamings name="fv_x31115381650" type="java.lang.Integer"/>
-            <renamings name="fv_x41115381650" type="java.lang.Integer"/>
-            <renamings name="fv_l_quant1115381650" type="java.lang.Double"/>
-            <renamings name="fv_l_extp1115381650" type="java.lang.Double"/>
-            <renamings name="fv_l_disc1115381650" type="java.lang.Double"/>
-            <renamings name="fv_l_tax1115381650" type="java.lang.Double"/>
-            <renamings name="fv_l_return1115381650" type="java.lang.String"/>
-            <renamings name="fv_l_linestat1115381650" type="java.lang.String"/>
-            <renamings name="fv_l_shipdate1115381650" type="java.util.Date"/>
-            <renamings name="fv_x51115381650" type="java.util.Date"/>
-            <renamings name="fv_x61115381650" type="java.util.Date"/>
-            <renamings name="fv_x71115381650" type="java.lang.String"/>
-            <renamings name="fv_x81115381650" type="java.lang.String"/>
-            <renamings name="fv_x91115381650" type="java.lang.String"/>
+            <renamings name="fv_l11822434669" type="java.lang.Integer"/>
+            <renamings name="fv_l_pk1822434669" type="java.lang.Integer"/>
+            <renamings name="fv_l21822434669" type="java.lang.Integer"/>
+            <renamings name="fv_l31822434669" type="java.lang.Integer"/>
+            <renamings name="fv_l_q1822434669" type="java.lang.Double"/>
+            <renamings name="fv_l_ep1822434669" type="java.lang.Double"/>
+            <renamings name="fv_l41822434669" type="java.lang.Double"/>
+            <renamings name="fv_l51822434669" type="java.lang.Double"/>
+            <renamings name="fv_l61822434669" type="java.lang.String"/>
+            <renamings name="fv_l71822434669" type="java.lang.String"/>
+            <renamings name="fv_l81822434669" type="java.util.Date"/>
+            <renamings name="fv_l91822434669" type="java.util.Date"/>
+            <renamings name="fv_l101822434669" type="java.util.Date"/>
+            <renamings name="fv_l111822434669" type="java.lang.String"/>
+            <renamings name="fv_l121822434669" type="java.lang.String"/>
+            <renamings name="fv_l131822434669" type="java.lang.String"/>
             <RelationalTerm type="AccessTerm">
                 <accessMethod name="m16"/>
                 <inputConstants/>

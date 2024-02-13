@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="part">
+				<variable name="p_partkey" />
+				<variable name="p1" />
+				<variable name="p2" />
+				<variable name="p3" />
+				<variable name="p_type" />
+				<variable name="p4" />
+				<variable name="p5" />
+				<variable name="p6" />
+				<variable name="p7" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="l1" />
+				<variable name="p_partkey" />
+				<variable name="l2" />
+				<variable name="l3" />
+				<variable name="l4" />
+				<variable name="l_extp" />
+				<variable name="l_discount" />
+				<variable name="l5" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l_shipdate" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
+			</atom>
+
+
+			<atom name="RPrime">
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'p_type')]])" />
+				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_discount')])])]])" />
+			</atom>
+  </body>
+  	<head name="prov_lineitem">
+		<variable name="l1" />
+		<variable name="p_partkey" />
+		<variable name="l2" />
+		<variable name="l3" />
+		<variable name="l4" />
+		<variable name="l_extp" />
+		<variable name="l_discount" />
+		<variable name="l5" />
+		<variable name="l6" />
+		<variable name="l7" />
+		<variable name="l_shipdate" />
+		<variable name="l8" />
+		<variable name="l9" />
+		<variable name="l10" />
+		<variable name="l11" />
+		<variable name="l12" />
+	</head>
+</query>

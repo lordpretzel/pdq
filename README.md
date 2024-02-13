@@ -22,3 +22,8 @@ Please check our [Wiki](https://github.com/ProofDrivenQuerying/pdq/wiki)
 The source code is available for free for non-commercial use.
 See the [LICENCE](https://github.com/ProofDrivenQuerying/pdq/blob/master/LICENCE) file for details.
 
+
+
+Installation needed for running test_tpch.py
+pip install sqlparse
+pip install lark-parser

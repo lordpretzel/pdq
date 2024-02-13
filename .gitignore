@@ -16,5 +16,5 @@
 
 regression/**/*.csv
 
-TestResults*
-examples/pdq-main-2.0.0-executable.jar
+# TestResults*
+# examples/pdq-main-2.0.0-executable.jar

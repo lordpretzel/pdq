@@ -1,0 +1,4 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+2024-02-09 16:28:36,800 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l11491522744,fv_l21491522744,fv_l31491522744,fv_l41491522744,fv_l_q1491522744,fv_l_ep1491522744,fv_l_d1491522744,fv_l51491522744,fv_l61491522744,fv_l71491522744,fv_l_sd1491522744,fv_l81491522744,fv_l91491522744,fv_l101491522744,fv_l111491522744,fv_l121491522744)}),APPLYRULE(RPrime(){RPrime(v_FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_ep'), Token('CNAME', 'l_d')])]])1491522744)}))	2.0
+Plan found with cost: 2.0
+Plan written to /Users/subramanyaganesh/Desktop/summerProject/New_Validation/pdq/examples/out.xml
