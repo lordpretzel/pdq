@@ -56,7 +56,7 @@ def run_pdq(element,index):
         run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
         output, error = run_cmd.communicate(timeout=timeoutPDQ)  
         output = output.decode("utf-8")
-        print("!!!!!",error)
+#        print("!!!!!",error)
         if error:
             output += "\n--------------[ERRORS]---------------\n" + error
 
@@ -70,6 +70,7 @@ def run_pdq(element,index):
             os.makedirs(pdq_folder)
         pdq_file_path = os.path.join(pdq_folder, f"PDQ_{index}_{element}.txt")
         print("PDQ file path:", pdq_file_path)
+        print(output)
         with open(pdq_file_path, 'w') as output_file:
             output_file.write(output)
 
@@ -78,7 +79,7 @@ def run_all():
     for index,qi in enumerate(queries, start=1) :
         run_single(qi,index)
         
-def run_single(qi,index,run_pdqs=True):
+def run_single(qi,index=0,run_pdqs=True):
     fn = q_dir + qi + "/tpcq"+qi+".dl"
     with open(fn) as f:
         lines = [line for line in f.readlines() if line.strip()]
@@ -98,14 +99,15 @@ def run_single(qi,index,run_pdqs=True):
         error = error
         if error:
             output += "\n----[ERRORS]-----\n" + error
-        
+        else:
+            with open(qout_file_path) as fq:
+                print(fq.read())
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
         output_file_path = os.path.join(output_folder, f"output_{index}_{element}.txt")
         with open(output_file_path, 'w') as output_file:
             output_file.write(output)
             
-
     if run_pdqs:
             run_pdq(element,index)
                 
@@ -121,9 +123,15 @@ def main():
     parser=argparse.ArgumentParser(description="Run tcp_h tests on pdq.")
     parser.add_argument('-i', '--individual', type=int, required=False, metavar="[1-20]", choices=range(1, 21))
     parser.add_argument('-r', '--run', action='store_true')
+    parser.add_argument('-p', '--pk', action='store_true')
     args=parser.parse_args()
+    if args.pk:
+        print("Encoding primary key in as part of schema.")
+        cmd1[6] = "-p"
+    else:
+        print("Encoding primary key in as dependencies.")
     if args.individual:
-        run_single('{:02d}'.format(args.individual), args.run)
+        run_single('{:02d}'.format(args.individual),1, run_pdqs = args.run)
     else:
         run_all()
     
