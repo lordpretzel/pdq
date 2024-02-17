@@ -1,1 +1,1 @@
-Process timed out after 60 seconds.
+Process timed out after 10 seconds.

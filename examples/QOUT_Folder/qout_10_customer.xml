@@ -46,12 +46,11 @@
 				<variable name="n2" />
 				<variable name="n3" />
 			</atom>
-
-
 			<atom name="RPrime">
 				<variable name="c_ck" />
 				<variable name="c_n" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_ep'), Operator(name='-', args=['1', Token('CNAME', 'l_d')])])]])" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
 				<variable name="c_ab" />
 				<variable name="n_n" />
 				<variable name="c_a" />

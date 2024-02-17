@@ -96,8 +96,14 @@
 
      <relation name="RPrime">
              <attribute name="l_suppkey" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_discount')])])]])" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <attribute name="l_extp" type="java.lang.String"/>
+             <attribute name="l_discount" type="java.lang.String"/>
+             <attribute name="s_suppkey" type="java.lang.String"/>
+             <attribute name="s_name" type="java.lang.String"/>
+             <attribute name="s_address" type="java.lang.String"/>
+             <attribute name="s_phone" type="java.lang.String"/>
+             <attribute name="rev" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -979,10 +985,25 @@
       <body>
 			<atom name="RPrime">
 				<variable name="l_suppkey" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_discount')])])]])" />
+				<variable name="l_extp" />
+				<variable name="l_discount" />
+				<variable name="s_suppkey" />
+				<variable name="s_name" />
+				<variable name="s_address" />
+				<variable name="s_phone" />
+				<variable name="rev" />
 			</atom>
       </body>
       <head>
+			<atom name="supplier">
+				<variable name="s_suppkey" />
+				<variable name="s_name" />
+				<variable name="s_address" />
+				<variable name="s1" />
+				<variable name="s_phone" />
+				<variable name="s2" />
+				<variable name="s3" />
+			</atom>
 			<atom name="lineitem">
 				<variable name="l1" />
 				<variable name="l2" />
@@ -1001,8 +1022,6 @@
 				<variable name="l11" />
 				<variable name="l12" />
 			</atom>
-
-
       </head>
     </dependency>
 

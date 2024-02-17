@@ -30,13 +30,6 @@
 				<variable name="p4" />
 				<variable name="p5" />
 			</atom>
-			<atom name="Qshipmodes">
-				<variable name="l_shipmode" />
-			</atom>
-
-
-
-
 			<atom name="RPrime">
 				<variable name="l_orderkey" />
 				<variable name="l_linenumber" />

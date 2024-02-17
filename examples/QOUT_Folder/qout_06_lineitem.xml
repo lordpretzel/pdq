@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="lineitem">
+				<variable name="l1" />
+				<variable name="l2" />
+				<variable name="l3" />
+				<variable name="l4" />
+				<variable name="l_q" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
+				<variable name="l5" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l_sd" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="l_ep" />
+				<variable name="l_d" />
+			</atom>
+  </body>
+  	<head name="prov_lineitem">
+		<variable name="l1" />
+		<variable name="l2" />
+		<variable name="l3" />
+		<variable name="l4" />
+		<variable name="l_q" />
+		<variable name="l_ep" />
+		<variable name="l_d" />
+		<variable name="l5" />
+		<variable name="l6" />
+		<variable name="l7" />
+		<variable name="l_sd" />
+		<variable name="l8" />
+		<variable name="l9" />
+		<variable name="l10" />
+		<variable name="l11" />
+		<variable name="l12" />
+	</head>
+</query>

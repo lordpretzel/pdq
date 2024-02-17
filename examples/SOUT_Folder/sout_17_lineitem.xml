@@ -95,9 +95,10 @@
      </relation>
 
      <relation name="RPrime">
+             <attribute name="l_ep" type="java.lang.String"/>
              <attribute name="l_pk" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <attribute name="l_q" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -978,11 +979,23 @@
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
+				<variable name="l_ep" />
 				<variable name="l_pk" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])" />
+				<variable name="l_q" />
 			</atom>
       </body>
       <head>
+			<atom name="part">
+				<variable name="l_pk" />
+				<variable name="p1" />
+				<variable name="p2" />
+				<variable name="bd" />
+				<variable name="p3" />
+				<variable name="p4" />
+				<variable name="mb" />
+				<variable name="p5" />
+				<variable name="p6" />
+			</atom>
 			<atom name="lineitem">
 				<variable name="l1" />
 				<variable name="l_pk" />
