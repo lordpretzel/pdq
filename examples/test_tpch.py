@@ -139,6 +139,7 @@ def run_single(qi,index,run_pdqs=True,table=None):
     f"{index}_{element}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken)))
         
 def main():
+   
     folders_to_check = [output_folder, pdq_folder,sout_folder,qout_folder,table_folder]
     for folder in folders_to_check:
         if os.path.exists(folder):
@@ -163,7 +164,7 @@ def main():
 	
 	
     table = os.path.join(table_folder, "table.txt")
-    
+    print(table)
     with open(table, 'w') as table_file:
         table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
         if args.individual:
