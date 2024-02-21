@@ -11,7 +11,7 @@ sout_folder = './SOUT_Folder'
 qout_folder = './QOUT_Folder'
 table_folder = './Table'
 
-timeoutPDQ = 60
+timeoutPDQ = 3600
 q_dir = os.path.join(os.path.dirname(__file__), "tpchqs/tpcq")
 
 
@@ -54,8 +54,7 @@ def run_pdq(element,index):
     try:
         sout_file_path = os.path.join(sout_folder, f"sout_{index}_{element}.xml")
         qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
-        gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path]
-        
+        gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={timeoutPDQ}"] +[f"-DdagThreadTimeout={timeoutPDQ}"]
         start_time_pdq = time.time()
         run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
         output, error = run_cmd.communicate(timeout=timeoutPDQ)  
@@ -63,7 +62,7 @@ def run_pdq(element,index):
         if error:
           print("PDQ Error:")
           pdq_status = f"Failure: {error}"
-        if error is None and 'Usage: pdq-planner-<version>.jar [options]' in output:
+        if error is None and 'Error' in output:
             raise Exception("--custom")
     except subprocess.TimeoutExpired:
         print("PDQ Timeout:")
