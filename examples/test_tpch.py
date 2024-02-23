@@ -43,7 +43,7 @@ query = ""
 python_executable = shutil.which('python') or shutil.which('python3.9')
 
 cmd1 = [python_executable,"query-and-schema-generator.py","translate_sql_and_query_and_prov", "-i", "./tpchqs/tpch.sql",  "-P", "-f", "--replace_dt",  "-q"]
-
+#"-p" instead of "-f"
 
 cmd2 = ["java", "-jar", "pdq-main-2.0.0-executable.jar", "planner"  ]
 
@@ -54,7 +54,7 @@ def run_pdq(element,index):
     try:
         sout_file_path = os.path.join(sout_folder, f"sout_{index}_{element}.xml")
         qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
-        gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={timeoutPDQ}"] +[f"-DdagThreadTimeout={timeoutPDQ}"]
+        gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={timeoutPDQ*1000}"] +[f"-DdagThreadTimeout={timeoutPDQ*1000}"]
         start_time_pdq = time.time()
         run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
         output, error = run_cmd.communicate(timeout=timeoutPDQ)  
@@ -62,7 +62,7 @@ def run_pdq(element,index):
         if error:
           print("PDQ Error:")
           pdq_status = f"Failure: {error}"
-        if error is None and 'Error' in output:
+        if error is None and 'ERROR' in output:
             raise Exception("--custom")
     except subprocess.TimeoutExpired:
         print("PDQ Timeout:")
@@ -70,7 +70,7 @@ def run_pdq(element,index):
         run_cmd.kill() 
         output = f"Process timed out after {timeoutPDQ} seconds."
     except Exception as e:
-        pdq_status = f"Error: {e}"
+        pdq_status = f"ERROR: {e}"
         print("PDQ Exception:")
     finally:
         end_time_pdq = time.time()
