@@ -25,7 +25,8 @@
 			</atom>
 			<atom name="RPrime">
 				<variable name="ps_pk" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'ps_sc'), Token('CNAME', 'ps_aq')])]])" />
+				<variable name="ps_sc" />
+				<variable name="ps_aq" />
 			</atom>
   </body>
   	<head name="prov_nation">

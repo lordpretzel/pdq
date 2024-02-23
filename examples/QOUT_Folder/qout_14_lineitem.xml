@@ -30,11 +30,10 @@
 				<variable name="l11" />
 				<variable name="l12" />
 			</atom>
-
-
 			<atom name="RPrime">
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'p_type')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_discount')])])]])" />
+				<variable name="p_type" />
+				<variable name="l_extp" />
+				<variable name="l_discount" />
 			</atom>
   </body>
   	<head name="prov_lineitem">

@@ -198,7 +198,7 @@ class Table:
         if self.name == provtable:
                     return f"""     <relation name="{self.name}">
 {attrStr}{pkStr}
-             <access-method name="{accm}" type="LIMITED"/>
+             <access-method name="{accm}"/>
     </relation>
     """
         return f"""     <relation name="{self.name}">

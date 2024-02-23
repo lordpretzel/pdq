@@ -1,5 +1,5 @@
-Qsub
-Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARCHAR'), ('p_mfgr', 'VARCHAR'), ('p_brand', 'VARCHAR'), ('p_type', 'VARCHAR'), ('p_size', 'INT8'), ('p_container', 'VARCHAR'), ('p_retailprice', 'NUMERIC'), ('p_comment', 'VARCHAR')], pk=['p_partkey']), Table(name='supplier', attrs=[('s_suppkey', 'INT8'), ('s_name', 'VARCHAR'), ('s_address', 'VARCHAR'), ('s_nationkey', 'INT8'), ('s_phone', 'VARCHAR'), ('s_acctbal', 'NUMERIC'), ('s_comment', 'VARCHAR')], pk=['s_suppkey']), Table(name='partsupp', attrs=[('ps_partkey', 'INT8'), ('ps_suppkey', 'INT8'), ('ps_availqty', 'INT8'), ('ps_supplycost', 'NUMERIC'), ('ps_comment', 'VARCHAR')], pk=['ps_partkey', 'ps_suppkey']), Table(name='customer', attrs=[('c_custkey', 'INT8'), ('c_name', 'VARCHAR'), ('c_address', 'VARCHAR'), ('c_nationkey', 'INT8'), ('c_phone', 'VARCHAR'), ('c_acctbal', 'NUMERIC'), ('c_mktsegment', 'VARCHAR'), ('c_comment', 'VARCHAR')], pk=['c_custkey']), Table(name='orders', attrs=[('o_orderkey', 'INT8'), ('o_custkey', 'INT8'), ('o_orderstatus', 'VARCHAR'), ('o_totalprice', 'NUMERIC'), ('o_orderdate', 'DATE'), ('o_orderpriority', 'VARCHAR'), ('o_clerk', 'VARCHAR'), ('o_shippriority', 'INT8'), ('o_comment', 'VARCHAR')], pk=['o_orderkey']), Table(name='lineitem', attrs=[('l_orderkey', 'INT8'), ('l_partkey', 'INT8'), ('l_suppkey', 'INT8'), ('l_linenumber', 'INT8'), ('l_quantity', 'NUMERIC'), ('l_extendedprice', 'NUMERIC'), ('l_discount', 'NUMERIC'), ('l_tax', 'NUMERIC'), ('l_returnflag', 'VARCHAR'), ('l_linestatus', 'VARCHAR'), ('l_shipdate', 'DATE'), ('l_commitdate', 'DATE'), ('l_receiptdate', 'DATE'), ('l_shipinstruct', 'VARCHAR'), ('l_shipmode', 'VARCHAR'), ('l_comment', 'VARCHAR')], pk=['l_orderkey', 'l_linenumber']), Table(name='nation', attrs=[('n_nationkey', 'INT8'), ('n_name', 'VARCHAR'), ('n_regionkey', 'INT8'), ('n_comment', 'VARCHAR')], pk=['n_nationkey']), Table(name='region', attrs=[('r_regionkey', 'INT8'), ('r_name', 'VARCHAR'), ('r_comment', 'VARCHAR')], pk=['r_regionkey']), Table(name='RPrime', attrs=[(Token('CNAME', 'l_pk'), 'VARCHAR'), (FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]]), 'VARCHAR')], pk=None)], deps=[TGD(lhs=[atom(name='RPrime', args=[Token('CNAME', 'l_pk'), FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])])], rhs=[atom(name=Token('CNAME', 'lineitem'), args=[Token('CNAME', 'l1'), Token('CNAME', 'l_pk'), Token('CNAME', 'l2'), Token('CNAME', 'l3'), Token('CNAME', 'l_q'), Token('CNAME', 'l_ep'), Token('CNAME', 'l4'), Token('CNAME', 'l5'), Token('CNAME', 'l6'), Token('CNAME', 'l7'), Token('CNAME', 'l8'), Token('CNAME', 'l9'), Token('CNAME', 'l10'), Token('CNAME', 'l11'), Token('CNAME', 'l12'), Token('CNAME', 'l13')])])], views=[])
+Q
+Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARCHAR'), ('p_mfgr', 'VARCHAR'), ('p_brand', 'VARCHAR'), ('p_type', 'VARCHAR'), ('p_size', 'INT8'), ('p_container', 'VARCHAR'), ('p_retailprice', 'NUMERIC'), ('p_comment', 'VARCHAR')], pk=['p_partkey']), Table(name='supplier', attrs=[('s_suppkey', 'INT8'), ('s_name', 'VARCHAR'), ('s_address', 'VARCHAR'), ('s_nationkey', 'INT8'), ('s_phone', 'VARCHAR'), ('s_acctbal', 'NUMERIC'), ('s_comment', 'VARCHAR')], pk=['s_suppkey']), Table(name='partsupp', attrs=[('ps_partkey', 'INT8'), ('ps_suppkey', 'INT8'), ('ps_availqty', 'INT8'), ('ps_supplycost', 'NUMERIC'), ('ps_comment', 'VARCHAR')], pk=['ps_partkey', 'ps_suppkey']), Table(name='customer', attrs=[('c_custkey', 'INT8'), ('c_name', 'VARCHAR'), ('c_address', 'VARCHAR'), ('c_nationkey', 'INT8'), ('c_phone', 'VARCHAR'), ('c_acctbal', 'NUMERIC'), ('c_mktsegment', 'VARCHAR'), ('c_comment', 'VARCHAR')], pk=['c_custkey']), Table(name='orders', attrs=[('o_orderkey', 'INT8'), ('o_custkey', 'INT8'), ('o_orderstatus', 'VARCHAR'), ('o_totalprice', 'NUMERIC'), ('o_orderdate', 'DATE'), ('o_orderpriority', 'VARCHAR'), ('o_clerk', 'VARCHAR'), ('o_shippriority', 'INT8'), ('o_comment', 'VARCHAR')], pk=['o_orderkey']), Table(name='lineitem', attrs=[('l_orderkey', 'INT8'), ('l_partkey', 'INT8'), ('l_suppkey', 'INT8'), ('l_linenumber', 'INT8'), ('l_quantity', 'NUMERIC'), ('l_extendedprice', 'NUMERIC'), ('l_discount', 'NUMERIC'), ('l_tax', 'NUMERIC'), ('l_returnflag', 'VARCHAR'), ('l_linestatus', 'VARCHAR'), ('l_shipdate', 'DATE'), ('l_commitdate', 'DATE'), ('l_receiptdate', 'DATE'), ('l_shipinstruct', 'VARCHAR'), ('l_shipmode', 'VARCHAR'), ('l_comment', 'VARCHAR')], pk=['l_orderkey', 'l_linenumber']), Table(name='nation', attrs=[('n_nationkey', 'INT8'), ('n_name', 'VARCHAR'), ('n_regionkey', 'INT8'), ('n_comment', 'VARCHAR')], pk=['n_nationkey']), Table(name='region', attrs=[('r_regionkey', 'INT8'), ('r_name', 'VARCHAR'), ('r_comment', 'VARCHAR')], pk=['r_regionkey']), Table(name='RPrime', attrs=[(Token('CNAME', 'l_ep'), 'VARCHAR'), (Token('CNAME', 'l_pk'), 'VARCHAR'), (Token('CNAME', 'l_q'), 'VARCHAR')], pk=None)], deps=[TGD(lhs=[atom(name='RPrime', args=[Token('CNAME', 'l_ep'), Token('CNAME', 'l_pk'), Token('CNAME', 'l_q')])], rhs=[atom(name=Token('CNAME', 'part'), args=[Token('CNAME', 'l_pk'), Token('CNAME', 'p1'), Token('CNAME', 'p2'), Token('CNAME', 'bd'), Token('CNAME', 'p3'), Token('CNAME', 'p4'), Token('CNAME', 'mb'), Token('CNAME', 'p5'), Token('CNAME', 'p6')]), atom(name=Token('CNAME', 'lineitem'), args=[Token('CNAME', 'l1'), Token('CNAME', 'l_pk'), Token('CNAME', 'l2'), Token('CNAME', 'l3'), Token('CNAME', 'l_q'), Token('CNAME', 'l_ep'), Token('CNAME', 'l4'), Token('CNAME', 'l5'), Token('CNAME', 'l6'), Token('CNAME', 'l7'), Token('CNAME', 'l8'), Token('CNAME', 'l9'), Token('CNAME', 'l10'), Token('CNAME', 'l11'), Token('CNAME', 'l12'), Token('CNAME', 'l13')])])], views=[])
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <schema>
 <relations>
@@ -97,9 +97,10 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
      </relation>
 
      <relation name="RPrime">
+             <attribute name="l_ep" type="java.lang.String"/>
              <attribute name="l_pk" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])" type="java.lang.String"/>
-             <access-method name="m10" type="LIMITED"/>
+             <attribute name="l_q" type="java.lang.String"/>
+             <access-method name="m10"/>
     </relation>
     
 
@@ -108,11 +109,23 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
+				<variable name="l_ep" />
 				<variable name="l_pk" />
-				<variable name="FunctionCall(name=Token('CNAME', 'avg'), args=[[Operator(name='*', args=['0.2', Token('CNAME', 'l_q')])]])" />
+				<variable name="l_q" />
 			</atom>
       </body>
       <head>
+			<atom name="part">
+				<variable name="l_pk" />
+				<variable name="p1" />
+				<variable name="p2" />
+				<variable name="bd" />
+				<variable name="p3" />
+				<variable name="p4" />
+				<variable name="mb" />
+				<variable name="p5" />
+				<variable name="p6" />
+			</atom>
 			<atom name="lineitem">
 				<variable name="l1" />
 				<variable name="l_pk" />

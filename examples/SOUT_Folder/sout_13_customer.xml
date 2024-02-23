@@ -96,8 +96,8 @@
 
      <relation name="RPrime">
              <attribute name="c_custkey" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'o_orderkey')]])" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <attribute name="o_orderkey" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -979,10 +979,20 @@
       <body>
 			<atom name="RPrime">
 				<variable name="c_custkey" />
-				<variable name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'o_orderkey')]])" />
+				<variable name="o_orderkey" />
 			</atom>
       </body>
       <head>
+			<atom name="customer">
+				<variable name="c_custkey" />
+				<variable name="c1" />
+				<variable name="c2" />
+				<variable name="c3" />
+				<variable name="c4" />
+				<variable name="c5" />
+				<variable name="c6" />
+				<variable name="c7" />
+			</atom>
 			<atom name="customer">
 				<variable name="c_custkey" />
 				<variable name="c1" />

@@ -95,10 +95,8 @@
      </relation>
 
      <relation name="RPrime">
-             <attribute name="l_okey" type="java.lang.String"/>
-             <attribute name="l_linenumber" type="java.lang.String"/>
              <attribute name="l_shipmode" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -979,12 +977,21 @@
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="l_okey" />
-				<variable name="l_linenumber" />
 				<variable name="l_shipmode" />
 			</atom>
       </body>
       <head>
+			<atom name="orders">
+				<variable name="o_okey" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="o_orderpriority" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+			</atom>
 			<atom name="lineitem">
 				<variable name="l_okey" />
 				<variable name="x8" />
@@ -1003,10 +1010,6 @@
 				<variable name="l_shipmode" />
 				<variable name="x18" />
 			</atom>
-
-
-
-
       </head>
     </dependency>
 

@@ -95,10 +95,9 @@
      </relation>
 
      <relation name="RPrime">
-             <attribute name="l_partkey" type="java.lang.String"/>
-             <attribute name="l_suppkey" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=['0.5', Token('CNAME', 'l_quantity')])]])" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <attribute name="s_name" type="java.lang.String"/>
+             <attribute name="s_address" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -979,18 +978,50 @@
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="l_partkey" />
-				<variable name="l_suppkey" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=['0.5', Token('CNAME', 'l_quantity')])]])" />
+				<variable name="s_name" />
+				<variable name="s_address" />
 			</atom>
       </body>
       <head>
+			<atom name="supplier">
+				<variable name="s_suppkey" />
+				<variable name="s_name" />
+				<variable name="s_address" />
+				<variable name="n_nationkey" />
+				<variable name="s1" />
+				<variable name="s2" />
+				<variable name="s3" />
+			</atom>
+			<atom name="nation">
+				<variable name="n_nationkey" />
+				<variable name="'CANADA'" />
+				<variable name="n1" />
+				<variable name="n2" />
+			</atom>
+			<atom name="part">
+				<variable name="p_partkey" />
+				<variable name="p_name" />
+				<variable name="p1" />
+				<variable name="p2" />
+				<variable name="p3" />
+				<variable name="p4" />
+				<variable name="p5" />
+				<variable name="p6" />
+				<variable name="p7" />
+			</atom>
+			<atom name="partsupp">
+				<variable name="p_partkey" />
+				<variable name="s_suppkey" />
+				<variable name="s_available" />
+				<variable name="s1" />
+				<variable name="s2" />
+			</atom>
 			<atom name="lineitem">
 				<variable name="l1" />
-				<variable name="l_partkey" />
-				<variable name="l_suppkey" />
+				<variable name="p_partkey" />
+				<variable name="s_suppkey" />
 				<variable name="l2" />
-				<variable name="l_quantity" />
+				<variable name="quantity" />
 				<variable name="l3" />
 				<variable name="l4" />
 				<variable name="l5" />
@@ -1003,8 +1034,6 @@
 				<variable name="l11" />
 				<variable name="l12" />
 			</atom>
-
-
       </head>
     </dependency>
 

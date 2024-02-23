@@ -99,7 +99,7 @@
              <attribute name="l_linenumber" type="java.lang.String"/>
              <attribute name="l_discount" type="java.lang.String"/>
              <attribute name="l_extp" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -1016,13 +1016,6 @@
 				<variable name="p4" />
 				<variable name="p5" />
 			</atom>
-			<atom name="Qshipmodes">
-				<variable name="l_shipmode" />
-			</atom>
-
-
-
-
       </head>
     </dependency>
 

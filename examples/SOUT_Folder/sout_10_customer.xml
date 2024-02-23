@@ -97,13 +97,14 @@
      <relation name="RPrime">
              <attribute name="c_ck" type="java.lang.String"/>
              <attribute name="c_n" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_ep'), Operator(name='-', args=['1', Token('CNAME', 'l_d')])])]])" type="java.lang.String"/>
+             <attribute name="l_ep" type="java.lang.String"/>
+             <attribute name="l_d" type="java.lang.String"/>
              <attribute name="c_ab" type="java.lang.String"/>
              <attribute name="n_n" type="java.lang.String"/>
              <attribute name="c_a" type="java.lang.String"/>
              <attribute name="c_p" type="java.lang.String"/>
              <attribute name="c_c" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -986,7 +987,8 @@
 			<atom name="RPrime">
 				<variable name="c_ck" />
 				<variable name="c_n" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_ep'), Operator(name='-', args=['1', Token('CNAME', 'l_d')])])]])" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
 				<variable name="c_ab" />
 				<variable name="n_n" />
 				<variable name="c_a" />
@@ -1040,8 +1042,6 @@
 				<variable name="n2" />
 				<variable name="n3" />
 			</atom>
-
-
       </head>
     </dependency>
 

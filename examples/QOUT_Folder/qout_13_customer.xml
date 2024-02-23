@@ -11,6 +11,16 @@
 				<variable name="c6" />
 				<variable name="c7" />
 			</atom>
+			<atom name="customer">
+				<variable name="c_custkey" />
+				<variable name="c1" />
+				<variable name="c2" />
+				<variable name="c3" />
+				<variable name="c4" />
+				<variable name="c5" />
+				<variable name="c6" />
+				<variable name="c7" />
+			</atom>
 			<atom name="orders">
 				<variable name="o_orderkey" />
 				<variable name="c_custkey" />
@@ -24,7 +34,7 @@
 			</atom>
 			<atom name="RPrime">
 				<variable name="c_custkey" />
-				<variable name="FunctionCall(name=Token('CNAME', 'count'), args=[[Token('CNAME', 'o_orderkey')]])" />
+				<variable name="o_orderkey" />
 			</atom>
   </body>
   	<head name="prov_customer">

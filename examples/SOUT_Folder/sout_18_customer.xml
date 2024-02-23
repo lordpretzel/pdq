@@ -95,9 +95,13 @@
      </relation>
 
      <relation name="RPrime">
-             <attribute name="l_orderkey" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quantity')]])" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <attribute name="c_name" type="java.lang.String"/>
+             <attribute name="c_custkey" type="java.lang.String"/>
+             <attribute name="o_orderkey" type="java.lang.String"/>
+             <attribute name="o_orderdate" type="java.lang.String"/>
+             <attribute name="o_totalprice" type="java.lang.String"/>
+             <attribute name="l_quantity" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -978,13 +982,38 @@
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="l_orderkey" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'l_quantity')]])" />
+				<variable name="c_name" />
+				<variable name="c_custkey" />
+				<variable name="o_orderkey" />
+				<variable name="o_orderdate" />
+				<variable name="o_totalprice" />
+				<variable name="l_quantity" />
 			</atom>
       </body>
       <head>
+			<atom name="customer">
+				<variable name="c_custkey" />
+				<variable name="c_name" />
+				<variable name="C1" />
+				<variable name="C2" />
+				<variable name="C3" />
+				<variable name="C4" />
+				<variable name="C5" />
+				<variable name="C6" />
+			</atom>
+			<atom name="orders">
+				<variable name="o_orderkey" />
+				<variable name="c_custkey" />
+				<variable name="O1" />
+				<variable name="o_totalprice" />
+				<variable name="o_orderdate" />
+				<variable name="O2" />
+				<variable name="O3" />
+				<variable name="O4" />
+				<variable name="O5" />
+			</atom>
 			<atom name="lineitem">
-				<variable name="l_orderkey" />
+				<variable name="o_orderkey" />
 				<variable name="X1" />
 				<variable name="X2" />
 				<variable name="X3" />

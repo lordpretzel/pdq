@@ -99,7 +99,7 @@
              <attribute name="p_type" type="java.lang.String"/>
              <attribute name="p_size" type="java.lang.String"/>
              <attribute name="ps_suppkey" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -1005,7 +1005,6 @@
 				<variable name="p4" />
 				<variable name="p5" />
 			</atom>
-
       </head>
     </dependency>
 

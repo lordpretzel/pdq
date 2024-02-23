@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <query>
   <body>
-    			<atom name="lineitem">
+    			<atom name="supplier">
+				<variable name="s_suppkey" />
+				<variable name="s_name" />
+				<variable name="s_address" />
+				<variable name="s1" />
+				<variable name="s_phone" />
+				<variable name="s2" />
+				<variable name="s3" />
+			</atom>
+			<atom name="lineitem">
 				<variable name="l1" />
 				<variable name="l2" />
 				<variable name="l_suppkey" />
@@ -19,11 +28,15 @@
 				<variable name="l11" />
 				<variable name="l12" />
 			</atom>
-
-
 			<atom name="RPrime">
 				<variable name="l_suppkey" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_discount')])])]])" />
+				<variable name="l_extp" />
+				<variable name="l_discount" />
+				<variable name="s_suppkey" />
+				<variable name="s_name" />
+				<variable name="s_address" />
+				<variable name="s_phone" />
+				<variable name="rev" />
 			</atom>
   </body>
   	<head name="prov_lineitem">

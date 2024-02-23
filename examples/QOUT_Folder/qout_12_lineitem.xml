@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <query>
   <body>
-    			<atom name="lineitem">
+    			<atom name="orders">
+				<variable name="o_okey" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="o_orderpriority" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+			</atom>
+			<atom name="lineitem">
 				<variable name="l_okey" />
 				<variable name="x8" />
 				<variable name="x9" />
@@ -19,13 +30,7 @@
 				<variable name="l_shipmode" />
 				<variable name="x18" />
 			</atom>
-
-
-
-
 			<atom name="RPrime">
-				<variable name="l_okey" />
-				<variable name="l_linenumber" />
 				<variable name="l_shipmode" />
 			</atom>
   </body>

@@ -95,9 +95,10 @@
      </relation>
 
      <relation name="RPrime">
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'p_type')]])" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_discount')])])]])" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <attribute name="p_type" type="java.lang.String"/>
+             <attribute name="l_extp" type="java.lang.String"/>
+             <attribute name="l_discount" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -978,8 +979,9 @@
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Token('CNAME', 'p_type')]])" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'l_extp'), Operator(name='-', args=['1', Token('CNAME', 'l_discount')])])]])" />
+				<variable name="p_type" />
+				<variable name="l_extp" />
+				<variable name="l_discount" />
 			</atom>
       </body>
       <head>
@@ -1012,8 +1014,6 @@
 				<variable name="l11" />
 				<variable name="l12" />
 			</atom>
-
-
       </head>
     </dependency>
 

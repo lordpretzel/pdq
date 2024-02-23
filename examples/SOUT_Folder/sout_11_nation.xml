@@ -96,8 +96,9 @@
 
      <relation name="RPrime">
              <attribute name="ps_pk" type="java.lang.String"/>
-             <attribute name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'ps_sc'), Token('CNAME', 'ps_aq')])]])" type="java.lang.String"/>
-             <access-method name="m19" type="LIMITED"/>
+             <attribute name="ps_sc" type="java.lang.String"/>
+             <attribute name="ps_aq" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -979,7 +980,8 @@
       <body>
 			<atom name="RPrime">
 				<variable name="ps_pk" />
-				<variable name="FunctionCall(name=Token('CNAME', 'sum'), args=[[Operator(name='*', args=[Token('CNAME', 'ps_sc'), Token('CNAME', 'ps_aq')])]])" />
+				<variable name="ps_sc" />
+				<variable name="ps_aq" />
 			</atom>
       </body>
       <head>
