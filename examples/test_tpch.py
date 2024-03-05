@@ -46,7 +46,7 @@ queries = {
     }
 
 query = ""
-python_executable = shutil.which('python') or shutil.which('python3.9')
+python_executable = shutil.which('python') or shutil.which('python3.9') or shutil.which('python3')
 
 cmd1 = [python_executable,"query-and-schema-generator.py","translate_sql_and_query_and_prov", "-i", "./tpchqs/tpch.sql",  "-P", "-p", "--replace_dt",  "-q"]
 #"-p" instead of "-f"
