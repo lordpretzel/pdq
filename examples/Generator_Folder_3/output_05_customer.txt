@@ -1,0 +1,184 @@
+------------------2024-03-04 18:26:47------------------
+Q
+Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARCHAR'), ('p_mfgr', 'VARCHAR'), ('p_brand', 'VARCHAR'), ('p_type', 'VARCHAR'), ('p_size', 'INT8'), ('p_container', 'VARCHAR'), ('p_retailprice', 'NUMERIC'), ('p_comment', 'VARCHAR')], pk=['p_partkey']), Table(name='supplier', attrs=[('s_suppkey', 'INT8'), ('s_name', 'VARCHAR'), ('s_address', 'VARCHAR'), ('s_nationkey', 'INT8'), ('s_phone', 'VARCHAR'), ('s_acctbal', 'NUMERIC'), ('s_comment', 'VARCHAR')], pk=['s_suppkey']), Table(name='partsupp', attrs=[('ps_partkey', 'INT8'), ('ps_suppkey', 'INT8'), ('ps_availqty', 'INT8'), ('ps_supplycost', 'NUMERIC'), ('ps_comment', 'VARCHAR')], pk=['ps_partkey', 'ps_suppkey']), Table(name='customer', attrs=[('c_custkey', 'INT8'), ('c_name', 'VARCHAR'), ('c_address', 'VARCHAR'), ('c_nationkey', 'INT8'), ('c_phone', 'VARCHAR'), ('c_acctbal', 'NUMERIC'), ('c_mktsegment', 'VARCHAR'), ('c_comment', 'VARCHAR')], pk=['c_custkey']), Table(name='orders', attrs=[('o_orderkey', 'INT8'), ('o_custkey', 'INT8'), ('o_orderstatus', 'VARCHAR'), ('o_totalprice', 'NUMERIC'), ('o_orderdate', 'DATE'), ('o_orderpriority', 'VARCHAR'), ('o_clerk', 'VARCHAR'), ('o_shippriority', 'INT8'), ('o_comment', 'VARCHAR')], pk=['o_orderkey']), Table(name='lineitem', attrs=[('l_orderkey', 'INT8'), ('l_partkey', 'INT8'), ('l_suppkey', 'INT8'), ('l_linenumber', 'INT8'), ('l_quantity', 'NUMERIC'), ('l_extendedprice', 'NUMERIC'), ('l_discount', 'NUMERIC'), ('l_tax', 'NUMERIC'), ('l_returnflag', 'VARCHAR'), ('l_linestatus', 'VARCHAR'), ('l_shipdate', 'DATE'), ('l_commitdate', 'DATE'), ('l_receiptdate', 'DATE'), ('l_shipinstruct', 'VARCHAR'), ('l_shipmode', 'VARCHAR'), ('l_comment', 'VARCHAR')], pk=['l_orderkey', 'l_linenumber']), Table(name='nation', attrs=[('n_nationkey', 'INT8'), ('n_name', 'VARCHAR'), ('n_regionkey', 'INT8'), ('n_comment', 'VARCHAR')], pk=['n_nationkey']), Table(name='region', attrs=[('r_regionkey', 'INT8'), ('r_name', 'VARCHAR'), ('r_comment', 'VARCHAR')], pk=['r_regionkey']), Table(name='RPrime', attrs=[(Token('CNAME', 'n_n'), 'VARCHAR'), (Token('CNAME', 'l_ep'), 'VARCHAR'), (Token('CNAME', 'l_d'), 'VARCHAR')], pk=None)], deps=[TGD(lhs=[atom(name='RPrime', args=[Token('CNAME', 'n_n'), Token('CNAME', 'l_ep'), Token('CNAME', 'l_d')])], rhs=[atom(name=Token('CNAME', 'customer'), args=[Token('CNAME', 'c_ck'), Token('CNAME', 'c1'), Token('CNAME', 'c2'), Token('CNAME', 'c_nk'), Token('CNAME', 'c3'), Token('CNAME', 'c4'), Token('CNAME', 'c5'), Token('CNAME', 'c6')]), atom(name=Token('CNAME', 'orders'), args=[Token('CNAME', 'o_ok'), Token('CNAME', 'c_ck'), Token('CNAME', 'o1'), Token('CNAME', 'o2'), Token('CNAME', 'o_od'), Token('CNAME', 'o3'), Token('CNAME', 'o4'), Token('CNAME', 'o5'), Token('CNAME', 'o6')]), atom(name=Token('CNAME', 'lineitem'), args=[Token('CNAME', 'o_ok'), Token('CNAME', 'l1'), Token('CNAME', 'l_sk'), Token('CNAME', 'l2'), Token('CNAME', 'l3'), Token('CNAME', 'l_ep'), Token('CNAME', 'l_d'), Token('CNAME', 'l5'), Token('CNAME', 'l6'), Token('CNAME', 'l7'), Token('CNAME', 'l8'), Token('CNAME', 'l9'), Token('CNAME', 'l10'), Token('CNAME', 'l11'), Token('CNAME', 'l12'), Token('CNAME', 'l13')]), atom(name=Token('CNAME', 'supplier'), args=[Token('CNAME', 'l_sk'), Token('CNAME', 's1'), Token('CNAME', 's2'), Token('CNAME', 'c_nk'), Token('CNAME', 's3'), Token('CNAME', 's4'), Token('CNAME', 's5')]), atom(name=Token('CNAME', 'nation'), args=[Token('CNAME', 'c_nk'), Token('CNAME', 'n_n'), Token('CNAME', 'n_rk'), Token('CNAME', 'n1')]), atom(name=Token('CNAME', 'region'), args=[Token('CNAME', 'n_rk'), "'ASIA'", Token('CNAME', 'r2')])])], views=[])
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema>
+<relations>
+     <relation name="part">
+             <attribute name="p_partkey" type="java.lang.Integer"/>
+             <attribute name="p_name" type="java.lang.String"/>
+             <attribute name="p_mfgr" type="java.lang.String"/>
+             <attribute name="p_brand" type="java.lang.String"/>
+             <attribute name="p_type" type="java.lang.String"/>
+             <attribute name="p_size" type="java.lang.Integer"/>
+             <attribute name="p_container" type="java.lang.String"/>
+             <attribute name="p_retailprice" type="java.lang.Double"/>
+             <attribute name="p_comment" type="java.lang.String"/>
+             <access-method name="m2"/>
+     </relation>
+
+     <relation name="supplier">
+             <attribute name="s_suppkey" type="java.lang.Integer"/>
+             <attribute name="s_name" type="java.lang.String"/>
+             <attribute name="s_address" type="java.lang.String"/>
+             <attribute name="s_nationkey" type="java.lang.Integer"/>
+             <attribute name="s_phone" type="java.lang.String"/>
+             <attribute name="s_acctbal" type="java.lang.Double"/>
+             <attribute name="s_comment" type="java.lang.String"/>
+             <access-method name="m3"/>
+     </relation>
+
+     <relation name="partsupp">
+             <attribute name="ps_partkey" type="java.lang.Integer"/>
+             <attribute name="ps_suppkey" type="java.lang.Integer"/>
+             <attribute name="ps_availqty" type="java.lang.Integer"/>
+             <attribute name="ps_supplycost" type="java.lang.Double"/>
+             <attribute name="ps_comment" type="java.lang.String"/>
+             <access-method name="m4"/>
+     </relation>
+
+     <relation name="customer">
+             <attribute name="c_custkey" type="java.lang.Integer"/>
+             <attribute name="c_name" type="java.lang.String"/>
+             <attribute name="c_address" type="java.lang.String"/>
+             <attribute name="c_nationkey" type="java.lang.Integer"/>
+             <attribute name="c_phone" type="java.lang.String"/>
+             <attribute name="c_acctbal" type="java.lang.Double"/>
+             <attribute name="c_mktsegment" type="java.lang.String"/>
+             <attribute name="c_comment" type="java.lang.String"/>
+             <access-method name="m5"/>
+     </relation>
+
+     <relation name="orders">
+             <attribute name="o_orderkey" type="java.lang.Integer"/>
+             <attribute name="o_custkey" type="java.lang.Integer"/>
+             <attribute name="o_orderstatus" type="java.lang.String"/>
+             <attribute name="o_totalprice" type="java.lang.Double"/>
+             <attribute name="o_orderdate" type="java.util.Date"/>
+             <attribute name="o_orderpriority" type="java.lang.String"/>
+             <attribute name="o_clerk" type="java.lang.String"/>
+             <attribute name="o_shippriority" type="java.lang.Integer"/>
+             <attribute name="o_comment" type="java.lang.String"/>
+             <access-method name="m6"/>
+     </relation>
+
+     <relation name="lineitem">
+             <attribute name="l_orderkey" type="java.lang.Integer"/>
+             <attribute name="l_partkey" type="java.lang.Integer"/>
+             <attribute name="l_suppkey" type="java.lang.Integer"/>
+             <attribute name="l_linenumber" type="java.lang.Integer"/>
+             <attribute name="l_quantity" type="java.lang.Double"/>
+             <attribute name="l_extendedprice" type="java.lang.Double"/>
+             <attribute name="l_discount" type="java.lang.Double"/>
+             <attribute name="l_tax" type="java.lang.Double"/>
+             <attribute name="l_returnflag" type="java.lang.String"/>
+             <attribute name="l_linestatus" type="java.lang.String"/>
+             <attribute name="l_shipdate" type="java.util.Date"/>
+             <attribute name="l_commitdate" type="java.util.Date"/>
+             <attribute name="l_receiptdate" type="java.util.Date"/>
+             <attribute name="l_shipinstruct" type="java.lang.String"/>
+             <attribute name="l_shipmode" type="java.lang.String"/>
+             <attribute name="l_comment" type="java.lang.String"/>
+             <access-method name="m7"/>
+     </relation>
+
+     <relation name="nation">
+             <attribute name="n_nationkey" type="java.lang.Integer"/>
+             <attribute name="n_name" type="java.lang.String"/>
+             <attribute name="n_regionkey" type="java.lang.Integer"/>
+             <attribute name="n_comment" type="java.lang.String"/>
+             <access-method name="m8"/>
+     </relation>
+
+     <relation name="region">
+             <attribute name="r_regionkey" type="java.lang.Integer"/>
+             <attribute name="r_name" type="java.lang.String"/>
+             <attribute name="r_comment" type="java.lang.String"/>
+             <access-method name="m9"/>
+     </relation>
+
+     <relation name="RPrime">
+             <attribute name="n_n" type="java.lang.String"/>
+             <attribute name="l_ep" type="java.lang.String"/>
+             <attribute name="l_d" type="java.lang.String"/>
+             <access-method name="m10"/>
+    </relation>
+    
+
+</relations>
+<dependencies>
+<dependency type="TGD">
+      <body>
+			<atom name="RPrime">
+				<variable name="n_n" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
+			</atom>
+      </body>
+      <head>
+			<atom name="customer">
+				<variable name="c_ck" />
+				<variable name="c1" />
+				<variable name="c2" />
+				<variable name="c_nk" />
+				<variable name="c3" />
+				<variable name="c4" />
+				<variable name="c5" />
+				<variable name="c6" />
+			</atom>
+			<atom name="orders">
+				<variable name="o_ok" />
+				<variable name="c_ck" />
+				<variable name="o1" />
+				<variable name="o2" />
+				<variable name="o_od" />
+				<variable name="o3" />
+				<variable name="o4" />
+				<variable name="o5" />
+				<variable name="o6" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="o_ok" />
+				<variable name="l1" />
+				<variable name="l_sk" />
+				<variable name="l2" />
+				<variable name="l3" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
+				<variable name="l5" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
+				<variable name="l13" />
+			</atom>
+			<atom name="supplier">
+				<variable name="l_sk" />
+				<variable name="s1" />
+				<variable name="s2" />
+				<variable name="c_nk" />
+				<variable name="s3" />
+				<variable name="s4" />
+				<variable name="s5" />
+			</atom>
+			<atom name="nation">
+				<variable name="c_nk" />
+				<variable name="n_n" />
+				<variable name="n_rk" />
+				<variable name="n1" />
+			</atom>
+			<atom name="region">
+				<variable name="n_rk" />
+				<variable name="'ASIA'" />
+				<variable name="r2" />
+			</atom>
+      </head>
+    </dependency>
+
+</dependencies>
+</schema>
+
+------------------2024-03-04 18:26:47------------------

@@ -1,6 +1,3 @@
-------------------2024-03-03 20:33:04------------------
-Q
-Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARCHAR'), ('p_mfgr', 'VARCHAR'), ('p_brand', 'VARCHAR'), ('p_type', 'VARCHAR'), ('p_size', 'INT8'), ('p_container', 'VARCHAR'), ('p_retailprice', 'NUMERIC'), ('p_comment', 'VARCHAR')], pk=['p_partkey']), Table(name='supplier', attrs=[('s_suppkey', 'INT8'), ('s_name', 'VARCHAR'), ('s_address', 'VARCHAR'), ('s_nationkey', 'INT8'), ('s_phone', 'VARCHAR'), ('s_acctbal', 'NUMERIC'), ('s_comment', 'VARCHAR')], pk=['s_suppkey']), Table(name='partsupp', attrs=[('ps_partkey', 'INT8'), ('ps_suppkey', 'INT8'), ('ps_availqty', 'INT8'), ('ps_supplycost', 'NUMERIC'), ('ps_comment', 'VARCHAR')], pk=['ps_partkey', 'ps_suppkey']), Table(name='customer', attrs=[('c_custkey', 'INT8'), ('c_name', 'VARCHAR'), ('c_address', 'VARCHAR'), ('c_nationkey', 'INT8'), ('c_phone', 'VARCHAR'), ('c_acctbal', 'NUMERIC'), ('c_mktsegment', 'VARCHAR'), ('c_comment', 'VARCHAR')], pk=['c_custkey']), Table(name='orders', attrs=[('o_orderkey', 'INT8'), ('o_custkey', 'INT8'), ('o_orderstatus', 'VARCHAR'), ('o_totalprice', 'NUMERIC'), ('o_orderdate', 'DATE'), ('o_orderpriority', 'VARCHAR'), ('o_clerk', 'VARCHAR'), ('o_shippriority', 'INT8'), ('o_comment', 'VARCHAR')], pk=['o_orderkey']), Table(name='lineitem', attrs=[('l_orderkey', 'INT8'), ('l_partkey', 'INT8'), ('l_suppkey', 'INT8'), ('l_linenumber', 'INT8'), ('l_quantity', 'NUMERIC'), ('l_extendedprice', 'NUMERIC'), ('l_discount', 'NUMERIC'), ('l_tax', 'NUMERIC'), ('l_returnflag', 'VARCHAR'), ('l_linestatus', 'VARCHAR'), ('l_shipdate', 'DATE'), ('l_commitdate', 'DATE'), ('l_receiptdate', 'DATE'), ('l_shipinstruct', 'VARCHAR'), ('l_shipmode', 'VARCHAR'), ('l_comment', 'VARCHAR')], pk=['l_orderkey', 'l_linenumber']), Table(name='nation', attrs=[('n_nationkey', 'INT8'), ('n_name', 'VARCHAR'), ('n_regionkey', 'INT8'), ('n_comment', 'VARCHAR')], pk=['n_nationkey']), Table(name='region', attrs=[('r_regionkey', 'INT8'), ('r_name', 'VARCHAR'), ('r_comment', 'VARCHAR')], pk=['r_regionkey']), Table(name='RPrime', attrs=[(Token('CNAME', 'l_return'), 'VARCHAR'), (Token('CNAME', 'l_linestat'), 'VARCHAR'), (Token('CNAME', 'l_quant'), 'VARCHAR'), (Token('CNAME', 'l_extp'), 'VARCHAR'), (Token('CNAME', 'l_disc'), 'VARCHAR'), (Token('CNAME', 'l_tax'), 'VARCHAR'), (Token('CNAME', 'x1'), 'VARCHAR')], pk=None)], deps=[TGD(lhs=[atom(name='RPrime', args=[Token('CNAME', 'l_return'), Token('CNAME', 'l_linestat'), Token('CNAME', 'l_quant'), Token('CNAME', 'l_extp'), Token('CNAME', 'l_disc'), Token('CNAME', 'l_tax'), Token('CNAME', 'x1')])], rhs=[atom(name=Token('CNAME', 'lineitem'), args=[Token('CNAME', 'x1'), Token('CNAME', 'x2'), Token('CNAME', 'x3'), Token('CNAME', 'x4'), Token('CNAME', 'l_quant'), Token('CNAME', 'l_extp'), Token('CNAME', 'l_disc'), Token('CNAME', 'l_tax'), Token('CNAME', 'l_return'), Token('CNAME', 'l_linestat'), Token('CNAME', 'l_shipdate'), Token('CNAME', 'x5'), Token('CNAME', 'x6'), Token('CNAME', 'x7'), Token('CNAME', 'x8'), Token('CNAME', 'x9')])])], views=[])
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <schema>
 <relations>
@@ -14,7 +11,8 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
              <attribute name="p_container" type="java.lang.String"/>
              <attribute name="p_retailprice" type="java.lang.Double"/>
              <attribute name="p_comment" type="java.lang.String"/>
-             <access-method name="m2"/>
+             <primaryKey>p_partkey</primaryKey>
+             <access-method name="m11"/>
      </relation>
 
      <relation name="supplier">
@@ -25,7 +23,8 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
              <attribute name="s_phone" type="java.lang.String"/>
              <attribute name="s_acctbal" type="java.lang.Double"/>
              <attribute name="s_comment" type="java.lang.String"/>
-             <access-method name="m3"/>
+             <primaryKey>s_suppkey</primaryKey>
+             <access-method name="m12"/>
      </relation>
 
      <relation name="partsupp">
@@ -34,7 +33,9 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
              <attribute name="ps_availqty" type="java.lang.Integer"/>
              <attribute name="ps_supplycost" type="java.lang.Double"/>
              <attribute name="ps_comment" type="java.lang.String"/>
-             <access-method name="m4"/>
+             <primaryKey>ps_partkey</primaryKey>
+             <primaryKey>ps_suppkey</primaryKey>
+             <access-method name="m13"/>
      </relation>
 
      <relation name="customer">
@@ -46,7 +47,8 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
              <attribute name="c_acctbal" type="java.lang.Double"/>
              <attribute name="c_mktsegment" type="java.lang.String"/>
              <attribute name="c_comment" type="java.lang.String"/>
-             <access-method name="m5"/>
+             <primaryKey>c_custkey</primaryKey>
+             <access-method name="m14"/>
      </relation>
 
      <relation name="orders">
@@ -59,7 +61,8 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
              <attribute name="o_clerk" type="java.lang.String"/>
              <attribute name="o_shippriority" type="java.lang.Integer"/>
              <attribute name="o_comment" type="java.lang.String"/>
-             <access-method name="m6"/>
+             <primaryKey>o_orderkey</primaryKey>
+             <access-method name="m15"/>
      </relation>
 
      <relation name="lineitem">
@@ -79,7 +82,9 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
              <attribute name="l_shipinstruct" type="java.lang.String"/>
              <attribute name="l_shipmode" type="java.lang.String"/>
              <attribute name="l_comment" type="java.lang.String"/>
-             <access-method name="m7"/>
+             <primaryKey>l_orderkey</primaryKey>
+             <primaryKey>l_linenumber</primaryKey>
+             <access-method name="m16"/>
      </relation>
 
      <relation name="nation">
@@ -87,25 +92,24 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
              <attribute name="n_name" type="java.lang.String"/>
              <attribute name="n_regionkey" type="java.lang.Integer"/>
              <attribute name="n_comment" type="java.lang.String"/>
-             <access-method name="m8"/>
+             <primaryKey>n_nationkey</primaryKey>
+             <access-method name="m17"/>
      </relation>
 
      <relation name="region">
              <attribute name="r_regionkey" type="java.lang.Integer"/>
              <attribute name="r_name" type="java.lang.String"/>
              <attribute name="r_comment" type="java.lang.String"/>
-             <access-method name="m9"/>
+             <primaryKey>r_regionkey</primaryKey>
+             <access-method name="m18"/>
      </relation>
 
      <relation name="RPrime">
-             <attribute name="l_return" type="java.lang.String"/>
-             <attribute name="l_linestat" type="java.lang.String"/>
-             <attribute name="l_quant" type="java.lang.String"/>
-             <attribute name="l_extp" type="java.lang.String"/>
-             <attribute name="l_disc" type="java.lang.String"/>
-             <attribute name="l_tax" type="java.lang.String"/>
-             <attribute name="x1" type="java.lang.String"/>
-             <access-method name="m10"/>
+             <attribute name="p_brand" type="java.lang.String"/>
+             <attribute name="p_type" type="java.lang.String"/>
+             <attribute name="p_size" type="java.lang.String"/>
+             <attribute name="ps_suppkey" type="java.lang.String"/>
+             <access-method name="m19"/>
     </relation>
     
 
@@ -114,38 +118,33 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="l_quant" />
-				<variable name="l_extp" />
-				<variable name="l_disc" />
-				<variable name="l_tax" />
-				<variable name="x1" />
+				<variable name="p_brand" />
+				<variable name="p_type" />
+				<variable name="p_size" />
+				<variable name="ps_suppkey" />
 			</atom>
       </body>
       <head>
-			<atom name="lineitem">
-				<variable name="x1" />
-				<variable name="x2" />
-				<variable name="x3" />
-				<variable name="x4" />
-				<variable name="l_quant" />
-				<variable name="l_extp" />
-				<variable name="l_disc" />
-				<variable name="l_tax" />
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="l_shipdate" />
-				<variable name="x5" />
-				<variable name="x6" />
-				<variable name="x7" />
-				<variable name="x8" />
-				<variable name="x9" />
+			<atom name="partsupp">
+				<variable name="p_partkey" />
+				<variable name="ps_suppkey" />
+				<variable name="ps1" />
+				<variable name="ps2" />
+				<variable name="ps3" />
+			</atom>
+			<atom name="part">
+				<variable name="p_partkey" />
+				<variable name="p1" />
+				<variable name="p2" />
+				<variable name="p_brand" />
+				<variable name="p_type" />
+				<variable name="p_size" />
+				<variable name="p3" />
+				<variable name="p4" />
+				<variable name="p5" />
 			</atom>
       </head>
     </dependency>
 
 </dependencies>
 </schema>
-
-------------------2024-03-03 20:33:04------------------

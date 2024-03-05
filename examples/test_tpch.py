@@ -4,14 +4,20 @@ import subprocess
 import argparse
 import shutil
 import time
+from datetime import datetime
 
-output_folder = './Generator_Folder'
-pdq_folder = './PDQ_Folder'
-sout_folder = './SOUT_Folder'
-qout_folder = './QOUT_Folder'
-table_folder = './Table'
+output_folder_1 = './Generator_Folder_1'
+output_folder_3 = './Generator_Folder_3'
+pdq_folder_1 = './PDQ_Folder_1'
+pdq_folder_3 = './PDQ_Folder_3'
+sout_folder_1 = './SOUT_Folder_1'
+sout_folder_3 = './SOUT_Folder_3'
+qout_folder_1 = './QOUT_Folder_1'
+qout_folder_3 = './QOUT_Folder_3'
+table_folder_1 = './Table_1'
+table_folder_3 = './Table_3'
 
-timeoutPDQ = 3600
+timeoutPDQ = 3
 q_dir = os.path.join(os.path.dirname(__file__), "tpchqs/tpcq")
 
 
@@ -42,17 +48,23 @@ queries = {
 query = ""
 python_executable = shutil.which('python') or shutil.which('python3.9')
 
-cmd1 = [python_executable,"query-and-schema-generator.py","translate_sql_and_query_and_prov", "-i", "./tpchqs/tpch.sql",  "-P", "-f", "--replace_dt",  "-q"]
+cmd1 = [python_executable,"query-and-schema-generator.py","translate_sql_and_query_and_prov", "-i", "./tpchqs/tpch.sql",  "-P", "-p", "--replace_dt",  "-q"]
 #"-p" instead of "-f"
 
 cmd2 = ["java", "-jar", "pdq-main-2.0.0-executable.jar", "planner"  ]
 
-def run_pdq(element,index):
+
+cmd3 = [python_executable,"query-and-schema-generator.py","translate_sql_and_query_and_prov", "-i", "./tpchqs/tpch.sql",  "-P", "-f", "--replace_dt",  "-q"]
+
+def run_pdq(element,index,num=None):
     print(f"Running PDQ for {index}:{element}")
     pdq_time_taken=0
     pdq_status = "Success"
     try:
+        sout_folder=sout_folder_1 if num==1 else sout_folder_3
         sout_file_path = os.path.join(sout_folder, f"sout_{index}_{element}.xml")
+        
+        qout_folder=qout_folder_1 if num==1 else qout_folder_3
         qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
         gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={timeoutPDQ*1000}"] +[f"-DdagThreadTimeout={timeoutPDQ*1000}"]
         start_time_pdq = time.time()
@@ -76,22 +88,26 @@ def run_pdq(element,index):
         end_time_pdq = time.time()
         pdq_time_taken = end_time_pdq - start_time_pdq
         print('PDQ finally')
+
+        pdq_folder=pdq_folder_1 if num==1 else pdq_folder_3
         pdq_file_path = os.path.join(pdq_folder, f"PDQ_{index}_{element}.txt")
         print("PDQ file path:", pdq_file_path)
         with open(pdq_file_path, 'w') as output_file:
+            output_file.write(f"------------------{datetime.fromtimestamp(start_time_pdq).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
             output_file.write(output)
+            output_file.write(f"------------------{datetime.fromtimestamp(end_time_pdq).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
 
     return pdq_status, pdq_time_taken
 
 
-def run_all(table):
+def run_all(table,num=None):
     for index, qi in queries.items():
-        run_single(qi,index,table=table)
+        run_single(qi,index,table=table,num=3) if num==1 else run_single(qi,index,table=table,num=1)
        
 
 
         
-def run_single(qi,index,run_pdqs=True,table=None):
+def run_single(qi,index,run_pdqs=True,table=None,num=None):
     cmd1_status = "Success"
     cmd1_time_taken = 0
     fn = q_dir + index + "/tpcq"+index+".dl"
@@ -104,7 +120,10 @@ def run_single(qi,index,run_pdqs=True,table=None):
         print("\n\nRunning query",index,":",qi[0])
         
         try:
+            sout_folder=sout_folder_1 if num==1 else sout_folder_3
             sout_file_path = os.path.join(sout_folder, f"sout_{index}_{element}.xml")
+
+            qout_folder=qout_folder_1 if num==1 else qout_folder_3
             qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
             gen_command = cmd1 + [query] + ["--prov"] + [element] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
             
@@ -125,12 +144,17 @@ def run_single(qi,index,run_pdqs=True,table=None):
         finally:
             end_time_exec = time.time()
             cmd1_time_taken = end_time_exec - start_time_exec
+
+            table.write('-----')
+            output_folder = output_folder_1 if num==1 else output_folder_3
             output_file_path = os.path.join(output_folder, f"output_{index}_{element}.txt")
             with open(output_file_path, 'w') as output_file:
+                output_file.write(f"------------------{datetime.fromtimestamp(start_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
                 output_file.write(output)
+                output_file.write(f"------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
             
     if run_pdqs:
-            pdq_status, pdq_time_taken = run_pdq(element,index)
+            pdq_status, pdq_time_taken = run_pdq(element,index,num)
     else:
         pdq_status, pdq_time_taken = "didn't run", 0
         
@@ -139,37 +163,39 @@ def run_single(qi,index,run_pdqs=True,table=None):
         
 def main():
    
-    folders_to_check = [output_folder, pdq_folder,sout_folder,qout_folder,table_folder]
+    folders_to_check = [output_folder_1,output_folder_3, pdq_folder_1,pdq_folder_3,sout_folder_1,sout_folder_3,qout_folder_1,qout_folder_3,table_folder_1,table_folder_3]
     for folder in folders_to_check:
         if os.path.exists(folder):
             shutil.rmtree(folder)
     
-    os.makedirs(sout_folder)
-    os.makedirs(qout_folder)
-    os.makedirs(pdq_folder)
-    os.makedirs(output_folder)
-    os.makedirs(table_folder)
+
+    for folder in folders_to_check:
+        os.makedirs(folder)
 
     parser=argparse.ArgumentParser(description="Run tcp_h tests on pdq.")
     parser.add_argument('-i', '--individual', type=int, required=False, metavar="[1-20]", choices=range(1, 21))
     parser.add_argument('-r', '--run', action='store_true')
     parser.add_argument('-p', '--pk', action='store_true')
     args=parser.parse_args()
-    if args.pk:
-        print("Encoding primary key in as part of schema.")
-        cmd1[6] = "-p"
-    else:
-        print("Encoding primary key in as dependencies.")
 	
 	
-    table = os.path.join(table_folder, "table.txt")
+    table = os.path.join(table_folder_1, "table.txt")
     print(table)
     with open(table, 'w') as table_file:
         table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
         if args.individual:
             run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
         else:
-            run_all(table_file)
+            run_all(table_file,1)
+
+    table = os.path.join(table_folder_3, "table.txt")
+    print(table)
+    with open(table, 'w') as table_file:
+        table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
+        if args.individual:
+            run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
+        else:
+            run_all(table_file,3)
     
 if __name__ == '__main__':
     main()

@@ -1,6 +1,6 @@
-------------------2024-03-03 20:33:04------------------
+------------------2024-03-04 18:27:31------------------
 Q
-Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARCHAR'), ('p_mfgr', 'VARCHAR'), ('p_brand', 'VARCHAR'), ('p_type', 'VARCHAR'), ('p_size', 'INT8'), ('p_container', 'VARCHAR'), ('p_retailprice', 'NUMERIC'), ('p_comment', 'VARCHAR')], pk=['p_partkey']), Table(name='supplier', attrs=[('s_suppkey', 'INT8'), ('s_name', 'VARCHAR'), ('s_address', 'VARCHAR'), ('s_nationkey', 'INT8'), ('s_phone', 'VARCHAR'), ('s_acctbal', 'NUMERIC'), ('s_comment', 'VARCHAR')], pk=['s_suppkey']), Table(name='partsupp', attrs=[('ps_partkey', 'INT8'), ('ps_suppkey', 'INT8'), ('ps_availqty', 'INT8'), ('ps_supplycost', 'NUMERIC'), ('ps_comment', 'VARCHAR')], pk=['ps_partkey', 'ps_suppkey']), Table(name='customer', attrs=[('c_custkey', 'INT8'), ('c_name', 'VARCHAR'), ('c_address', 'VARCHAR'), ('c_nationkey', 'INT8'), ('c_phone', 'VARCHAR'), ('c_acctbal', 'NUMERIC'), ('c_mktsegment', 'VARCHAR'), ('c_comment', 'VARCHAR')], pk=['c_custkey']), Table(name='orders', attrs=[('o_orderkey', 'INT8'), ('o_custkey', 'INT8'), ('o_orderstatus', 'VARCHAR'), ('o_totalprice', 'NUMERIC'), ('o_orderdate', 'DATE'), ('o_orderpriority', 'VARCHAR'), ('o_clerk', 'VARCHAR'), ('o_shippriority', 'INT8'), ('o_comment', 'VARCHAR')], pk=['o_orderkey']), Table(name='lineitem', attrs=[('l_orderkey', 'INT8'), ('l_partkey', 'INT8'), ('l_suppkey', 'INT8'), ('l_linenumber', 'INT8'), ('l_quantity', 'NUMERIC'), ('l_extendedprice', 'NUMERIC'), ('l_discount', 'NUMERIC'), ('l_tax', 'NUMERIC'), ('l_returnflag', 'VARCHAR'), ('l_linestatus', 'VARCHAR'), ('l_shipdate', 'DATE'), ('l_commitdate', 'DATE'), ('l_receiptdate', 'DATE'), ('l_shipinstruct', 'VARCHAR'), ('l_shipmode', 'VARCHAR'), ('l_comment', 'VARCHAR')], pk=['l_orderkey', 'l_linenumber']), Table(name='nation', attrs=[('n_nationkey', 'INT8'), ('n_name', 'VARCHAR'), ('n_regionkey', 'INT8'), ('n_comment', 'VARCHAR')], pk=['n_nationkey']), Table(name='region', attrs=[('r_regionkey', 'INT8'), ('r_name', 'VARCHAR'), ('r_comment', 'VARCHAR')], pk=['r_regionkey']), Table(name='RPrime', attrs=[(Token('CNAME', 'l_return'), 'VARCHAR'), (Token('CNAME', 'l_linestat'), 'VARCHAR'), (Token('CNAME', 'l_quant'), 'VARCHAR'), (Token('CNAME', 'l_extp'), 'VARCHAR'), (Token('CNAME', 'l_disc'), 'VARCHAR'), (Token('CNAME', 'l_tax'), 'VARCHAR'), (Token('CNAME', 'x1'), 'VARCHAR')], pk=None)], deps=[TGD(lhs=[atom(name='RPrime', args=[Token('CNAME', 'l_return'), Token('CNAME', 'l_linestat'), Token('CNAME', 'l_quant'), Token('CNAME', 'l_extp'), Token('CNAME', 'l_disc'), Token('CNAME', 'l_tax'), Token('CNAME', 'x1')])], rhs=[atom(name=Token('CNAME', 'lineitem'), args=[Token('CNAME', 'x1'), Token('CNAME', 'x2'), Token('CNAME', 'x3'), Token('CNAME', 'x4'), Token('CNAME', 'l_quant'), Token('CNAME', 'l_extp'), Token('CNAME', 'l_disc'), Token('CNAME', 'l_tax'), Token('CNAME', 'l_return'), Token('CNAME', 'l_linestat'), Token('CNAME', 'l_shipdate'), Token('CNAME', 'x5'), Token('CNAME', 'x6'), Token('CNAME', 'x7'), Token('CNAME', 'x8'), Token('CNAME', 'x9')])])], views=[])
+Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARCHAR'), ('p_mfgr', 'VARCHAR'), ('p_brand', 'VARCHAR'), ('p_type', 'VARCHAR'), ('p_size', 'INT8'), ('p_container', 'VARCHAR'), ('p_retailprice', 'NUMERIC'), ('p_comment', 'VARCHAR')], pk=['p_partkey']), Table(name='supplier', attrs=[('s_suppkey', 'INT8'), ('s_name', 'VARCHAR'), ('s_address', 'VARCHAR'), ('s_nationkey', 'INT8'), ('s_phone', 'VARCHAR'), ('s_acctbal', 'NUMERIC'), ('s_comment', 'VARCHAR')], pk=['s_suppkey']), Table(name='partsupp', attrs=[('ps_partkey', 'INT8'), ('ps_suppkey', 'INT8'), ('ps_availqty', 'INT8'), ('ps_supplycost', 'NUMERIC'), ('ps_comment', 'VARCHAR')], pk=['ps_partkey', 'ps_suppkey']), Table(name='customer', attrs=[('c_custkey', 'INT8'), ('c_name', 'VARCHAR'), ('c_address', 'VARCHAR'), ('c_nationkey', 'INT8'), ('c_phone', 'VARCHAR'), ('c_acctbal', 'NUMERIC'), ('c_mktsegment', 'VARCHAR'), ('c_comment', 'VARCHAR')], pk=['c_custkey']), Table(name='orders', attrs=[('o_orderkey', 'INT8'), ('o_custkey', 'INT8'), ('o_orderstatus', 'VARCHAR'), ('o_totalprice', 'NUMERIC'), ('o_orderdate', 'DATE'), ('o_orderpriority', 'VARCHAR'), ('o_clerk', 'VARCHAR'), ('o_shippriority', 'INT8'), ('o_comment', 'VARCHAR')], pk=['o_orderkey']), Table(name='lineitem', attrs=[('l_orderkey', 'INT8'), ('l_partkey', 'INT8'), ('l_suppkey', 'INT8'), ('l_linenumber', 'INT8'), ('l_quantity', 'NUMERIC'), ('l_extendedprice', 'NUMERIC'), ('l_discount', 'NUMERIC'), ('l_tax', 'NUMERIC'), ('l_returnflag', 'VARCHAR'), ('l_linestatus', 'VARCHAR'), ('l_shipdate', 'DATE'), ('l_commitdate', 'DATE'), ('l_receiptdate', 'DATE'), ('l_shipinstruct', 'VARCHAR'), ('l_shipmode', 'VARCHAR'), ('l_comment', 'VARCHAR')], pk=['l_orderkey', 'l_linenumber']), Table(name='nation', attrs=[('n_nationkey', 'INT8'), ('n_name', 'VARCHAR'), ('n_regionkey', 'INT8'), ('n_comment', 'VARCHAR')], pk=['n_nationkey']), Table(name='region', attrs=[('r_regionkey', 'INT8'), ('r_name', 'VARCHAR'), ('r_comment', 'VARCHAR')], pk=['r_regionkey']), Table(name='RPrime', attrs=[(Token('CNAME', 'o_opriority'), 'VARCHAR')], pk=None)], deps=[TGD(lhs=[atom(name='RPrime', args=[Token('CNAME', 'o_opriority')])], rhs=[atom(name=Token('CNAME', 'orders'), args=[Token('CNAME', 'l_okey'), Token('CNAME', 'x1'), Token('CNAME', 'x2'), Token('CNAME', 'x3'), Token('CNAME', 'o_odate'), Token('CNAME', 'o_opriority'), Token('CNAME', 'x4'), Token('CNAME', 'x5'), Token('CNAME', 'x6')]), atom(name=Token('CNAME', 'lineitem'), args=[Token('CNAME', 'l_okey'), Token('CNAME', 'x1'), Token('CNAME', 'x2'), Token('CNAME', 'x3'), Token('CNAME', 'x4'), Token('CNAME', 'x5'), Token('CNAME', 'x6'), Token('CNAME', 'x7'), Token('CNAME', 'x8'), Token('CNAME', 'x9'), Token('CNAME', 'x10'), Token('CNAME', 'l_comm_date'), Token('CNAME', 'l_receipt_date'), Token('CNAME', 'x11'), Token('CNAME', 'x12'), Token('CNAME', 'x13')])])], views=[])
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <schema>
 <relations>
@@ -98,13 +98,7 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
      </relation>
 
      <relation name="RPrime">
-             <attribute name="l_return" type="java.lang.String"/>
-             <attribute name="l_linestat" type="java.lang.String"/>
-             <attribute name="l_quant" type="java.lang.String"/>
-             <attribute name="l_extp" type="java.lang.String"/>
-             <attribute name="l_disc" type="java.lang.String"/>
-             <attribute name="l_tax" type="java.lang.String"/>
-             <attribute name="x1" type="java.lang.String"/>
+             <attribute name="o_opriority" type="java.lang.String"/>
              <access-method name="m10"/>
     </relation>
     
@@ -114,33 +108,38 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="l_quant" />
-				<variable name="l_extp" />
-				<variable name="l_disc" />
-				<variable name="l_tax" />
-				<variable name="x1" />
+				<variable name="o_opriority" />
 			</atom>
       </body>
       <head>
+			<atom name="orders">
+				<variable name="l_okey" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="o_odate" />
+				<variable name="o_opriority" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+			</atom>
 			<atom name="lineitem">
+				<variable name="l_okey" />
 				<variable name="x1" />
 				<variable name="x2" />
 				<variable name="x3" />
 				<variable name="x4" />
-				<variable name="l_quant" />
-				<variable name="l_extp" />
-				<variable name="l_disc" />
-				<variable name="l_tax" />
-				<variable name="l_return" />
-				<variable name="l_linestat" />
-				<variable name="l_shipdate" />
 				<variable name="x5" />
 				<variable name="x6" />
 				<variable name="x7" />
 				<variable name="x8" />
 				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="l_comm_date" />
+				<variable name="l_receipt_date" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
 			</atom>
       </head>
     </dependency>
@@ -148,4 +147,4 @@ Schema(tables=[Table(name='part', attrs=[('p_partkey', 'INT8'), ('p_name', 'VARC
 </dependencies>
 </schema>
 
-------------------2024-03-03 20:33:04------------------
+------------------2024-03-04 18:27:32------------------
