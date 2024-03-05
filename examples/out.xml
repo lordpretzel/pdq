@@ -1,30 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <RelationalTermWithCost type="ProjectionTerm">
-    <projections name="fv_l_orderkey1793899405" type="java.lang.Integer"/>
-    <projections name="fv_p_partkey1793899405" type="java.lang.Integer"/>
-    <projections name="fv_l21793899405" type="java.lang.Integer"/>
-    <projections name="fv_l_linenumber1793899405" type="java.lang.Integer"/>
-    <projections name="fv_l_quantity1793899405" type="java.lang.Double"/>
-    <projections name="fv_l_extp1793899405" type="java.lang.Double"/>
-    <projections name="fv_l_discount1793899405" type="java.lang.Double"/>
-    <projections name="fv_l41793899405" type="java.lang.Double"/>
-    <projections name="fv_l51793899405" type="java.lang.String"/>
-    <projections name="fv_l61793899405" type="java.lang.String"/>
-    <projections name="fv_l71793899405" type="java.util.Date"/>
-    <projections name="fv_l81793899405" type="java.util.Date"/>
-    <projections name="fv_l91793899405" type="java.util.Date"/>
-    <projections name="fv_'DELIVER IN PERSON'1793899405" type="java.lang.String"/>
-    <projections name="fv_l_shipmode1793899405" type="java.lang.String"/>
-    <projections name="fv_l101793899405" type="java.lang.String"/>
+    <projections name="fv_p_partkey385332399" type="java.lang.Integer"/>
+    <projections name="fv_p1385332399" type="java.lang.String"/>
+    <projections name="fv_p2385332399" type="java.lang.String"/>
+    <projections name="fv_p_brand385332399" type="java.lang.String"/>
+    <projections name="fv_p_type385332399" type="java.lang.String"/>
+    <projections name="fv_p_size385332399" type="java.lang.Integer"/>
+    <projections name="fv_p3385332399" type="java.lang.String"/>
+    <projections name="fv_p4385332399" type="java.lang.Double"/>
+    <projections name="fv_p5385332399" type="java.lang.String"/>
     <RelationalTerm type="JoinTerm">
         <RelationalTerm type="JoinTerm">
             <RelationalTerm type="RenameTerm">
-                <renamings name="fv_l_orderkey1793899405" type="java.lang.Integer"/>
-                <renamings name="fv_p_partkey1793899405" type="java.lang.Integer"/>
-                <renamings name="fv_l21793899405" type="java.lang.Integer"/>
-                <renamings name="fv_l_linenumber1793899405" type="java.lang.Integer"/>
-                <renamings name="fv_l_quantity1793899405" type="java.lang.Double"/>
-                <renamings name="fv_l_extp1793899405" type="java.lang.Double"/>
-                <renamings name="fv_l_discount1793899405" type="java.lang.Double"/>
-                <renamings name="fv_l41793899405" type="java.lang.Double"/>
-                <renamings name="fv_l51793899405
+                <renamings name="fv_p_brand385332399" type="java.lang.String"/>
+                <renamings name="fv_p_type385332399" type="java.lang.String"/>
+                <renamings name="fv_p_size385332399" type="java.lang.String"/>
+                <renamings name="v_ps_suppkey385332399" type="java.lang.String"/>
+                <RelationalTerm type="AccessTerm">
+                    <accessMethod name="m19"/>
+                    <inputConstants/>
+                    <relation name="RPrime">
+                        <attribute name="p_brand" type="java.lang.String"/>
+                        <attribute name="p_type" type="java.lang.String"/>
+                        <attribute name="p_size" type="java.lang.String"/>
+                        <attribute name="ps_suppkey" type="java.lang.String"/>
+                        <access-method name="m19"/>
+                    </relation>
+                </RelationalTerm>
+            </RelationalTerm>
+            <RelationalTerm type="RenameTerm">
+                <renamings name="fv_p_partkey385332399" type="java.lang.Integer"/>
+                <renamings name="fv_p1385332399" type="java.lang.String"/>
+                <renamings name="fv_p2385332399" type="java.lang.String"/>
+                <renamings name="fv_p_brand385332399" type="java.lang.String"/>
+                <renamings name="fv_p_type385332399" type="java.lang.String"/>
+                <renamings name="fv_p_size385332399" type="java.lang.Integer"/>
+                <renamings name="fv_p3385332399" type="java.lang.String"/>
+                <renamings name="fv_p4385332399" type="java.lang.Double"/>
+                <renamings name="fv_p5385332399" type="java.lang.String"/>
+                <RelationalTerm type="AccessTerm">
+                    <accessMethod name="m11"/>
+                    <inputConstants/>
+                    <relation name="part">
+                        <attribute name="p_partkey" type="java.lang.Integer"/>
+                        <attribute name="p_name" type="java.lang.String"/>
+                        <attribute name="p_mfgr" type="java.lang.String"/>
+                        <attribute name="p_brand" type="java.lang.String"/>
+                        <attribute name="p_type" type="java.lang.String"/>
+                        <attribute name="p_size" type="java.lang.Integer"/>
+                        <attribute name="p_container" type="java.lang.String"/>
+                        <attribute name="p_retailprice" type="java.lang.Double"/>
+                        <attribute name="p_comment" type="java.lang.String"/>
+                        <access-method name="m11"/>
+                    </relation>
+                </RelationalTerm>
+            </RelationalTerm>
+        </RelationalTerm>
+        <RelationalTerm type="RenameTerm">
+            <renamings name="fv_p_partkey385332399" type="java.lang.Integer"/>
+            <renamings name="v_ps_suppkey385332399" type="java.lang.Integer"/>
+            <renamings name="v_ps1385332399" type="java.lang.Integer"/>
+            <renamings name="v_ps2385332399" type="java.lang.Double"/>
+            <renamings name="v_ps3385332399" type="java.lang.String"/>
+            <RelationalTerm type="AccessTerm">
+                <accessMethod name="m13"/>
+                <inputConstants/>
+                <relation name="partsupp">
+                    <attribute name="ps_partkey" type="java.lang.Integer"/>
+                    <attribute name="ps_suppkey" type="java.lang.Integer"/>
+                    <attribute name="ps_availqty" type="java.lang.Integer"/>
+                    <attribute name="ps_supplycost" type="java.lang.Double"/>
+                    <attribute name="ps_comment" type="java.lang.String"/>
+                    <access-method name="m13"/>
+                </relation>
+            </RelationalTerm>
+        </RelationalTerm>
+    </RelationalTerm>
+    <cost value="3.0" type="DoubleCost"/>
+</RelationalTermWithCost>

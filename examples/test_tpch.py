@@ -17,7 +17,7 @@ qout_folder_3 = './QOUT_Folder_3'
 table_folder_1 = './Table_1'
 table_folder_3 = './Table_3'
 
-timeoutPDQ = 3
+timeoutPDQ = 3600
 q_dir = os.path.join(os.path.dirname(__file__), "tpchqs/tpcq")
 
 
@@ -95,14 +95,14 @@ def run_pdq(element,index,num=None):
         with open(pdq_file_path, 'w') as output_file:
             output_file.write(f"------------------{datetime.fromtimestamp(start_time_pdq).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
             output_file.write(output)
-            output_file.write(f"------------------{datetime.fromtimestamp(end_time_pdq).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
+            output_file.write(f"\n------------------{datetime.fromtimestamp(end_time_pdq).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
 
     return pdq_status, pdq_time_taken
 
 
 def run_all(table,num=None):
     for index, qi in queries.items():
-        run_single(qi,index,table=table,num=3) if num==1 else run_single(qi,index,table=table,num=1)
+        run_single(qi,index,table=table,num=3) if num==3 else run_single(qi,index,table=table,num=1)
        
 
 
@@ -125,7 +125,8 @@ def run_single(qi,index,run_pdqs=True,table=None,num=None):
 
             qout_folder=qout_folder_1 if num==1 else qout_folder_3
             qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
-            gen_command = cmd1 + [query] + ["--prov"] + [element] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
+            cmd=cmd1 if num==1 else cmd3
+            gen_command = cmd + [query] + ["--prov"] + [element] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
             
             start_time_exec = time.time()
             run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
@@ -144,14 +145,12 @@ def run_single(qi,index,run_pdqs=True,table=None,num=None):
         finally:
             end_time_exec = time.time()
             cmd1_time_taken = end_time_exec - start_time_exec
-
-            table.write('-----')
             output_folder = output_folder_1 if num==1 else output_folder_3
             output_file_path = os.path.join(output_folder, f"output_{index}_{element}.txt")
             with open(output_file_path, 'w') as output_file:
                 output_file.write(f"------------------{datetime.fromtimestamp(start_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
                 output_file.write(output)
-                output_file.write(f"------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
+                output_file.write(f"\n------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
             
     if run_pdqs:
             pdq_status, pdq_time_taken = run_pdq(element,index,num)
@@ -179,9 +178,9 @@ def main():
     args=parser.parse_args()
 	
 	
-    table = os.path.join(table_folder_1, "table.txt")
-    print(table)
-    with open(table, 'w') as table_file:
+    table1 = os.path.join(table_folder_1, "table.txt")
+    print(table1)
+    with open(table1, 'w') as table_file:
         table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
         if args.individual:
             run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
@@ -191,7 +190,7 @@ def main():
     table = os.path.join(table_folder_3, "table.txt")
     print(table)
     with open(table, 'w') as table_file:
-        table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
+        table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken"))
         if args.individual:
             run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
         else:

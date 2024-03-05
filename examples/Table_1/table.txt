@@ -1,21 +1,21 @@
 Query           cmd1_status     cmd1_timetaken  cmd2_status     cmd2_timetaken 
------01_lineitem     Success         0.11            ERROR: --custom 2.03           
------02_nation       Success         0.09            Timeout         3.00           
------03_customer     Success         0.09            ERROR: --custom 2.02           
------04_lineitem     Success         0.09            ERROR: --custom 1.80           
------05_customer     Success         0.09            Timeout         3.00           
------06_lineitem     Success         0.09            ERROR: --custom 1.62           
------07_customer     Success         0.10            Timeout         3.00           
------08_customer     Success         0.10            Timeout         3.00           
------09_lineitem     Success         0.10            Timeout         3.00           
------10_customer     Success         0.09            ERROR: --custom 2.65           
------11_nation       Success         0.08            ERROR: --custom 2.17           
------12_lineitem     Success         0.09            ERROR: --custom 1.73           
------13_customer     Success         0.09            ERROR: --custom 1.73           
------14_lineitem     Success         0.09            ERROR: --custom 1.74           
------15_lineitem     Success         0.09            ERROR: --custom 1.74           
------16_part         Success         0.08            ERROR: --custom 1.77           
------17_lineitem     Success         0.09            ERROR: --custom 1.71           
------18_customer     Success         0.09            ERROR: --custom 1.93           
------19_lineitem     Success         0.09            ERROR: --custom 1.79           
------20_part         Success         0.09            Timeout         3.00           
+01_lineitem     Success         0.09            ERROR: --custom 1.82           
+02_nation       Success         0.09            ERROR: --custom 6.19           
+03_customer     Success         0.09            ERROR: --custom 2.12           
+04_lineitem     Success         0.09            ERROR: --custom 1.82           
+05_customer     Success         0.10            Timeout         13.00          
+06_lineitem     Success         0.11            ERROR: --custom 1.66           
+07_customer     Success         0.10            Timeout         13.00          
+08_customer     Success         0.10            Timeout         13.00          
+09_lineitem     Success         0.10            Timeout         13.00          
+10_customer     Success         0.12            ERROR: --custom 2.69           
+11_nation       Success         0.09            ERROR: --custom 2.14           
+12_lineitem     Success         0.09            ERROR: --custom 1.73           
+13_customer     Success         0.09            ERROR: --custom 1.76           
+14_lineitem     Success         0.09            ERROR: --custom 1.80           
+15_lineitem     Success         0.09            ERROR: --custom 1.77           
+16_part         Success         0.09            ERROR: --custom 1.82           
+17_lineitem     Success         0.09            ERROR: --custom 1.73           
+18_customer     Success         0.09            ERROR: --custom 1.86           
+19_lineitem     Success         0.09            ERROR: --custom 1.82           
+20_part         Success         0.09            Timeout         13.00          

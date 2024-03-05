@@ -1,8 +1,8 @@
-------------------2024-03-04 18:27:36------------------
+------------------2024-03-04 20:15:52------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-04 18:27:38,456 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l11493042329,fv_l21493042329,fv_l31493042329,fv_l41493042329,fv_l_q1493042329,fv_l_ep1493042329,fv_l_d1493042329,fv_l51493042329,fv_l61493042329,fv_l71493042329,fv_l_sd1493042329,fv_l81493042329,fv_l91493042329,fv_l101493042329,fv_l111493042329,fv_l121493042329)}),APPLYRULE(RPrime(){RPrime(fv_l_ep1493042329,fv_l_d1493042329)}))	2.0
+2024-03-04 20:15:53,964 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l11493042329,fv_l21493042329,fv_l31493042329,fv_l41493042329,fv_l_q1493042329,fv_l_ep1493042329,fv_l_d1493042329,fv_l51493042329,fv_l61493042329,fv_l71493042329,fv_l_sd1493042329,fv_l81493042329,fv_l91493042329,fv_l101493042329,fv_l111493042329,fv_l121493042329)}),APPLYRULE(RPrime(){RPrime(fv_l_ep1493042329,fv_l_d1493042329)}))	2.0
 Plan found with cost: 2.0
-2024-03-04 18:27:38,512 ERROR [main] (RelationAdapter.java:40) - Index 0 out of bounds for length 0
+2024-03-04 20:15:54,014 ERROR [main] (RelationAdapter.java:40) - Index 0 out of bounds for length 0
 java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at uk.ac.ox.cs.pdq.io.jaxb.adapted.AdaptedRelation.<init>(AdaptedRelation.java:56) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.io.jaxb.adapters.RelationAdapter.marshal(RelationAdapter.java:38) ~[pdq-main-2.0.0-executable.jar:?]
@@ -39,7 +39,7 @@ java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
 DefaultValidationEventHandler: [ERROR]: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0 
      Location:  obj: uk.ac.ox.cs.pdq.io.jaxb.adapted.AdaptedRelationalTerm@7cc586a8
-2024-03-04 18:27:38,540 ERROR [main] (Planner.java:182) - Planning aborted: null
+2024-03-04 20:15:54,041 ERROR [main] (Planner.java:182) - Planning aborted: null
 javax.xml.bind.MarshalException: null
 	at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:301) ~[pdq-main-2.0.0-executable.jar:?]
 	at com.sun.xml.bind.v2.runtime.MarshallerImpl.marshal(MarshallerImpl.java:226) ~[pdq-main-2.0.0-executable.jar:?]
@@ -127,4 +127,5 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 	at com.sun.xml.bind.v2.runtime.XMLSerializer.childAsRoot(XMLSerializer.java:464) ~[pdq-main-2.0.0-executable.jar:?]
 	at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:298) ~[pdq-main-2.0.0-executable.jar:?]
 	... 7 more
-------------------2024-03-04 18:27:38------------------
+
+------------------2024-03-04 20:15:54------------------

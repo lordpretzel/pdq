@@ -11,7 +11,6 @@
              <attribute name="p_container" type="java.lang.String"/>
              <attribute name="p_retailprice" type="java.lang.Double"/>
              <attribute name="p_comment" type="java.lang.String"/>
-             <primaryKey>p_partkey</primaryKey>
              <access-method name="m11"/>
      </relation>
 
@@ -23,7 +22,6 @@
              <attribute name="s_phone" type="java.lang.String"/>
              <attribute name="s_acctbal" type="java.lang.Double"/>
              <attribute name="s_comment" type="java.lang.String"/>
-             <primaryKey>s_suppkey</primaryKey>
              <access-method name="m12"/>
      </relation>
 
@@ -33,8 +31,6 @@
              <attribute name="ps_availqty" type="java.lang.Integer"/>
              <attribute name="ps_supplycost" type="java.lang.Double"/>
              <attribute name="ps_comment" type="java.lang.String"/>
-             <primaryKey>ps_partkey</primaryKey>
-             <primaryKey>ps_suppkey</primaryKey>
              <access-method name="m13"/>
      </relation>
 
@@ -47,7 +43,6 @@
              <attribute name="c_acctbal" type="java.lang.Double"/>
              <attribute name="c_mktsegment" type="java.lang.String"/>
              <attribute name="c_comment" type="java.lang.String"/>
-             <primaryKey>c_custkey</primaryKey>
              <access-method name="m14"/>
      </relation>
 
@@ -61,7 +56,6 @@
              <attribute name="o_clerk" type="java.lang.String"/>
              <attribute name="o_shippriority" type="java.lang.Integer"/>
              <attribute name="o_comment" type="java.lang.String"/>
-             <primaryKey>o_orderkey</primaryKey>
              <access-method name="m15"/>
      </relation>
 
@@ -82,8 +76,6 @@
              <attribute name="l_shipinstruct" type="java.lang.String"/>
              <attribute name="l_shipmode" type="java.lang.String"/>
              <attribute name="l_comment" type="java.lang.String"/>
-             <primaryKey>l_orderkey</primaryKey>
-             <primaryKey>l_linenumber</primaryKey>
              <access-method name="m16"/>
      </relation>
 
@@ -92,7 +84,6 @@
              <attribute name="n_name" type="java.lang.String"/>
              <attribute name="n_regionkey" type="java.lang.Integer"/>
              <attribute name="n_comment" type="java.lang.String"/>
-             <primaryKey>n_nationkey</primaryKey>
              <access-method name="m17"/>
      </relation>
 
@@ -100,7 +91,6 @@
              <attribute name="r_regionkey" type="java.lang.Integer"/>
              <attribute name="r_name" type="java.lang.String"/>
              <attribute name="r_comment" type="java.lang.String"/>
-             <primaryKey>r_regionkey</primaryKey>
              <access-method name="m18"/>
      </relation>
 
@@ -120,6 +110,878 @@
 
 </relations>
 <dependencies>
+    <dependency>
+        <body>
+			<atom name="part">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+			</atom>
+			<atom name="part">
+				<variable name="x0" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+				<variable name="x16" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x1" />
+                <variable name="x9" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x10" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x3" />
+                <variable name="x11" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="part">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+			</atom>
+			<atom name="part">
+				<variable name="x0" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+				<variable name="x16" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x4" />
+                <variable name="x12" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x5" />
+                <variable name="x13" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x6" />
+                <variable name="x14" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="part">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+			</atom>
+			<atom name="part">
+				<variable name="x0" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+				<variable name="x16" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x7" />
+                <variable name="x15" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x8" />
+                <variable name="x16" />
+            </atom>
+
+	  </head>
+    </dependency>
+
+    <dependency>
+        <body>
+			<atom name="supplier">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+			</atom>
+			<atom name="supplier">
+				<variable name="x0" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x1" />
+                <variable name="x7" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x8" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x3" />
+                <variable name="x9" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="supplier">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+			</atom>
+			<atom name="supplier">
+				<variable name="x0" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x4" />
+                <variable name="x10" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x5" />
+                <variable name="x11" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x6" />
+                <variable name="x12" />
+            </atom>
+
+	  </head>
+    </dependency>
+
+    <dependency>
+        <body>
+			<atom name="partsupp">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+			</atom>
+			<atom name="partsupp">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x5" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x3" />
+                <variable name="x6" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x4" />
+                <variable name="x7" />
+            </atom>
+
+	  </head>
+    </dependency>
+
+    <dependency>
+        <body>
+			<atom name="customer">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+			</atom>
+			<atom name="customer">
+				<variable name="x0" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x1" />
+                <variable name="x8" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x9" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x3" />
+                <variable name="x10" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="customer">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+			</atom>
+			<atom name="customer">
+				<variable name="x0" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x4" />
+                <variable name="x11" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x5" />
+                <variable name="x12" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x6" />
+                <variable name="x13" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="customer">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+			</atom>
+			<atom name="customer">
+				<variable name="x0" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x7" />
+                <variable name="x14" />
+            </atom>
+
+	  </head>
+    </dependency>
+
+    <dependency>
+        <body>
+			<atom name="orders">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+			</atom>
+			<atom name="orders">
+				<variable name="x0" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+				<variable name="x16" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x1" />
+                <variable name="x9" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x10" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x3" />
+                <variable name="x11" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="orders">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+			</atom>
+			<atom name="orders">
+				<variable name="x0" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+				<variable name="x16" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x4" />
+                <variable name="x12" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x5" />
+                <variable name="x13" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x6" />
+                <variable name="x14" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="orders">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+			</atom>
+			<atom name="orders">
+				<variable name="x0" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+				<variable name="x16" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x7" />
+                <variable name="x15" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x8" />
+                <variable name="x16" />
+            </atom>
+
+	  </head>
+    </dependency>
+
+    <dependency>
+        <body>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x1" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x16" />
+				<variable name="x17" />
+				<variable name="x1" />
+				<variable name="x18" />
+				<variable name="x19" />
+				<variable name="x20" />
+				<variable name="x21" />
+				<variable name="x22" />
+				<variable name="x23" />
+				<variable name="x24" />
+				<variable name="x25" />
+				<variable name="x26" />
+				<variable name="x27" />
+				<variable name="x28" />
+				<variable name="x29" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x16" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x3" />
+                <variable name="x17" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x4" />
+                <variable name="x18" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x1" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x16" />
+				<variable name="x17" />
+				<variable name="x1" />
+				<variable name="x18" />
+				<variable name="x19" />
+				<variable name="x20" />
+				<variable name="x21" />
+				<variable name="x22" />
+				<variable name="x23" />
+				<variable name="x24" />
+				<variable name="x25" />
+				<variable name="x26" />
+				<variable name="x27" />
+				<variable name="x28" />
+				<variable name="x29" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x5" />
+                <variable name="x19" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x6" />
+                <variable name="x20" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x7" />
+                <variable name="x21" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x1" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x16" />
+				<variable name="x17" />
+				<variable name="x1" />
+				<variable name="x18" />
+				<variable name="x19" />
+				<variable name="x20" />
+				<variable name="x21" />
+				<variable name="x22" />
+				<variable name="x23" />
+				<variable name="x24" />
+				<variable name="x25" />
+				<variable name="x26" />
+				<variable name="x27" />
+				<variable name="x28" />
+				<variable name="x29" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x8" />
+                <variable name="x22" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x9" />
+                <variable name="x23" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x10" />
+                <variable name="x24" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x1" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x16" />
+				<variable name="x17" />
+				<variable name="x1" />
+				<variable name="x18" />
+				<variable name="x19" />
+				<variable name="x20" />
+				<variable name="x21" />
+				<variable name="x22" />
+				<variable name="x23" />
+				<variable name="x24" />
+				<variable name="x25" />
+				<variable name="x26" />
+				<variable name="x27" />
+				<variable name="x28" />
+				<variable name="x29" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x11" />
+                <variable name="x25" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x12" />
+                <variable name="x26" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x13" />
+                <variable name="x27" />
+            </atom>
+
+	  </head>
+    </dependency>
+    <dependency>
+        <body>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x2" />
+				<variable name="x3" />
+				<variable name="x1" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+				<variable name="x7" />
+				<variable name="x8" />
+				<variable name="x9" />
+				<variable name="x10" />
+				<variable name="x11" />
+				<variable name="x12" />
+				<variable name="x13" />
+				<variable name="x14" />
+				<variable name="x15" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="x0" />
+				<variable name="x16" />
+				<variable name="x17" />
+				<variable name="x1" />
+				<variable name="x18" />
+				<variable name="x19" />
+				<variable name="x20" />
+				<variable name="x21" />
+				<variable name="x22" />
+				<variable name="x23" />
+				<variable name="x24" />
+				<variable name="x25" />
+				<variable name="x26" />
+				<variable name="x27" />
+				<variable name="x28" />
+				<variable name="x29" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x14" />
+                <variable name="x28" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x15" />
+                <variable name="x29" />
+            </atom>
+
+	  </head>
+    </dependency>
+
+    <dependency>
+        <body>
+			<atom name="nation">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+				<variable name="x3" />
+			</atom>
+			<atom name="nation">
+				<variable name="x0" />
+				<variable name="x4" />
+				<variable name="x5" />
+				<variable name="x6" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x1" />
+                <variable name="x4" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x5" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x3" />
+                <variable name="x6" />
+            </atom>
+
+	  </head>
+    </dependency>
+
+    <dependency>
+        <body>
+			<atom name="region">
+				<variable name="x0" />
+				<variable name="x1" />
+				<variable name="x2" />
+			</atom>
+			<atom name="region">
+				<variable name="x0" />
+				<variable name="x3" />
+				<variable name="x4" />
+			</atom>
+	  </body>
+	  <head>
+
+            <atom name="EQUALITY">
+                <variable name="x1" />
+                <variable name="x3" />
+            </atom>
+
+
+            <atom name="EQUALITY">
+                <variable name="x2" />
+                <variable name="x4" />
+            </atom>
+
+	  </head>
+    </dependency>
+
 <dependency type="TGD">
       <body>
 			<atom name="RPrime">

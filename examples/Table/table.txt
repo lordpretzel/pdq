@@ -1,2 +1,0 @@
-Query           cmd1_status     cmd1_timetaken  cmd2_status     cmd2_timetaken 
-01_lineitem     Success         0.10            Success         2.39           

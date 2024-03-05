@@ -1,8 +1,8 @@
-------------------2024-03-04 18:27:50------------------
+------------------2024-03-04 20:16:36------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-04 18:27:52,612 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(v_ps_pk565881091,v_ps_sc565881091,v_ps_aq565881091)}),APPLYRULE(supplier(){supplier(v_ps_sk565881091,v_s1565881091,v_s2565881091,fv_s_nk565881091,v_s3565881091,v_s4565881091,v_s5565881091)})),BINARY(APPLYRULE(partsupp(){partsupp(v_ps_pk565881091,v_ps_sk565881091,v_ps_aq565881091,v_ps_sc565881091,v_ps2565881091)}),APPLYRULE(nation(){nation(fv_s_nk565881091,fv_'GERMANY'565881091,fv_n1565881091,fv_n2565881091)})))	4.0
+2024-03-04 20:16:38,150 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(v_ps_pk565881091,v_ps_sc565881091,v_ps_aq565881091)}),APPLYRULE(supplier(){supplier(v_ps_sk565881091,v_s1565881091,v_s2565881091,fv_s_nk565881091,v_s3565881091,v_s4565881091,v_s5565881091)})),BINARY(APPLYRULE(partsupp(){partsupp(v_ps_pk565881091,v_ps_sk565881091,v_ps_aq565881091,v_ps_sc565881091,v_ps2565881091)}),APPLYRULE(nation(){nation(fv_s_nk565881091,fv_'GERMANY'565881091,fv_n1565881091,fv_n2565881091)})))	4.0
 Plan found with cost: 4.0
-2024-03-04 18:27:52,830 ERROR [main] (RelationAdapter.java:40) - Index 0 out of bounds for length 0
+2024-03-04 20:16:38,357 ERROR [main] (RelationAdapter.java:40) - Index 0 out of bounds for length 0
 java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at uk.ac.ox.cs.pdq.io.jaxb.adapted.AdaptedRelation.<init>(AdaptedRelation.java:56) ~[pdq-main-2.0.0-executable.jar:?]
 	at uk.ac.ox.cs.pdq.io.jaxb.adapters.RelationAdapter.marshal(RelationAdapter.java:38) ~[pdq-main-2.0.0-executable.jar:?]
@@ -44,7 +44,7 @@ java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-executable.jar:?]
 DefaultValidationEventHandler: [ERROR]: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0 
      Location:  obj: uk.ac.ox.cs.pdq.io.jaxb.adapted.AdaptedRelationalTerm@45394b31
-2024-03-04 18:27:52,859 ERROR [main] (Planner.java:182) - Planning aborted: null
+2024-03-04 20:16:38,388 ERROR [main] (Planner.java:182) - Planning aborted: null
 javax.xml.bind.MarshalException: null
 	at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:301) ~[pdq-main-2.0.0-executable.jar:?]
 	at com.sun.xml.bind.v2.runtime.MarshallerImpl.marshal(MarshallerImpl.java:226) ~[pdq-main-2.0.0-executable.jar:?]
@@ -147,4 +147,5 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 	at com.sun.xml.bind.v2.runtime.XMLSerializer.childAsRoot(XMLSerializer.java:464) ~[pdq-main-2.0.0-executable.jar:?]
 	at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:298) ~[pdq-main-2.0.0-executable.jar:?]
 	... 7 more
-------------------2024-03-04 18:27:52------------------
+
+------------------2024-03-04 20:16:38------------------
