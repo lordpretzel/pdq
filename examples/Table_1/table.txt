@@ -1,21 +1,21 @@
 Query           cmd1_status     cmd1_timetaken  cmd2_status     cmd2_timetaken 
-01_lineitem     Success         0.09            ERROR: --custom 1.82           
-02_nation       Success         0.09            ERROR: --custom 6.19           
-03_customer     Success         0.09            ERROR: --custom 2.12           
-04_lineitem     Success         0.09            ERROR: --custom 1.82           
-05_customer     Success         0.10            Timeout         13.00          
-06_lineitem     Success         0.11            ERROR: --custom 1.66           
-07_customer     Success         0.10            Timeout         13.00          
-08_customer     Success         0.10            Timeout         13.00          
-09_lineitem     Success         0.10            Timeout         13.00          
-10_customer     Success         0.12            ERROR: --custom 2.69           
-11_nation       Success         0.09            ERROR: --custom 2.14           
-12_lineitem     Success         0.09            ERROR: --custom 1.73           
-13_customer     Success         0.09            ERROR: --custom 1.76           
-14_lineitem     Success         0.09            ERROR: --custom 1.80           
-15_lineitem     Success         0.09            ERROR: --custom 1.77           
-16_part         Success         0.09            ERROR: --custom 1.82           
-17_lineitem     Success         0.09            ERROR: --custom 1.73           
-18_customer     Success         0.09            ERROR: --custom 1.86           
-19_lineitem     Success         0.09            ERROR: --custom 1.82           
-20_part         Success         0.09            Timeout         13.00          
+01_lineitem     Success         0.09            Success         1.87           
+02_nation       Success         0.09            Success         6.44           
+03_customer     Success         0.10            Success         2.15           
+04_lineitem     Success         0.09            Success         1.82           
+05_customer     Success         0.10            Timeout         20.00          
+06_lineitem     Success         0.25            Success         2.51           
+07_customer     Success         0.11            Timeout         20.00          
+08_customer     Success         0.14            Timeout         20.00          
+09_lineitem     Success         0.11            Timeout         20.00          
+10_customer     Success         0.12            Success         2.98           
+11_nation       Success         0.11            Success         2.40           
+12_lineitem     Success         0.11            Success         1.94           
+13_customer     Success         0.09            Success         1.83           
+14_lineitem     Success         0.09            Success         1.86           
+15_lineitem     Success         0.09            Success         2.24           
+16_part         Success         0.13            Success         2.22           
+17_lineitem     Success         0.11            Success         2.67           
+18_customer     Success         0.09            Success         2.03           
+19_lineitem     Success         0.09            Success         2.09           
+20_part         Success         0.09            Timeout         20.00          

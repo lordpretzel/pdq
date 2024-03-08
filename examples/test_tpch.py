@@ -51,7 +51,7 @@ python_executable = shutil.which('python') or shutil.which('python3.9') or shuti
 cmd1 = [python_executable,"query-and-schema-generator.py","translate_sql_and_query_and_prov", "-i", "./tpchqs/tpch.sql",  "-P", "-p", "--replace_dt",  "-q"]
 #"-p" instead of "-f"
 
-cmd2 = ["java", "-jar", "pdq-main-2.0.0-executable.jar", "planner"  ]
+cmd2 = ["java", "-jar", "pdq-main-2.0.0-jar-with-dependencies.jar", "planner"  ]
 
 
 cmd3 = [python_executable,"query-and-schema-generator.py","translate_sql_and_query_and_prov", "-i", "./tpchqs/tpch.sql",  "-P", "-f", "--replace_dt",  "-q"]
