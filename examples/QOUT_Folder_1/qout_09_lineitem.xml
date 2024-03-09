@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="part">
+				<variable name="p_partkey" />
+				<variable name="p_name" />
+				<variable name="p1" />
+				<variable name="p2" />
+				<variable name="p3" />
+				<variable name="p4" />
+				<variable name="p5" />
+				<variable name="p6" />
+				<variable name="p7" />
+			</atom>
+			<atom name="supplier">
+				<variable name="s_suppkey" />
+				<variable name="s1" />
+				<variable name="s2" />
+				<variable name="n_nationkey" />
+				<variable name="s3" />
+				<variable name="s4" />
+				<variable name="s5" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="o_orderkey" />
+				<variable name="p_partkey" />
+				<variable name="s_suppkey" />
+				<variable name="l1" />
+				<variable name="l_quantity" />
+				<variable name="l_ep" />
+				<variable name="l_discount" />
+				<variable name="l2" />
+				<variable name="l3" />
+				<variable name="l4" />
+				<variable name="l5" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+			</atom>
+			<atom name="partsupp">
+				<variable name="p_partkey" />
+				<variable name="s_suppkey" />
+				<variable name="ps1" />
+				<variable name="ps_supplycost" />
+				<variable name="ps2" />
+			</atom>
+			<atom name="nation">
+				<variable name="n_nationkey" />
+				<variable name="n_name" />
+				<variable name="n1" />
+				<variable name="n2" />
+			</atom>
+			<atom name="orders">
+				<variable name="o_orderkey" />
+				<variable name="o1" />
+				<variable name="o2" />
+				<variable name="o3" />
+				<variable name="o_orderdate" />
+				<variable name="o4" />
+				<variable name="o5" />
+				<variable name="o6" />
+				<variable name="o7" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="n_name" />
+				<variable name="o_orderdate" />
+				<variable name="l_ep" />
+				<variable name="l_discount" />
+				<variable name="ps_supplycost" />
+				<variable name="l_quantity" />
+			</atom>
+  </body>
+  	<head name="prov_lineitem">
+		<variable name="o_orderkey" />
+		<variable name="p_partkey" />
+		<variable name="s_suppkey" />
+		<variable name="l1" />
+		<variable name="l_quantity" />
+		<variable name="l_ep" />
+		<variable name="l_discount" />
+		<variable name="l2" />
+		<variable name="l3" />
+		<variable name="l4" />
+		<variable name="l5" />
+		<variable name="l6" />
+		<variable name="l7" />
+		<variable name="l8" />
+		<variable name="l9" />
+		<variable name="l10" />
+	</head>
+</query>

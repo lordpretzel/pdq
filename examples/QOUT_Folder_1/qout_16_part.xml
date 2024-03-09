@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="partsupp">
+				<variable name="p_partkey" />
+				<variable name="ps_suppkey" />
+				<variable name="ps1" />
+				<variable name="ps2" />
+				<variable name="ps3" />
+			</atom>
+			<atom name="part">
+				<variable name="p_partkey" />
+				<variable name="p1" />
+				<variable name="p2" />
+				<variable name="p_brand" />
+				<variable name="p_type" />
+				<variable name="p_size" />
+				<variable name="p3" />
+				<variable name="p4" />
+				<variable name="p5" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="p_brand" />
+				<variable name="p_type" />
+				<variable name="p_size" />
+				<variable name="ps_suppkey" />
+			</atom>
+  </body>
+  	<head name="prov_part">
+		<variable name="p_partkey" />
+		<variable name="p1" />
+		<variable name="p2" />
+		<variable name="p_brand" />
+		<variable name="p_type" />
+		<variable name="p_size" />
+		<variable name="p3" />
+		<variable name="p4" />
+		<variable name="p5" />
+	</head>
+</query>

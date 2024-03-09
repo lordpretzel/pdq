@@ -1,4 +1,0 @@
-WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-02-19 00:09:55,202 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_x11488946768,fv_x21488946768,fv_x31488946768,fv_x41488946768,fv_l_quant1488946768,fv_l_extp1488946768,fv_l_disc1488946768,fv_l_tax1488946768,fv_l_return1488946768,fv_l_linestat1488946768,fv_l_shipdate1488946768,fv_x51488946768,fv_x61488946768,fv_x71488946768,fv_x81488946768,fv_x91488946768)}),APPLYRULE(RPrime(){RPrime(fv_l_return1488946768,fv_l_linestat1488946768,fv_l_quant1488946768,fv_l_extp1488946768,fv_l_disc1488946768,fv_l_tax1488946768,fv_x11488946768)}))	2.0
-Plan found with cost: 2.0
-Plan written to /Users/subramanyaganesh/Desktop/summerProject/New_Validation/pdq/examples/out.xml

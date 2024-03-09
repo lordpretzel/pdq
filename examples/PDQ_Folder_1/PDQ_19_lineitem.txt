@@ -1,0 +1,7 @@
+------------------2024-03-08 17:14:54------------------
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+2024-03-08 17:14:56,030 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(lineitem(){lineitem(fv_l_orderkey998242313,fv_p_partkey998242313,fv_l2998242313,fv_l_linenumber998242313,fv_l_quantity998242313,fv_l_extp998242313,fv_l_discount998242313,fv_l4998242313,fv_l5998242313,fv_l6998242313,fv_l7998242313,fv_l8998242313,fv_l9998242313,fv_'DELIVER IN PERSON'998242313,fv_l_shipmode998242313,fv_l10998242313)}),APPLYRULE(part(){part(fv_p_partkey998242313,v_p1998242313,v_p2998242313,v_p_brand998242313,v_p3998242313,v_p_size998242313,v_p_container998242313,v_p4998242313,v_p5998242313)})),APPLYRULE(RPrime(){RPrime(fv_l_orderkey998242313,fv_l_linenumber998242313,fv_l_discount998242313,fv_l_extp998242313)}))	3.0
+Plan found with cost: 3.0
+Plan written to /Users/subramanyaganesh/Desktop/summerProject/New_Validation/pdq/examples/out.xml
+
+------------------2024-03-08 17:14:56------------------

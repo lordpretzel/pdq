@@ -30,7 +30,7 @@ public class AdaptedRelation implements Serializable {
 	protected Attribute[] attributes;
 	protected AccessMethodDescriptor[] accessMethods;
 	protected ForeignKey[] foreignKeys;
-	protected String[] primaryKey; // one or more attribute names that form the primary key.
+	protected String[] primaryKey=null; // one or more attribute names that form the primary key.
 	protected Properties properties;
 	private String name;
 	private Boolean isEquality = null;
@@ -50,8 +50,9 @@ public class AdaptedRelation implements Serializable {
 	public AdaptedRelation(Relation r) {
 		this.attributes = r.getAttributes();
 		this.accessMethods = r.getAccessMethods();
-		this.primaryKey = new String[r.getForeignKeys().length];
+		//this.primaryKey =new String[r.getForeignKeys().length];
 		if (r.getPrimaryKey()!=null) {
+			this.primaryKey = new String[r.getPrimaryKey().getNumberOfAttributes()];
 			for (int i = 0; i < r.getPrimaryKey().getNumberOfAttributes(); i++) {
 				this.primaryKey[i] = r.getPrimaryKey().getAttributes()[i].getName();
 			}
