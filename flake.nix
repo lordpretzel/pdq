@@ -51,55 +51,24 @@
             ###################################################################
             #                             build jar                           #
             ###################################################################
-            packages = {
-              default =  stdenv.mkDerivation rec {
+            packages = {              
+              pdq =  stdenv.mkDerivation rec {
                 name = "PDQ";
-                nativebBuildInputs = [ makeWrapper ];
+                nativeBuildInputs = [ makeWrapper ];
                 buildInputs = [ maven ];                
                 src = ./.;
                 buildPhase = ''
-                  mvn clean package -DskipTests -Dmaven.repo.local=$out
+                  mvn package -DskipTests -Dmaven.repo.local=$out
                '';
                 installPhase = ''
     mkdir -p $out/bin $out/share/pdq
     install -Dm644 pdq-main/target/pdq-main-2.0.0-jar-with-dependencies.jar $out/share/pdq/pdq.jar
 
-    echo "${jre}/bin/java -jar $out/share/pdq/pdq.jar" > $out/bin/pdq
-    chmod 744 $out/bin/pdq
+    makeWrapper ${jre}/bin/java $out/bin/pdq --add-flags "-jar $out/share/pdq/pdq.jar"
   '';                  
               };
-
-              
-              # default = maven.buildMavenPackage rec {
-              #   pname = "pdq";
-              #   version = "2.0.0";
-
-                
-                
-              #   buildPhase = ''
-              #       echo "MMMMMMMMMMMMMMMMMMMYYYYY MAVEN"
-
-              #   '';
-                
-              #   src = ./.;
-              #   # src = fetchFromGitHub {
-              #   #   owner = "intoolswetrust";
-              #   #   repo = pname;
-              #   #   rev = "${pname}-${version}";
-              #   #   hash = "sha256-rRttA5H0A0c44loBzbKH7Waoted3IsOgxGCD2VM0U/Q=";
-              #   # };
-
-              #   mvnHash = "sha256-kLpjMj05uC94/5vGMwMlFzLKNFOKeyNvq/vmB6pHTAo=";
-
-              #   nativeBuildInputs = [ makeWrapper ];
-
-              #   meta = with lib; {
-              #     description = "PDQ";
-              #     homepage = "https://github.com/lordpretzel/PDQ";
-              #     license = licenses.gpl3Plus;
-              #     #maintainers = with maintainers; [ majiir ];
-              #   };
-              # };
+             
+              # default = self.packages.pdq;
             };
 
             
