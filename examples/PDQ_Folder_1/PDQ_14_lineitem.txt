@@ -1,7 +1,7 @@
-------------------2024-03-08 17:14:42------------------
+------------------2024-03-08 21:34:25------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 17:14:44,263 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(lineitem(){lineitem(fv_l11078262677,fv_p_partkey1078262677,fv_l21078262677,fv_l31078262677,fv_l41078262677,fv_l_extp1078262677,fv_l_discount1078262677,fv_l51078262677,fv_l61078262677,fv_l71078262677,fv_l_shipdate1078262677,fv_l81078262677,fv_l91078262677,fv_l101078262677,fv_l111078262677,fv_l121078262677)}),APPLYRULE(part(){part(fv_p_partkey1078262677,v_p11078262677,v_p21078262677,v_p31078262677,v_p_type1078262677,v_p41078262677,v_p51078262677,v_p61078262677,v_p71078262677)})),APPLYRULE(RPrime(){RPrime(v_p_type1078262677,fv_l_extp1078262677,fv_l_discount1078262677)}))	3.0
+2024-03-08 21:34:27,288 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(lineitem(){lineitem(fv_l1226690498,fv_p_partkey226690498,fv_l2226690498,fv_l3226690498,fv_l4226690498,fv_l_extp226690498,fv_l_discount226690498,fv_l5226690498,fv_l6226690498,fv_l7226690498,fv_l_shipdate226690498,fv_l8226690498,fv_l9226690498,fv_l10226690498,fv_l11226690498,fv_l12226690498)}),APPLYRULE(part(){part(fv_p_partkey226690498,v_p1226690498,v_p2226690498,v_p3226690498,v_p_type226690498,v_p4226690498,v_p5226690498,v_p6226690498,v_p7226690498)})),APPLYRULE(RPrime(){RPrime(v_p_type226690498,fv_l_extp226690498,fv_l_discount226690498)}))	3.0
 Plan found with cost: 3.0
-Plan written to /Users/subramanyaganesh/Desktop/summerProject/New_Validation/pdq/examples/out.xml
+Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
 
-------------------2024-03-08 17:14:44------------------
+------------------2024-03-08 21:34:27------------------

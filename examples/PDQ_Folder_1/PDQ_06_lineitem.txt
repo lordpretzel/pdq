@@ -1,7 +1,7 @@
-------------------2024-03-08 17:13:29------------------
+------------------2024-03-08 18:34:14------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 17:13:32,357 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l11614133563,fv_l21614133563,fv_l31614133563,fv_l41614133563,fv_l_q1614133563,fv_l_ep1614133563,fv_l_d1614133563,fv_l51614133563,fv_l61614133563,fv_l71614133563,fv_l_sd1614133563,fv_l81614133563,fv_l91614133563,fv_l101614133563,fv_l111614133563,fv_l121614133563)}),APPLYRULE(RPrime(){RPrime(fv_l_ep1614133563,fv_l_d1614133563)}))	2.0
+2024-03-08 18:34:15,723 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l1615954678,fv_l2615954678,fv_l3615954678,fv_l4615954678,fv_l_q615954678,fv_l_ep615954678,fv_l_d615954678,fv_l5615954678,fv_l6615954678,fv_l7615954678,fv_l_sd615954678,fv_l8615954678,fv_l9615954678,fv_l10615954678,fv_l11615954678,fv_l12615954678)}),APPLYRULE(RPrime(){RPrime(fv_l_ep615954678,fv_l_d615954678)}))	2.0
 Plan found with cost: 2.0
-Plan written to /Users/subramanyaganesh/Desktop/summerProject/New_Validation/pdq/examples/out.xml
+Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
 
-------------------2024-03-08 17:13:32------------------
+------------------2024-03-08 18:34:15------------------

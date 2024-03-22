@@ -1,7 +1,7 @@
-------------------2024-03-08 17:14:46------------------
+------------------2024-03-08 21:34:29------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 17:14:48,943 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(partsupp(){partsupp(fv_p_partkey178604517,v_ps_suppkey178604517,v_ps1178604517,v_ps2178604517,v_ps3178604517)}),APPLYRULE(part(){part(fv_p_partkey178604517,fv_p1178604517,fv_p2178604517,fv_p_brand178604517,fv_p_type178604517,fv_p_size178604517,fv_p3178604517,fv_p4178604517,fv_p5178604517)})),APPLYRULE(RPrime(){RPrime(fv_p_brand178604517,fv_p_type178604517,fv_p_size178604517,v_ps_suppkey178604517)}))	3.0
+2024-03-08 21:34:31,146 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(partsupp(){partsupp(fv_p_partkey1455204443,v_ps_suppkey1455204443,v_ps11455204443,v_ps21455204443,v_ps31455204443)}),APPLYRULE(RPrime(){RPrime(fv_p_brand1455204443,fv_p_type1455204443,fv_p_size1455204443,v_ps_suppkey1455204443)})),APPLYRULE(part(){part(fv_p_partkey1455204443,fv_p11455204443,fv_p21455204443,fv_p_brand1455204443,fv_p_type1455204443,fv_p_size1455204443,fv_p31455204443,fv_p41455204443,fv_p51455204443)}))	3.0
 Plan found with cost: 3.0
-Plan written to /Users/subramanyaganesh/Desktop/summerProject/New_Validation/pdq/examples/out.xml
+Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
 
-------------------2024-03-08 17:14:49------------------
+------------------2024-03-08 21:34:31------------------

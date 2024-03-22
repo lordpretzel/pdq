@@ -1,86 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <RelationalTermWithCost type="ProjectionTerm">
-    <projections name="fv_x1385332399" type="java.lang.Integer"/>
-    <projections name="fv_x2385332399" type="java.lang.Integer"/>
-    <projections name="fv_x3385332399" type="java.lang.Integer"/>
-    <projections name="fv_x4385332399" type="java.lang.Integer"/>
-    <projections name="fv_l_quant385332399" type="java.lang.Double"/>
-    <projections name="fv_l_extp385332399" type="java.lang.Double"/>
-    <projections name="fv_l_disc385332399" type="java.lang.Double"/>
-    <projections name="fv_l_tax385332399" type="java.lang.Double"/>
-    <projections name="fv_l_return385332399" type="java.lang.String"/>
-    <projections name="fv_l_linestat385332399" type="java.lang.String"/>
-    <projections name="fv_l_shipdate385332399" type="java.util.Date"/>
-    <projections name="fv_x5385332399" type="java.util.Date"/>
-    <projections name="fv_x6385332399" type="java.util.Date"/>
-    <projections name="fv_x7385332399" type="java.lang.String"/>
-    <projections name="fv_x8385332399" type="java.lang.String"/>
-    <projections name="fv_x9385332399" type="java.lang.String"/>
+    <projections name="fv_p_partkey1453062635" type="java.lang.Integer"/>
+    <projections name="fv_p11453062635" type="java.lang.String"/>
+    <projections name="fv_p21453062635" type="java.lang.String"/>
+    <projections name="fv_p_brand1453062635" type="java.lang.String"/>
+    <projections name="fv_p_type1453062635" type="java.lang.String"/>
+    <projections name="fv_p_size1453062635" type="java.lang.Integer"/>
+    <projections name="fv_p31453062635" type="java.lang.String"/>
+    <projections name="fv_p41453062635" type="java.lang.Double"/>
+    <projections name="fv_p51453062635" type="java.lang.String"/>
     <RelationalTerm type="JoinTerm">
-        <RelationalTerm type="RenameTerm">
-            <renamings name="fv_l_return385332399" type="java.lang.String"/>
-            <renamings name="fv_l_linestat385332399" type="java.lang.String"/>
-            <renamings name="fv_l_quant385332399" type="java.lang.String"/>
-            <renamings name="fv_l_extp385332399" type="java.lang.String"/>
-            <renamings name="fv_l_disc385332399" type="java.lang.String"/>
-            <renamings name="fv_l_tax385332399" type="java.lang.String"/>
-            <renamings name="fv_x1385332399" type="java.lang.String"/>
-            <RelationalTerm type="AccessTerm">
-                <accessMethod name="m19"/>
-                <inputConstants/>
-                <relation name="RPrime">
-                    <attribute name="l_return" type="java.lang.String"/>
-                    <attribute name="l_linestat" type="java.lang.String"/>
-                    <attribute name="l_quant" type="java.lang.String"/>
-                    <attribute name="l_extp" type="java.lang.String"/>
-                    <attribute name="l_disc" type="java.lang.String"/>
-                    <attribute name="l_tax" type="java.lang.String"/>
-                    <attribute name="x1" type="java.lang.String"/>
-                    <access-method name="m19"/>
-                </relation>
+        <RelationalTerm type="JoinTerm">
+            <RelationalTerm type="RenameTerm">
+                <renamings name="fv_p_brand1453062635" type="java.lang.String"/>
+                <renamings name="fv_p_type1453062635" type="java.lang.String"/>
+                <renamings name="fv_p_size1453062635" type="java.lang.String"/>
+                <renamings name="v_ps_suppkey1453062635" type="java.lang.String"/>
+                <RelationalTerm type="AccessTerm">
+                    <accessMethod name="m19"/>
+                    <inputConstants/>
+                    <relation name="RPrime">
+                        <attribute name="p_brand" type="java.lang.String"/>
+                        <attribute name="p_type" type="java.lang.String"/>
+                        <attribute name="p_size" type="java.lang.String"/>
+                        <attribute name="ps_suppkey" type="java.lang.String"/>
+                        <access-method name="m19"/>
+                    </relation>
+                </RelationalTerm>
+            </RelationalTerm>
+            <RelationalTerm type="RenameTerm">
+                <renamings name="fv_p_partkey1453062635" type="java.lang.Integer"/>
+                <renamings name="v_ps_suppkey1453062635" type="java.lang.Integer"/>
+                <renamings name="v_ps11453062635" type="java.lang.Integer"/>
+                <renamings name="v_ps21453062635" type="java.lang.Double"/>
+                <renamings name="v_ps31453062635" type="java.lang.String"/>
+                <RelationalTerm type="AccessTerm">
+                    <accessMethod name="m13"/>
+                    <inputConstants/>
+                    <relation name="partsupp">
+                        <attribute name="ps_partkey" type="java.lang.Integer"/>
+                        <attribute name="ps_suppkey" type="java.lang.Integer"/>
+                        <attribute name="ps_availqty" type="java.lang.Integer"/>
+                        <attribute name="ps_supplycost" type="java.lang.Double"/>
+                        <attribute name="ps_comment" type="java.lang.String"/>
+                        <access-method name="m13"/>
+                    </relation>
+                </RelationalTerm>
             </RelationalTerm>
         </RelationalTerm>
         <RelationalTerm type="RenameTerm">
-            <renamings name="fv_x1385332399" type="java.lang.Integer"/>
-            <renamings name="fv_x2385332399" type="java.lang.Integer"/>
-            <renamings name="fv_x3385332399" type="java.lang.Integer"/>
-            <renamings name="fv_x4385332399" type="java.lang.Integer"/>
-            <renamings name="fv_l_quant385332399" type="java.lang.Double"/>
-            <renamings name="fv_l_extp385332399" type="java.lang.Double"/>
-            <renamings name="fv_l_disc385332399" type="java.lang.Double"/>
-            <renamings name="fv_l_tax385332399" type="java.lang.Double"/>
-            <renamings name="fv_l_return385332399" type="java.lang.String"/>
-            <renamings name="fv_l_linestat385332399" type="java.lang.String"/>
-            <renamings name="fv_l_shipdate385332399" type="java.util.Date"/>
-            <renamings name="fv_x5385332399" type="java.util.Date"/>
-            <renamings name="fv_x6385332399" type="java.util.Date"/>
-            <renamings name="fv_x7385332399" type="java.lang.String"/>
-            <renamings name="fv_x8385332399" type="java.lang.String"/>
-            <renamings name="fv_x9385332399" type="java.lang.String"/>
+            <renamings name="fv_p_partkey1453062635" type="java.lang.Integer"/>
+            <renamings name="fv_p11453062635" type="java.lang.String"/>
+            <renamings name="fv_p21453062635" type="java.lang.String"/>
+            <renamings name="fv_p_brand1453062635" type="java.lang.String"/>
+            <renamings name="fv_p_type1453062635" type="java.lang.String"/>
+            <renamings name="fv_p_size1453062635" type="java.lang.Integer"/>
+            <renamings name="fv_p31453062635" type="java.lang.String"/>
+            <renamings name="fv_p41453062635" type="java.lang.Double"/>
+            <renamings name="fv_p51453062635" type="java.lang.String"/>
             <RelationalTerm type="AccessTerm">
-                <accessMethod name="m16"/>
+                <accessMethod name="m11"/>
                 <inputConstants/>
-                <relation name="lineitem">
-                    <attribute name="l_orderkey" type="java.lang.Integer"/>
-                    <attribute name="l_partkey" type="java.lang.Integer"/>
-                    <attribute name="l_suppkey" type="java.lang.Integer"/>
-                    <attribute name="l_linenumber" type="java.lang.Integer"/>
-                    <attribute name="l_quantity" type="java.lang.Double"/>
-                    <attribute name="l_extendedprice" type="java.lang.Double"/>
-                    <attribute name="l_discount" type="java.lang.Double"/>
-                    <attribute name="l_tax" type="java.lang.Double"/>
-                    <attribute name="l_returnflag" type="java.lang.String"/>
-                    <attribute name="l_linestatus" type="java.lang.String"/>
-                    <attribute name="l_shipdate" type="java.util.Date"/>
-                    <attribute name="l_commitdate" type="java.util.Date"/>
-                    <attribute name="l_receiptdate" type="java.util.Date"/>
-                    <attribute name="l_shipinstruct" type="java.lang.String"/>
-                    <attribute name="l_shipmode" type="java.lang.String"/>
-                    <attribute name="l_comment" type="java.lang.String"/>
-                    <access-method name="m16"/>
+                <relation name="part">
+                    <attribute name="p_partkey" type="java.lang.Integer"/>
+                    <attribute name="p_name" type="java.lang.String"/>
+                    <attribute name="p_mfgr" type="java.lang.String"/>
+                    <attribute name="p_brand" type="java.lang.String"/>
+                    <attribute name="p_type" type="java.lang.String"/>
+                    <attribute name="p_size" type="java.lang.Integer"/>
+                    <attribute name="p_container" type="java.lang.String"/>
+                    <attribute name="p_retailprice" type="java.lang.Double"/>
+                    <attribute name="p_comment" type="java.lang.String"/>
+                    <access-method name="m11"/>
                 </relation>
             </RelationalTerm>
         </RelationalTerm>
     </RelationalTerm>
-    <cost value="2.0" type="DoubleCost"/>
+    <cost value="3.0" type="DoubleCost"/>
 </RelationalTermWithCost>
