@@ -1,21 +1,56 @@
-Query           cmd3_status     cmd3_timetaken  cmd2_status     cmd2_timetaken 
-01_lineitem     Success         0.25            Success         2.31           
-02_nation       Success         0.26            ERROR: --custom 123.78         
-03_customer     Success         0.26            ERROR: --custom 123.11         
-04_lineitem     Success         0.25            ERROR: --custom 124.06         
-05_customer     Success         0.28            Timeout         3600.10        
-06_lineitem     Success         0.24            Success         2.48           
-07_customer     Success         0.28            Timeout         3600.10        
-08_customer     Success         0.29            Timeout         3600.07        
-09_lineitem     Success         0.28            Timeout         3600.10        
-10_customer     Success         0.27            Timeout         3600.09        
-11_nation       Success         0.25            Success         6.74           
-12_lineitem     Success         0.25            ERROR: --custom 122.39         
-13_customer     Success         0.25            ERROR: --custom 122.04         
-14_lineitem     Success         0.25            ERROR: --custom 122.36         
-15_lineitem     Success         0.25            Success         4.78           
-16_part         Success         0.24            Success         2.52           
-17_lineitem     Success         0.25            ERROR: --custom 122.28         
-18_customer     Success         0.26            ERROR: --custom 123.05         
-19_lineitem     Success         0.25            ERROR: --custom 124.19         
-20_part         Success         0.27            Timeout         3600.10        
+01_lineitem     Success         0.30            Success         2.29           
+02_nation       Success         0.31            Timeout         20.02          
+02_part         Success         0.31            Timeout         20.02          
+02_partsupp     Success         0.31            Timeout         20.02          
+02_region       Success         0.31            Timeout         20.02          
+03_customer     Success         0.31            Timeout         20.02          
+03_lineitem     Success         0.31            Timeout         20.02          
+03_orders       Success         0.31            Timeout         20.02          
+04_lineitem     Success         0.30            Timeout         20.02          
+04_orders       Success         0.30            Timeout         20.01          
+05_customer     Success         0.33            Timeout         20.01          
+05_lineitem     Success         0.33            Timeout         20.00          
+05_nation       Success         0.32            Timeout         20.02          
+05_orders       Success         0.32            Timeout         20.02          
+05_region       Success         0.32            Timeout         20.01          
+06_lineitem     Success         0.29            Success         2.47           
+07_customer     Success         0.32            Timeout         20.02          
+07_lineitem     Success         0.33            Timeout         20.00          
+07_nation       Success         0.32            Timeout         20.00          
+07_orders       Success         0.32            Timeout         20.02          
+07_supplier     Success         0.32            Timeout         20.00          
+08_customer     Success         0.33            Timeout         20.00          
+08_nation       Success         0.33            Timeout         20.02          
+08_part         Success         0.33            Timeout         20.01          
+08_supplier     Success         0.33            Timeout         20.02          
+09_lineitem     Success         0.32            Timeout         20.01          
+09_nation       Success         0.33            Timeout         20.02          
+09_orders       Success         0.32            Timeout         20.01          
+09_part         Success         0.32            Timeout         20.02          
+09_partsupp     Success         0.32            Timeout         20.02          
+09_supplier     Success         0.33            Timeout         20.02          
+10_customer     Success         0.31            Timeout         20.02          
+10_lineitem     Success         0.31            Timeout         20.02          
+10_nation       Success         0.31            Timeout         20.01          
+10_orders       Success         0.32            Timeout         20.01          
+11_nation       Success         0.29            Success         6.47           
+11_partsupp     Success         0.29            Success         6.60           
+11_supplier     Success         0.29            Success         7.02           
+12_lineitem     Success         0.30            Timeout         20.02          
+12_orders       Success         0.30            Timeout         20.02          
+13_customer     Success         0.30            Timeout         20.02          
+13_orders       Success         0.30            Timeout         20.00          
+14_lineitem     Success         0.30            Timeout         20.02          
+14_part         Success         0.31            Timeout         20.02          
+15_lineitem     Success         0.30            Success         5.35           
+15_supplier     Success         0.30            Success         5.19           
+16_part         Success         0.29            Success         2.39           
+16_partsupp     Success         0.29            Success         2.38           
+17_lineitem     Success         0.30            Timeout         20.02          
+17_part         Success         0.30            Timeout         20.02          
+18_customer     Success         0.31            Timeout         20.02          
+18_lineitem     Success         0.31            Timeout         20.02          
+18_orders       Success         0.31            Timeout         20.02          
+19_lineitem     Success         0.30            Timeout         20.02          
+19_part         Success         0.30            Timeout         20.02          
+20_part         Success         0.32            Timeout         20.02          
