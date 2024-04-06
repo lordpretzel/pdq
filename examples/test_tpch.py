@@ -204,17 +204,31 @@ def delete_existing_folders(folders):
             shutil.rmtree(folder)
 
 def create_folders():
-    pdq_folders = [ pdq_folder_1, pdq_folder_3 ]
-    generator_folders = [output_folder_1,output_folder_3, sout_folder_1,sout_folder_3,qout_folder_1,qout_folder_3,table_folder_1,table_folder_3]
-    folders_to_check = pdq_folders + generator_folders
+    pdq_folders = { 1: [pdq_folder_1], 3: [pdq_folder_3] ]
+    generator_folders = {
+        1: [output_folder_1, sout_folder_1,qout_folder_1,table_folder_1]
+        3: [output_folder_3, sout_folder_3,qout_folder_3, table_folder_3]
+    }
+    folders_to_check = []
+    pdq_to_check = []
+    generator_to_check = []
+
+    if options.pk == 'pk' or options.pk == 'both':
+        folders_to_check += pdq_folders[1] + generator_folders[1]
+        pdq_to_check += pdq_folders[1]
+        generator_to_check += genetator_folders[1]
+    if options.pk == 'edg' or options.pk == 'both':
+        folders_to_check += pdq_folders[3] + generator_folders[3]
+        pdq_to_check += pdq_folders[3]
+        generator_to_check += genetator_folders[3]
     # only delete result folder if we want to regenerate both the generator and pdf
     if options.overwrite and not options.individual:
         if options.run_pdq:
             print("REGENERATE PDQ FOLDERS")
-            delete_existing_folders(pdq_folders)
+            delete_existing_folders(pdq_to_check)
         if options.run_generator:
             print("REGENERATE GENERATOR FOLDERS")
-            delete_existing_folders(generator_folders)
+            delete_existing_folders(generator_to_check)
 
     for folder in folders_to_check:
         if not os.path.exists(folder):
