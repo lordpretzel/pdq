@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="supplier">
+				<variable name="l_sk" />
+				<variable name="s2" />
+				<variable name="s3" />
+				<variable name="s_nationkey" />
+				<variable name="s4" />
+				<variable name="s5" />
+				<variable name="s6" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="l_ok" />
+				<variable name="l1" />
+				<variable name="l_sk" />
+				<variable name="l2" />
+				<variable name="l3" />
+				<variable name="l_extendedprice" />
+				<variable name="l_discount" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l8" />
+				<variable name="l_sd" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
+				<variable name="l13" />
+			</atom>
+			<atom name="orders">
+				<variable name="l_ok" />
+				<variable name="l_ck" />
+				<variable name="o1" />
+				<variable name="o2" />
+				<variable name="o3" />
+				<variable name="o4" />
+				<variable name="o5" />
+				<variable name="o6" />
+				<variable name="o7" />
+			</atom>
+			<atom name="customer">
+				<variable name="l_ck" />
+				<variable name="c1" />
+				<variable name="c2" />
+				<variable name="c_nationkey" />
+				<variable name="c3" />
+				<variable name="c4" />
+				<variable name="c5" />
+				<variable name="c6" />
+			</atom>
+			<atom name="nation">
+				<variable name="s_nationkey" />
+				<variable name="supp_nation" />
+				<variable name="n1" />
+				<variable name="n2" />
+			</atom>
+			<atom name="nation">
+				<variable name="c_nationkey" />
+				<variable name="cust_nation" />
+				<variable name="n3" />
+				<variable name="n4" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="supp_nation" />
+				<variable name="cust_nation" />
+				<variable name="l_year" />
+				<variable name="l_extendedprice" />
+				<variable name="l_discount" />
+			</atom>
+  </body>
+  	<head name="prov_orders">
+		<variable name="l_ok" />
+		<variable name="l_ck" />
+		<variable name="o1" />
+		<variable name="o2" />
+		<variable name="o3" />
+		<variable name="o4" />
+		<variable name="o5" />
+		<variable name="o6" />
+		<variable name="o7" />
+	</head>
+</query>

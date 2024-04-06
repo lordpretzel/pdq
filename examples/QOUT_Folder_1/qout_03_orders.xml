@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="customer">
+				<variable name="c_custkey" />
+				<variable name="C1" />
+				<variable name="C2" />
+				<variable name="C3" />
+				<variable name="C4" />
+				<variable name="C5" />
+				<variable name="'BUILDING'" />
+				<variable name="C6" />
+			</atom>
+			<atom name="orders">
+				<variable name="l_orderkey" />
+				<variable name="c_custkey" />
+				<variable name="O1" />
+				<variable name="O2" />
+				<variable name="o_orderdate" />
+				<variable name="O3" />
+				<variable name="O4" />
+				<variable name="o_shippriority" />
+				<variable name="O5" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="l_orderkey" />
+				<variable name="X1" />
+				<variable name="X2" />
+				<variable name="X3" />
+				<variable name="X4" />
+				<variable name="l_extendedprice" />
+				<variable name="l_discount" />
+				<variable name="X5" />
+				<variable name="X6" />
+				<variable name="X7" />
+				<variable name="l_shipdate" />
+				<variable name="X8" />
+				<variable name="X9" />
+				<variable name="X10" />
+				<variable name="X11" />
+				<variable name="X12" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="l_orderkey" />
+				<variable name="o_orderdate" />
+				<variable name="o_shippriority" />
+				<variable name="l_extendedprice" />
+				<variable name="l_discount" />
+			</atom>
+  </body>
+  	<head name="prov_orders">
+		<variable name="l_orderkey" />
+		<variable name="c_custkey" />
+		<variable name="O1" />
+		<variable name="O2" />
+		<variable name="o_orderdate" />
+		<variable name="O3" />
+		<variable name="O4" />
+		<variable name="o_shippriority" />
+		<variable name="O5" />
+	</head>
+</query>
