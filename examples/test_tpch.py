@@ -106,64 +106,67 @@ def run_all(table,num=None,overwrite=False):
 def run_single(qi,index,run_pdqs=True,table=None,num=None,overwrite=False):
     cmd1_status = "Success"
     cmd1_time_taken = 0
-    fn = q_dir + index + "/tpcq"+index+".dl"
+
+    print(f"will run Q{index} on tables {qi}")
 
     # iterate through tables
-    for element in qi:
-        # element = qi[0]
-        print("\n" + 80 * "*" + "\nRunning query",index,":",element)
+    for table_name in qi:
+        fn = q_dir + index + "/tpcq"+index+".dl"
+        # table_name = qi[0]
+        print("\n" + 80 * "*" + "\nRunning query",index,":",table_name)
 
         # setup outputs
         output_folder = output_folder_1 if num==1 else output_folder_3
-        output_file_path = os.path.join(output_folder, f"output_{index}_{element}.txt")
+        output_file_path = os.path.join(output_folder, f"output_{index}_{table_name}.txt")
         sout_folder=sout_folder_1 if num==1 else sout_folder_3
-        sout_file_path = os.path.join(sout_folder, f"sout_{index}_{element}.xml")        
+        sout_file_path = os.path.join(sout_folder, f"sout_{index}_{table_name}.xml")
         qout_folder=qout_folder_1 if num==1 else qout_folder_3
-        qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
+        qout_file_path = os.path.join(qout_folder, f"qout_{index}_{table_name}.xml")
 
-        if not overwrite and os.path.exists(output_file_path) and os.path.exists(sout_file_path) and os.path.exists(qout_file_path):
+        print(f"would write to {output_file_path} {sout_file_path} {qout_file_path}")
+        if (not overwrite) and os.path.exists(output_file_path) and os.path.exists(sout_file_path) and os.path.exists(qout_file_path):
             print(f"we are not overwriting and all output files already exist")
-            return
-        print(f"will write results to files: {output_file_path} {sout_file_path} {qout_file_path}")
-        
-        with open(fn) as f:
-            lines = [line for line in f.readlines() if line.strip()]
-            query = lines[0].rstrip()
-            qi = qi or queries[index]
-            
-            try:
-                cmd=cmd1 if num==1 else cmd3
-                gen_command = cmd + [query] + ["--prov"] + [element] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
-                
-                start_time_exec = time.time()
-                run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
-                output,error = run_cmd.communicate()
-                output = output.decode("utf-8")
-                
-                if error:
-                    print (f"Error from communicate: {error}")
-                    cmd1_status = f"Failure: {error}"
-                    output += "\n----[ERRORS]-----\n" + error
-                if error is None and 'Traceback (most recent call last):' in output or output.strip() =="" :
-                    raise Exception("--custom")
-            except Exception as e:
-                print(f"Error from exception: {e}")
-                cmd1_status = f"Error: {e}"
-            finally:
-                end_time_exec = time.time()
-                cmd1_time_taken = end_time_exec - start_time_exec
-                with open(output_file_path, 'w') as output_file:
-                    output_file.write(f"------------------{datetime.fromtimestamp(start_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
-                    output_file.write(output)
-                    output_file.write(f"\n------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
-                
-        if run_pdqs:
-            pdq_status, pdq_time_taken = run_pdq(element,index,num)
         else:
-            pdq_status, pdq_time_taken = "didn't run", 0
-            
-        table.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format(
-     	f"{index}_{element}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken)))
+            print(f"will write results to files: {output_file_path} {sout_file_path} {qout_file_path}")
+        
+            with open(fn) as f:
+                lines = [line for line in f.readlines() if line.strip()]
+                query = lines[0].rstrip()
+                qi = qi or queries[index]
+
+                try:
+                          cmd=cmd1 if num==1 else cmd3
+                          gen_command = cmd + [query] + ["--prov"] + [table_name] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
+
+                          start_time_exec = time.time()
+                          run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
+                          output,error = run_cmd.communicate()
+                          output = output.decode("utf-8")
+
+                          if error:
+                              print (f"Error from communicate: {error}")
+                              cmd1_status = f"Failure: {error}"
+                              output += "\n----[ERRORS]-----\n" + error
+                          if error is None and 'Traceback (most recent call last):' in output or output.strip() =="" :
+                              raise Exception("--custom")
+                except Exception as e:
+                          print(f"Error from exception: {e}")
+                          cmd1_status = f"Error: {e}"
+                finally:
+                          end_time_exec = time.time()
+                          cmd1_time_taken = end_time_exec - start_time_exec
+                          with open(output_file_path, 'w') as output_file:
+                              output_file.write(f"------------------{datetime.fromtimestamp(start_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
+                              output_file.write(output)
+                              output_file.write(f"\n------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
+
+            if run_pdqs:
+                pdq_status, pdq_time_taken = run_pdq(table_name,index,num)
+            else:
+                pdq_status, pdq_time_taken = "didn't run", 0
+
+            table.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format(
+                      f"{index}_{table}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken)))
 
 def recreate_folders():
     folders_to_check = [output_folder_1,output_folder_3, pdq_folder_1,pdq_folder_3,sout_folder_1,sout_folder_3,qout_folder_1,qout_folder_3,table_folder_1,table_folder_3]
