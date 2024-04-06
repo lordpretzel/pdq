@@ -100,11 +100,11 @@ def run_pdq(element,index,num=None):
 
     return pdq_status, pdq_time_taken
 
-def run_all(table,num=None,overwrite=False,run_pdq=False):
+def run_all(table,num=None):
     for index, qi in queries.items():
-        run_single(qi,index,table=table,num=3,overwrite=overwrite) if num==3 else run_single(qi,index,table=table,num=1,overwrite=overwrite)
+        run_single(qi,index,table=table,num=num)
 
-def run_single(qi,index,table=None,num=None):
+def run_single(qi,index,table=None,num=1):
     cmd1_status = "Success"
     cmd1_time_taken = 0
 
@@ -210,27 +210,27 @@ def main():
     # if we are overwriting then delete and recreate results folders
     create_folders()
 
-    writemode = 'w' if args.overwrite else 'a'
+    writemode = 'w' if options.overwrite else 'a'
 
-    print(f"Options: {args}")
+    print(f"Options: {options}")
 
     table1 = os.path.join(table_folder_1, "table.txt")
     print(table1)
     with open(table1, writemode) as table_file:
-        if not args.overwrite:
+        if not options.overwrite:
             write_to_table_and_log(table_file,"Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken")
-        if args.individual:
-            run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
+        if options.individual:
+            run_single(None,'{:02d}'.format(options.individual),table=table_file)
         else:
-            run_all(table_file,1,args.run)
+            run_all(table_file,1)
 
     table = os.path.join(table_folder_3, "table.txt")
     print(table)
     with open(table, writemode) as table_file:
-        if not args.overwrite:
+        if not options.overwrite:
             write_to_table_and_log(table_file,"Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken")
-        if args.individual:
-            run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
+        if options.individual:
+            run_single(None,'{:02d}'.format(options.individual),table=table_file)
         else:
             run_all(table_file,3)
 
