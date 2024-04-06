@@ -19,7 +19,8 @@ table_folder_3 = './Table_3'
 
 timeoutPDQ = 3600
 q_dir = os.path.join(os.path.dirname(__file__), "tpchqs/tpcq")
-
+# store commandline parameters
+options = None
 
 # Queries and the provenance tables we want to use
 queries = {
@@ -63,13 +64,13 @@ def run_pdq(element,index,num=None):
     try:
         sout_folder=sout_folder_1 if num==1 else sout_folder_3
         sout_file_path = os.path.join(sout_folder, f"sout_{index}_{element}.xml")
-        
+
         qout_folder=qout_folder_1 if num==1 else qout_folder_3
         qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
         gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={timeoutPDQ*1000}"] +[f"-DdagThreadTimeout={timeoutPDQ*1000}"]
         start_time_pdq = time.time()
         run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
-        output, error = run_cmd.communicate(timeout=timeoutPDQ)  
+        output, error = run_cmd.communicate(timeout=timeoutPDQ)
         output = output.decode("utf-8")
         if error:
           print("PDQ Error:")
@@ -79,7 +80,7 @@ def run_pdq(element,index,num=None):
     except subprocess.TimeoutExpired:
         print("PDQ Timeout:")
         pdq_status = "Timeout"
-        run_cmd.kill() 
+        run_cmd.kill()
         output = f"Process timed out after {timeoutPDQ} seconds."
     except Exception as e:
         pdq_status = f"ERROR: {e}"
@@ -102,8 +103,8 @@ def run_pdq(element,index,num=None):
 def run_all(table,num=None,overwrite=False):
     for index, qi in queries.items():
         run_single(qi,index,table=table,num=3,overwrite=overwrite) if num==3 else run_single(qi,index,table=table,num=1,overwrite=overwrite)
-        
-def run_single(qi,index,run_pdqs=True,table=None,num=None,overwrite=False):
+
+def run_single(qi,index,table=None,num=None):
     cmd1_status = "Success"
     cmd1_time_taken = 0
 
@@ -124,43 +125,44 @@ def run_single(qi,index,run_pdqs=True,table=None,num=None,overwrite=False):
         qout_file_path = os.path.join(qout_folder, f"qout_{index}_{table_name}.xml")
 
         print(f"would write to {output_file_path} {sout_file_path} {qout_file_path}")
-        if (not overwrite) and os.path.exists(output_file_path) and os.path.exists(sout_file_path) and os.path.exists(qout_file_path):
+        if (not options.overwrite) and os.path.exists(output_file_path) and os.path.exists(sout_file_path) and os.path.exists(qout_file_path):
             print(f"we are not overwriting and all output files already exist")
         else:
-            print(f"will write results to files: {output_file_path} {sout_file_path} {qout_file_path}")
-        
-            with open(fn) as f:
-                lines = [line for line in f.readlines() if line.strip()]
-                query = lines[0].rstrip()
-                qi = qi or queries[index]
+            if options.run_generator:
+                print(f"will write results to files: {output_file_path} {sout_file_path} {qout_file_path}")
 
-                try:
-                          cmd=cmd1 if num==1 else cmd3
-                          gen_command = cmd + [query] + ["--prov"] + [table_name] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
+                with open(fn) as f:
+                    lines = [line for line in f.readlines() if line.strip()]
+                    query = lines[0].rstrip()
+                    qi = qi or queries[index]
 
-                          start_time_exec = time.time()
-                          run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
-                          output,error = run_cmd.communicate()
-                          output = output.decode("utf-8")
+                    try:
+                              cmd=cmd1 if num==1 else cmd3
+                              gen_command = cmd + [query] + ["--prov"] + [table_name] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
 
-                          if error:
-                              print (f"Error from communicate: {error}")
-                              cmd1_status = f"Failure: {error}"
-                              output += "\n----[ERRORS]-----\n" + error
-                          if error is None and 'Traceback (most recent call last):' in output or output.strip() =="" :
-                              raise Exception("--custom")
-                except Exception as e:
-                          print(f"Error from exception: {e}")
-                          cmd1_status = f"Error: {e}"
-                finally:
-                          end_time_exec = time.time()
-                          cmd1_time_taken = end_time_exec - start_time_exec
-                          with open(output_file_path, 'w') as output_file:
-                              output_file.write(f"------------------{datetime.fromtimestamp(start_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
-                              output_file.write(output)
-                              output_file.write(f"\n------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
+                              start_time_exec = time.time()
+                              run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
+                              output,error = run_cmd.communicate()
+                              output = output.decode("utf-8")
 
-            if run_pdqs:
+                              if error:
+                                  print (f"Error from communicate: {error}")
+                                  cmd1_status = f"Failure: {error}"
+                                  output += "\n----[ERRORS]-----\n" + error
+                              if error is None and 'Traceback (most recent call last):' in output or output.strip() =="" :
+                                  raise Exception("--custom")
+                    except Exception as e:
+                              print(f"Error from exception: {e}")
+                              cmd1_status = f"Error: {e}"
+                    finally:
+                              end_time_exec = time.time()
+                              cmd1_time_taken = end_time_exec - start_time_exec
+                              with open(output_file_path, 'w') as output_file:
+                                  output_file.write(f"------------------{datetime.fromtimestamp(start_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
+                                  output_file.write(output)
+                                  output_file.write(f"\n------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
+
+            if options.run_pdqs:
                 pdq_status, pdq_time_taken = run_pdq(table_name,index,num)
             else:
                 pdq_status, pdq_time_taken = "didn't run", 0
@@ -168,34 +170,47 @@ def run_single(qi,index,run_pdqs=True,table=None,num=None,overwrite=False):
             table.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format(
                       f"{index}_{table}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken)))
 
-def recreate_folders():
-    folders_to_check = [output_folder_1,output_folder_3, pdq_folder_1,pdq_folder_3,sout_folder_1,sout_folder_3,qout_folder_1,qout_folder_3,table_folder_1,table_folder_3]
-    for folder in folders_to_check:
+def delete_existing_folders(folders):
+    for folder in folders:
         if os.path.exists(folder):
             shutil.rmtree(folder)
-    
+
+def create_folders():
+    pdq_folders = [ pdq_folder_1, pdq_folder_3 ]
+    generator_folders = [output_folder_1,output_folder_3, sout_folder_1,sout_folder_3,qout_folder_1,qout_folder_3,table_folder_1,table_folder_3]
+    folders_to_check = pdq_folders + generator_folders
+    # only delete result folder if we want to regenerate both the generator and pdf
+    if options.overwrite:
+        if options.run_pdq:
+            print("REGENERATE PDQ FOLDERS")
+            delete_existing_folders(pdq_folders)
+        if options.run_generator:
+            print("REGENERATE GENERATOR FOLDERS")
+            delete_existing_folders(generator_folders)
+
     for folder in folders_to_check:
         os.makedirs(folder)
-        
+
 def main():
     # parse arguments
+    global options
     parser=argparse.ArgumentParser(description="Run tcp_h tests on pdq.")
     parser.add_argument('-i', '--individual', type=int, required=False, metavar="[1-20]", choices=range(1, 21))
-    parser.add_argument('-r', '--run', action='store_true')
+    parser.add_argument('-g', '--run_generator', action='store_true')
+    parser.add_argument('-r', '--run_pdq', action='store_true')
     parser.add_argument('-p', '--pk', action='store_true')
     parser.add_argument('-o', '--overwrite', action='store_true', required=False)
-    args=parser.parse_args()
+    options=parser.parse_args()
 
     # if we are overwriting then delete and recreate results folders
-    if args.overwrite:
-        recreate_folders()    
-    
+    create_folders()
+
     table1 = os.path.join(table_folder_1, "table.txt")
     print(table1)
     with open(table1, 'w') as table_file:
         table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
-        if args.individual:
-            run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
+        if options.individual:
+            run_single(None,'{:02d}'.format(options.individual),table=table_file)
         else:
             run_all(table_file,1)
 
@@ -203,10 +218,10 @@ def main():
     print(table)
     with open(table, 'w') as table_file:
         table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken"))
-        if args.individual:
-            run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
+        if options.individual:
+            run_single(None,'{:02d}'.format(options.individual),table=table_file)
         else:
             run_all(table_file,3)
-    
+
 if __name__ == '__main__':
     main()
