@@ -99,11 +99,11 @@ def run_pdq(element,index,num=None):
 
     return pdq_status, pdq_time_taken
 
-def run_all(table,num=None,overwrite=False):
+def run_all(table,num=None,overwrite=False,run_pdq=False):
     for index, qi in queries.items():
-        run_single(qi,index,table=table,num=3,overwrite=overwrite) if num==3 else run_single(qi,index,table=table,num=1,overwrite=overwrite)
+        run_single(qi,index,run_pdqs=run_pdq,table=table,num=3,overwrite=overwrite) if num==3 else run_single(qi,index,table=table,num=1,overwrite=overwrite)
         
-def run_single(qi,index,run_pdqs=True,table=None,num=None,overwrite=False):
+def run_single(qi,index,run_pdqs=False,table=None,num=None,overwrite=False):
     cmd1_status = "Success"
     cmd1_time_taken = 0
 
@@ -165,8 +165,13 @@ def run_single(qi,index,run_pdqs=True,table=None,num=None,overwrite=False):
             else:
                 pdq_status, pdq_time_taken = "didn't run", 0
 
-            table.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format(
-                      f"{index}_{table}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken)))
+            write_to_table_and_log(table,
+                      f"{index}_{table}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken))
+
+def write_to_table_and_log(table, *elements):
+    print(f"writing result row: {elements}")
+    table.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format(*elements))
+    table.flush()
 
 def recreate_folders():
     folders_to_check = [output_folder_1,output_folder_3, pdq_folder_1,pdq_folder_3,sout_folder_1,sout_folder_3,qout_folder_1,qout_folder_3,table_folder_1,table_folder_3]
@@ -181,32 +186,38 @@ def main():
     # parse arguments
     parser=argparse.ArgumentParser(description="Run tcp_h tests on pdq.")
     parser.add_argument('-i', '--individual', type=int, required=False, metavar="[1-20]", choices=range(1, 21))
-    parser.add_argument('-r', '--run', action='store_true')
-    parser.add_argument('-p', '--pk', action='store_true')
+    parser.add_argument('-r', '--run', action='store_true', default=False)
+    parser.add_argument('-p', '--pk', action='store_true', default=False)
     parser.add_argument('-o', '--overwrite', action='store_true', required=False)
     args=parser.parse_args()
 
     # if we are overwriting then delete and recreate results folders
     if args.overwrite:
         recreate_folders()    
-    
+
+    writemode = 'w' if args.overwrite else 'a'
+
+    print(f"Options: {args}")
+
     table1 = os.path.join(table_folder_1, "table.txt")
     print(table1)
-    with open(table1, 'w') as table_file:
-        table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
+    with open(table1, writemode) as table_file:
+        if not args.overwrite:
+            write_to_table_and_log(table_file,"Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken")
         if args.individual:
             run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
         else:
-            run_all(table_file,1)
+            run_all(table_file,1,args.run)
 
     table = os.path.join(table_folder_3, "table.txt")
     print(table)
-    with open(table, 'w') as table_file:
-        table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken"))
+    with open(table, writemode) as table_file:
+        if not args.overwrite:
+            write_to_table_and_log(table_file,"Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken")
         if args.individual:
             run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
         else:
-            run_all(table_file,3)
+            run_all(table_file,3,args.run)
     
 if __name__ == '__main__':
     main()
