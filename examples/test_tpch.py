@@ -39,7 +39,7 @@ queries = {
     "13": ["customer", "orders"],
     "14": ["lineitem", "part"],
     "15": ["lineitem", "supplier"],
-    "16": ["part", "partsupp", "supplier"],
+    "16": ["part", "partsupp"], # currently not supported "supplier"],
     "17": ["lineitem", "part"],
     "18": ["customer", "lineitem", "orders"],
     "19": ["lineitem", "part"],
@@ -61,6 +61,7 @@ def run_pdq(element,index,num=None):
     print(f"Running PDQ for {index}:{element}")
     pdq_time_taken=0
     pdq_status = "Success"
+    start_time_pdq = time.time()
     try:
         sout_folder=sout_folder_1 if num==1 else sout_folder_3
         sout_file_path = os.path.join(sout_folder, f"sout_{index}_{element}.xml")
@@ -68,6 +69,7 @@ def run_pdq(element,index,num=None):
         qout_folder=qout_folder_1 if num==1 else qout_folder_3
         qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
         gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={timeoutPDQ*1000}"] +[f"-DdagThreadTimeout={timeoutPDQ*1000}"]
+
         start_time_pdq = time.time()
         run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
         output, error = run_cmd.communicate(timeout=timeoutPDQ)
@@ -101,17 +103,19 @@ def run_pdq(element,index,num=None):
     return pdq_status, pdq_time_taken
 
 def run_all(table,num=None):
-    for index, qi in queries.items():
-        run_single(qi,index,table=table,num=num)
+    for index, table_names in queries.items():
+        run_single(table_names,index,table=table,num=num)
 
-def run_single(qi,index,table=None,num=1):
+def run_single(table_names,index,table=None,num=1):
     cmd1_status = "Success"
     cmd1_time_taken = 0
 
-    print(f"will run Q{index} on tables {qi}")
+    print(f"will run Q{index} on tables {table_names}")
+
+    table_names = table_names if table_names else queries[index]
 
     # iterate through tables
-    for table_name in qi:
+    for table_name in table_names:
         fn = q_dir + index + "/tpcq"+index+".dl"
         # table_name = qi[0]
         print("\n" + 80 * "*" + "\nRunning query",index,":",table_name)
@@ -134,25 +138,28 @@ def run_single(qi,index,table=None,num=1):
                 with open(fn) as f:
                     lines = [line for line in f.readlines() if line.strip()]
                     query = lines[0].rstrip()
-                    qi = qi or queries[index]
+                    #qi = qi or queries[index]
 
+                    start_time_exec = time.time()
                     try:
                               cmd=cmd1 if num==1 else cmd3
                               gen_command = cmd + [query] + ["--prov"] + [table_name] + ["-o"]+ [sout_file_path] + ["--query_file"] + [qout_file_path]
 
-                              start_time_exec = time.time()
-                              run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
+                              run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                               output,error = run_cmd.communicate()
+                              exit_code = run_cmd.returncode
                               output = output.decode("utf-8")
-
                               if error:
-                                  print (f"Error from communicate: {error}")
+                                  error = error.decode("utf-8")
+                              if exit_code:
+                                  print (f"Error from communicate {exit_code}:\n {error}")
                                   cmd1_status = f"Failure: {error}"
                                   output += "\n----[ERRORS]-----\n" + error
-                              if error is None and 'Traceback (most recent call last):' in output or output.strip() =="" :
-                                  raise Exception("--custom")
+                              # if error is None and 'Traceback (most recent call last):' in output or output.strip() =="" :
+                              #     raise Exception("--custom")
                     except Exception as e:
                               print(f"Error from exception: {e}")
+                              output += f"\n---[EXCEPTIONS]------\n{e}"
                               cmd1_status = f"Error: {e}"
                     finally:
                               end_time_exec = time.time()
