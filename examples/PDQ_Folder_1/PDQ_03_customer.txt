@@ -1,7 +1,7 @@
-------------------2024-03-08 17:34:09------------------
+------------------2024-04-06 15:08:15------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 17:34:11,505 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(customer(){customer(fv_c_custkey177104018,fv_C1177104018,fv_C2177104018,fv_C3177104018,fv_C4177104018,fv_C5177104018,fv_'BUILDING'177104018,fv_C6177104018)}),APPLYRULE(orders(){orders(v_l_orderkey177104018,fv_c_custkey177104018,v_O1177104018,v_O2177104018,v_o_orderdate177104018,v_O3177104018,v_O4177104018,v_o_shippriority177104018,v_O5177104018)})),APPLYRULE(RPrime(){RPrime(v_l_orderkey177104018,v_o_orderdate177104018,v_o_shippriority177104018,v_l_extendedprice177104018,v_l_discount177104018)}))	3.0
+2024-04-06 15:08:19,981 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(customer(){customer(fv_c_custkey380616082,fv_C1380616082,fv_C2380616082,fv_C3380616082,fv_C4380616082,fv_C5380616082,fv_'BUILDING'380616082,fv_C6380616082)}),APPLYRULE(orders(){orders(v_l_orderkey380616082,fv_c_custkey380616082,v_O1380616082,v_O2380616082,v_o_orderdate380616082,v_O3380616082,v_O4380616082,v_o_shippriority380616082,v_O5380616082)})),APPLYRULE(RPrime(){RPrime(v_l_orderkey380616082,v_o_orderdate380616082,v_o_shippriority380616082,v_l_extendedprice380616082,v_l_discount380616082)}))	3.0
 Plan found with cost: 3.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
+Plan written to /home/bglavic/pdq/examples/out.xml
 
-------------------2024-03-08 17:34:11------------------
+------------------2024-04-06 15:08:20------------------

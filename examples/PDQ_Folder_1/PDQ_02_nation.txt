@@ -1,7 +1,3 @@
-------------------2024-03-08 17:33:59------------------
-WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 17:34:01,927 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(partsupp(){partsupp(v_p_key894421232,v_s_key894421232,v_x8894421232,v_s_cost894421232,v_x9894421232)}),APPLYRULE(supplier(){supplier(v_s_key894421232,v_s_name894421232,v_s_addr894421232,fv_n_key894421232,v_s_phone894421232,v_s_account_bal894421232,v_s_comment894421232)})),BINARY(APPLYRULE(RPrime(){RPrime(v_s_account_bal894421232,v_s_name894421232,fv_n_name894421232,v_p_key894421232,v_s_cost894421232,v_p_manu894421232,v_s_addr894421232,v_s_phone894421232,v_s_comment894421232)}),APPLYRULE(nation(){nation(fv_n_key894421232,fv_n_name894421232,fv_r_key894421232,fv_x1894421232)})))	4.0
-Plan found with cost: 4.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
-
-------------------2024-03-08 17:34:09------------------
+------------------2024-04-06 15:07:08------------------
+Process timed out after 20 seconds.
+------------------2024-04-06 15:07:28------------------

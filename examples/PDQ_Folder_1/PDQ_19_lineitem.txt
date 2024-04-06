@@ -1,7 +1,7 @@
-------------------2024-03-08 21:34:35------------------
+------------------2024-04-06 15:17:44------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 21:34:36,972 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey1624351535,v_p11624351535,v_p21624351535,v_p_brand1624351535,v_p31624351535,v_p_size1624351535,v_p_container1624351535,v_p41624351535,v_p51624351535)}),APPLYRULE(lineitem(){lineitem(fv_l_orderkey1624351535,fv_p_partkey1624351535,fv_l21624351535,fv_l_linenumber1624351535,fv_l_quantity1624351535,fv_l_extp1624351535,fv_l_discount1624351535,fv_l41624351535,fv_l51624351535,fv_l61624351535,fv_l71624351535,fv_l81624351535,fv_l91624351535,fv_'DELIVER IN PERSON'1624351535,fv_l_shipmode1624351535,fv_l101624351535)})),APPLYRULE(RPrime(){RPrime(fv_l_orderkey1624351535,fv_l_linenumber1624351535,fv_l_discount1624351535,fv_l_extp1624351535)}))	3.0
+2024-04-06 15:17:47,257 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(part(){part(fv_p_partkey709439274,v_p1709439274,v_p2709439274,v_p_brand709439274,v_p3709439274,v_p_size709439274,v_p_container709439274,v_p4709439274,v_p5709439274)}),APPLYRULE(RPrime(){RPrime(fv_l_orderkey709439274,fv_l_linenumber709439274,fv_l_discount709439274,fv_l_extp709439274)})),APPLYRULE(lineitem(){lineitem(fv_l_orderkey709439274,fv_p_partkey709439274,fv_l2709439274,fv_l_linenumber709439274,fv_l_quantity709439274,fv_l_extp709439274,fv_l_discount709439274,fv_l4709439274,fv_l5709439274,fv_l6709439274,fv_l7709439274,fv_l8709439274,fv_l9709439274,fv_'DELIVER IN PERSON'709439274,fv_l_shipmode709439274,fv_l10709439274)}))	3.0
 Plan found with cost: 3.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
+Plan written to /home/bglavic/pdq/examples/out.xml
 
-------------------2024-03-08 21:34:37------------------
+------------------2024-04-06 15:17:47------------------

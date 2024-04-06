@@ -1012,6 +1012,11 @@
 				<variable name="s_account_bal" />
 				<variable name="s_comment" />
 			</atom>
+			<atom name="region">
+				<variable name="r_key" />
+				<variable name="r_name" />
+				<variable name="x2" />
+			</atom>
 			<atom name="part">
 				<variable name="p_key" />
 				<variable name="x3" />
