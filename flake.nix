@@ -24,7 +24,8 @@
 
           pythonEnv = pkgs.python311.withPackages (p: with p; [       
             pip
-            sqlparse       
+            sqlparse
+            lark
           ]);
           
           # Utility to run a script easily in the flakes app
@@ -34,6 +35,7 @@
               runtimeInputs = with pkgs; [
                 jdk11
                 maven
+                pythonEnv
               ] ++ add_deps;
             };
           in {
