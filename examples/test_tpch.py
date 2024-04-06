@@ -129,7 +129,7 @@ def run_single(qi,index,table=None,num=1):
             print(f"we are not overwriting and all output files already exist")
         else:
             if options.run_generator:
-                print(f"will write results to files: {output_file_path} {sout_file_path} {qout_file_path}")
+                print(f"will write generator results to files: {output_file_path} {sout_file_path} {qout_file_path}")
 
                 with open(fn) as f:
                     lines = [line for line in f.readlines() if line.strip()]
@@ -161,14 +161,16 @@ def run_single(qi,index,table=None,num=1):
                                   output_file.write(f"------------------{datetime.fromtimestamp(start_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
                                   output_file.write(output)
                                   output_file.write(f"\n------------------{datetime.fromtimestamp(end_time_exec).strftime('%Y-%m-%d %H:%M:%S')}------------------\n")
-
-            if options.run_pdqs:
+            else:
+                print("skip running generator")
+            if options.run_pdq:
                 pdq_status, pdq_time_taken = run_pdq(table_name,index,num)
             else:
                 pdq_status, pdq_time_taken = "didn't run", 0
+                print("skip running PDQ")
 
             write_to_table_and_log(table,
-                      f"{index}_{table}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken))
+                      f"{index}_{table_name}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken))
 
 def write_to_table_and_log(table, *elements):
     print(f"writing result row: {elements}")
@@ -194,7 +196,8 @@ def create_folders():
             delete_existing_folders(generator_folders)
 
     for folder in folders_to_check:
-        os.makedirs(folder)
+        if not os.path.exists(folder):
+            os.makedirs(folder)
 
 def main():
     # parse arguments
