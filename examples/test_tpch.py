@@ -5,6 +5,7 @@ import argparse
 import shutil
 import time
 from datetime import datetime
+import traceback
 
 output_folder_1 = './Generator_Folder_1'
 output_folder_3 = './Generator_Folder_3'
@@ -17,7 +18,6 @@ qout_folder_3 = './QOUT_Folder_3'
 table_folder_1 = './Table_1'
 table_folder_3 = './Table_3'
 
-timeoutPDQ = 3600
 q_dir = os.path.join(os.path.dirname(__file__), "tpchqs/tpcq")
 # store commandline parameters
 options = None
@@ -68,26 +68,37 @@ def run_pdq(element,index,num=None):
 
         qout_folder=qout_folder_1 if num==1 else qout_folder_3
         qout_file_path = os.path.join(qout_folder, f"qout_{index}_{element}.xml")
-        gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={timeoutPDQ*1000}"] +[f"-DdagThreadTimeout={timeoutPDQ*1000}"]
+        gen_command = cmd2 +["-s"] + [sout_file_path]+ ["-q"] + [qout_file_path] + [f"-Dtimeout={options.timeout*1000}"] +[f"-DdagThreadTimeout={options.timeout*1000}"]
 
+        output=""
+        error=None
         start_time_pdq = time.time()
-        run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE)
-        output, error = run_cmd.communicate(timeout=timeoutPDQ)
+        run_cmd = subprocess.Popen(gen_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, error = run_cmd.communicate(timeout=options.timeout)
         output = output.decode("utf-8")
+        exit_code = run_cmd.returncode
         if error:
-          print("PDQ Error:")
+            error = error.decode("utf-8")
+        if exit_code:
+          print(f"PDQ Error [{exit_code}]:")
           pdq_status = f"Failure: {error}"
-        if error is None and 'ERROR' in output:
-            raise Exception("--custom")
+        if not exit_code and 'ERROR' in output:
+            raise Exception("--custom: {error}")
     except subprocess.TimeoutExpired:
         print("PDQ Timeout:")
         pdq_status = "Timeout"
         run_cmd.kill()
-        output = f"Process timed out after {timeoutPDQ} seconds."
+        output = f"Process timed out after {options.timeout} seconds."
     except Exception as e:
         pdq_status = f"ERROR: {e}"
         print("PDQ Exception:")
+        exc_type, exc_value, exc_traceback = sys.exc_info()
+        lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
+        for line in lines:
+            print(str(line) + "\n", file=sys.stderr)
     finally:
+        if not output:
+            output=""
         end_time_pdq = time.time()
         pdq_time_taken = end_time_pdq - start_time_pdq
         print('PDQ finally')
@@ -113,6 +124,9 @@ def run_single(table_names,index,table=None,num=1):
     print(f"will run Q{index} on tables {table_names}")
 
     table_names = table_names if table_names else queries[index]
+
+    if options.table:
+        table_names = [options.table]
 
     # iterate through tables
     for table_name in table_names:
@@ -194,7 +208,7 @@ def create_folders():
     generator_folders = [output_folder_1,output_folder_3, sout_folder_1,sout_folder_3,qout_folder_1,qout_folder_3,table_folder_1,table_folder_3]
     folders_to_check = pdq_folders + generator_folders
     # only delete result folder if we want to regenerate both the generator and pdf
-    if options.overwrite:
+    if options.overwrite and not options.individual:
         if options.run_pdq:
             print("REGENERATE PDQ FOLDERS")
             delete_existing_folders(pdq_folders)
@@ -206,6 +220,21 @@ def create_folders():
         if not os.path.exists(folder):
             os.makedirs(folder)
 
+def run_experiment(num):
+    print(f"RUN EXPERIMENT {'PK' if num == 1 else 'EDG'}")
+    writemode = 'w' if options.overwrite else 'a'
+    table_folder = table_folder_1 if num == 1 else table_folder_3
+    table = os.path.join(table_folder, "table.txt")
+    print(table)
+    with open(table, writemode) as table_file:
+        if not options.overwrite:
+            write_to_table_and_log(table_file,"Query", f"cmd{3}_status", f"cmd{3}_timetaken", "cmd2_status", "cmd2_timetaken")
+        if options.individual:
+            run_single(None,'{:02d}'.format(options.individual),table=table_file,num=num)
+        else:
+            run_all(table_file,num)
+
+
 def main():
     # parse arguments
     global options
@@ -213,36 +242,21 @@ def main():
     parser.add_argument('-i', '--individual', type=int, required=False, metavar="[1-20]", choices=range(1, 21))
     parser.add_argument('-g', '--run_generator', action='store_true')
     parser.add_argument('-r', '--run_pdq', action='store_true')
-    parser.add_argument('-p', '--pk', action='store_true')
+    parser.add_argument('-p', '--pk', choices=["pk","edg","both"], default="both")
     parser.add_argument('-o', '--overwrite', action='store_true', required=False)
+    parser.add_argument('-t', '--timeout', default=3600,type=int)
+    parser.add_argument('-T', '--table')
     options=parser.parse_args()
 
     # if we are overwriting then delete and recreate results folders
     create_folders()
 
-    writemode = 'w' if options.overwrite else 'a'
-
     print(f"Options: {options}")
 
-    table1 = os.path.join(table_folder_1, "table.txt")
-    print(table1)
-    with open(table1, writemode) as table_file:
-        if not options.overwrite:
-            write_to_table_and_log(table_file,"Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken")
-        if options.individual:
-            run_single(None,'{:02d}'.format(options.individual),table=table_file)
-        else:
-            run_all(table_file,1)
-
-    table = os.path.join(table_folder_3, "table.txt")
-    print(table)
-    with open(table, writemode) as table_file:
-        if not options.overwrite:
-            write_to_table_and_log(table_file,"Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken")
-        if options.individual:
-            run_single(None,'{:02d}'.format(options.individual),table=table_file)
-        else:
-            run_all(table_file,3)
+    if options.pk == "both" or options.pk == "pk":
+        run_experiment(1)
+    if options.pk == "both" or options.pk == "edg":
+        run_experiment(3)
 
 if __name__ == '__main__':
     main()
