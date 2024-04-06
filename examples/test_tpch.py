@@ -100,7 +100,7 @@ def run_pdq(element,index,num=None):
 
     return pdq_status, pdq_time_taken
 
-def run_all(table,num=None,overwrite=False):
+def run_all(table,num=None,overwrite=False,run_pdq=False):
     for index, qi in queries.items():
         run_single(qi,index,table=table,num=3,overwrite=overwrite) if num==3 else run_single(qi,index,table=table,num=1,overwrite=overwrite)
 
@@ -167,8 +167,13 @@ def run_single(qi,index,table=None,num=None):
             else:
                 pdq_status, pdq_time_taken = "didn't run", 0
 
-            table.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format(
-                      f"{index}_{table}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken)))
+            write_to_table_and_log(table,
+                      f"{index}_{table}", cmd1_status, "{:.2f}".format(cmd1_time_taken), pdq_status, "{:.2f}".format(pdq_time_taken))
+
+def write_to_table_and_log(table, *elements):
+    print(f"writing result row: {elements}")
+    table.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format(*elements))
+    table.flush()
 
 def delete_existing_folders(folders):
     for folder in folders:
@@ -205,21 +210,27 @@ def main():
     # if we are overwriting then delete and recreate results folders
     create_folders()
 
+    writemode = 'w' if args.overwrite else 'a'
+
+    print(f"Options: {args}")
+
     table1 = os.path.join(table_folder_1, "table.txt")
     print(table1)
-    with open(table1, 'w') as table_file:
-        table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken"))
-        if options.individual:
-            run_single(None,'{:02d}'.format(options.individual),table=table_file)
+    with open(table1, writemode) as table_file:
+        if not args.overwrite:
+            write_to_table_and_log(table_file,"Query", "cmd1_status", "cmd1_timetaken", "cmd2_status", "cmd2_timetaken")
+        if args.individual:
+            run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
         else:
-            run_all(table_file,1)
+            run_all(table_file,1,args.run)
 
     table = os.path.join(table_folder_3, "table.txt")
     print(table)
-    with open(table, 'w') as table_file:
-        table_file.write("{:<15} {:<15} {:<15} {:<15} {:<15}\n".format("Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken"))
-        if options.individual:
-            run_single(None,'{:02d}'.format(options.individual),table=table_file)
+    with open(table, writemode) as table_file:
+        if not args.overwrite:
+            write_to_table_and_log(table_file,"Query", "cmd3_status", "cmd3_timetaken", "cmd2_status", "cmd2_timetaken")
+        if args.individual:
+            run_single(None,'{:02d}'.format(args.individual),run_pdqs =args.run,table=table_file)
         else:
             run_all(table_file,3)
 
