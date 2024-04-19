@@ -1,0 +1,21 @@
+Query           cmd3_status     cmd3_timetaken  cmd2_status     cmd2_timetaken	numJoins	joins 
+01_lineitem     Success         0.25            Success         2.31            2		lineitem, RPrime
+02_nation       Success         0.26            ERROR: --custom 123.78          -
+03_customer     Success         0.26            ERROR: --custom 123.11          -
+04_lineitem     Success         0.25            ERROR: --custom 124.06          -
+05_customer     Success         0.28            Timeout         3600.10         -
+06_lineitem     Success         0.24            Success         2.48            2		lineitem, RPrime
+07_customer     Success         0.28            Timeout         3600.10         -
+08_customer     Success         0.29            Timeout         3600.07         -
+09_lineitem     Success         0.28            Timeout         3600.10         -
+10_customer     Success         0.27            Timeout         3600.09         -
+11_nation       Success         0.25            Success         6.74            4		nation, supplier, partsupp, RPrime
+12_lineitem     Success         0.25            ERROR: --custom 122.39          -
+13_customer     Success         0.25            ERROR: --custom 122.04          -
+14_lineitem     Success         0.25            ERROR: --custom 122.36          -
+15_lineitem     Success         0.25            Success         4.78            2		lineitem, RPrime
+16_part         Success         0.24            Success         2.52            3		partsupp, part, RPrime
+17_lineitem     Success         0.25            ERROR: --custom 122.28          -
+18_customer     Success         0.26            ERROR: --custom 123.05          - 
+19_lineitem     Success         0.25            ERROR: --custom 124.19          -
+20_part         Success         0.27            Timeout         3600.10         -
