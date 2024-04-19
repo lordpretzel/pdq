@@ -1,14 +1,3 @@
-------------------2024-03-08 22:36:44------------------
-WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 22:38:47,193 ERROR [main] (Planner.java:182) - Planning aborted: Worker thread read error (probably timeout) at createBinaryConfigurations. 
-uk.ac.ox.cs.pdq.planner.PlannerException: Worker thread read error (probably timeout) at createBinaryConfigurations. 
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread$CreateBinaryConfigurationsTask.getReturnValue(DAGOptimizedMultiThread.java:292) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-	at uk.ac.ox.cs.pdq.planner.dag.explorer.DAGOptimizedMultiThread.performSingleExplorationStep(DAGOptimizedMultiThread.java:147) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Explorer.explore(Explorer.java:81) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-	at uk.ac.ox.cs.pdq.planner.ExplorationSetUp.search(ExplorationSetUp.java:188) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.run(Planner.java:169) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.<init>(Planner.java:135) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-	at uk.ac.ox.cs.pdq.planner.Planner.main(Planner.java:201) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-	at uk.ac.ox.cs.pdq.main.PdqMain.main(PdqMain.java:35) ~[pdq-main-2.0.0-jar-with-dependencies.jar:?]
-
-------------------2024-03-08 22:38:47------------------
+------------------2024-04-06 14:29:04------------------
+Process timed out after 20 seconds.
+------------------2024-04-06 14:29:24------------------

@@ -19,6 +19,8 @@ import argparse as ap
 import re
 from enum import Enum
 from lark import Lark, Transformer
+import sys
+import traceback
 
 provtable = "RPrime"
 
@@ -755,5 +757,14 @@ def test1():
         print(s)
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"exception {e}", file=sys.stderr)
+        exc_type, exc_value, exc_traceback = sys.exc_info()
+        lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
+        for line in lines:
+            print(str(line) + "\n", file=sys.stderr)
+
+        exit(1)
     #test()

@@ -1,7 +1,7 @@
-------------------2024-03-09 03:40:56------------------
+------------------2024-04-06 14:38:56------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-09 03:41:01,870 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(v_ps_pk224060798,v_ps_sc224060798,v_ps_aq224060798)}),APPLYRULE(nation(){nation(fv_s_nk224060798,fv_'GERMANY'224060798,fv_n1224060798,fv_n2224060798)})),BINARY(APPLYRULE(supplier(){supplier(v_ps_sk224060798,v_s1224060798,v_s2224060798,fv_s_nk224060798,v_s3224060798,v_s4224060798,v_s5224060798)}),APPLYRULE(partsupp(){partsupp(v_ps_pk224060798,v_ps_sk224060798,v_ps_aq224060798,v_ps_sc224060798,v_ps2224060798)})))	4.0
+2024-04-06 14:39:01,918 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(partsupp(){partsupp(v_ps_pk1554877309,v_ps_sk1554877309,v_ps_aq1554877309,v_ps_sc1554877309,v_ps21554877309)}),APPLYRULE(nation(){nation(fv_s_nk1554877309,fv_'GERMANY'1554877309,fv_n11554877309,fv_n21554877309)})),BINARY(APPLYRULE(RPrime(){RPrime(v_ps_pk1554877309,v_ps_sc1554877309,v_ps_aq1554877309)}),APPLYRULE(supplier(){supplier(v_ps_sk1554877309,v_s11554877309,v_s21554877309,fv_s_nk1554877309,v_s31554877309,v_s41554877309,v_s51554877309)})))	4.0
 Plan found with cost: 4.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
+Plan written to /home/bglavic/pdq/examples/out.xml
 
-------------------2024-03-09 03:41:03------------------
+------------------2024-04-06 14:39:03------------------

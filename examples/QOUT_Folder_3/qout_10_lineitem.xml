@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="customer">
+				<variable name="c_ck" />
+				<variable name="c_n" />
+				<variable name="c_a" />
+				<variable name="c_nk" />
+				<variable name="c_p" />
+				<variable name="c_ab" />
+				<variable name="c1" />
+				<variable name="c_c" />
+			</atom>
+			<atom name="orders">
+				<variable name="o_ok" />
+				<variable name="c_ck" />
+				<variable name="o1" />
+				<variable name="o2" />
+				<variable name="o_od" />
+				<variable name="o3" />
+				<variable name="o4" />
+				<variable name="o5" />
+				<variable name="o6" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="o_ok" />
+				<variable name="l1" />
+				<variable name="l2" />
+				<variable name="l3" />
+				<variable name="l4" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
+				<variable name="l5" />
+				<variable name="'R'" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
+			</atom>
+			<atom name="nation">
+				<variable name="c_nk" />
+				<variable name="n_n" />
+				<variable name="n2" />
+				<variable name="n3" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="c_ck" />
+				<variable name="c_n" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
+				<variable name="c_ab" />
+				<variable name="n_n" />
+				<variable name="c_a" />
+				<variable name="c_p" />
+				<variable name="c_c" />
+			</atom>
+  </body>
+  	<head name="prov_lineitem">
+		<variable name="o_ok" />
+		<variable name="l1" />
+		<variable name="l2" />
+		<variable name="l3" />
+		<variable name="l4" />
+		<variable name="l_ep" />
+		<variable name="l_d" />
+		<variable name="l5" />
+		<variable name="'R'" />
+		<variable name="l6" />
+		<variable name="l7" />
+		<variable name="l8" />
+		<variable name="l9" />
+		<variable name="l10" />
+		<variable name="l11" />
+		<variable name="l12" />
+	</head>
+</query>

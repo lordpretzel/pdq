@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="supplier">
+				<variable name="s_suppkey" />
+				<variable name="s_name" />
+				<variable name="s_address" />
+				<variable name="s1" />
+				<variable name="s_phone" />
+				<variable name="s2" />
+				<variable name="s3" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="l1" />
+				<variable name="l2" />
+				<variable name="l_suppkey" />
+				<variable name="l3" />
+				<variable name="l4" />
+				<variable name="l_extp" />
+				<variable name="l_discount" />
+				<variable name="l5" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l_shipdate" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="l_suppkey" />
+				<variable name="l_extp" />
+				<variable name="l_discount" />
+				<variable name="s_suppkey" />
+				<variable name="s_name" />
+				<variable name="s_address" />
+				<variable name="s_phone" />
+				<variable name="rev" />
+			</atom>
+  </body>
+  	<head name="prov_supplier">
+		<variable name="s_suppkey" />
+		<variable name="s_name" />
+		<variable name="s_address" />
+		<variable name="s1" />
+		<variable name="s_phone" />
+		<variable name="s2" />
+		<variable name="s3" />
+	</head>
+</query>

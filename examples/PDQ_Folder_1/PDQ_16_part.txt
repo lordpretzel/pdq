@@ -1,7 +1,7 @@
-------------------2024-03-08 21:34:29------------------
+------------------2024-04-06 15:17:07------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 21:34:31,146 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(partsupp(){partsupp(fv_p_partkey1455204443,v_ps_suppkey1455204443,v_ps11455204443,v_ps21455204443,v_ps31455204443)}),APPLYRULE(RPrime(){RPrime(fv_p_brand1455204443,fv_p_type1455204443,fv_p_size1455204443,v_ps_suppkey1455204443)})),APPLYRULE(part(){part(fv_p_partkey1455204443,fv_p11455204443,fv_p21455204443,fv_p_brand1455204443,fv_p_type1455204443,fv_p_size1455204443,fv_p31455204443,fv_p41455204443,fv_p51455204443)}))	3.0
+2024-04-06 15:17:12,715 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(fv_p_brand458817438,fv_p_type458817438,fv_p_size458817438,v_ps_suppkey458817438)}),APPLYRULE(part(){part(fv_p_partkey458817438,fv_p1458817438,fv_p2458817438,fv_p_brand458817438,fv_p_type458817438,fv_p_size458817438,fv_p3458817438,fv_p4458817438,fv_p5458817438)})),APPLYRULE(partsupp(){partsupp(fv_p_partkey458817438,v_ps_suppkey458817438,v_ps1458817438,v_ps2458817438,v_ps3458817438)}))	3.0
 Plan found with cost: 3.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
+Plan written to /home/bglavic/pdq/examples/out.xml
 
-------------------2024-03-08 21:34:31------------------
+------------------2024-04-06 15:17:12------------------

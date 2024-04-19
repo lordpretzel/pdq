@@ -1,7 +1,7 @@
-------------------2024-03-08 21:34:31------------------
+------------------2024-04-06 15:17:18------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 21:34:33,025 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_ep1978209605,fv_l_pk1978209605,fv_l_q1978209605)}),APPLYRULE(lineitem(){lineitem(fv_l11978209605,fv_l_pk1978209605,fv_l21978209605,fv_l31978209605,fv_l_q1978209605,fv_l_ep1978209605,fv_l41978209605,fv_l51978209605,fv_l61978209605,fv_l71978209605,fv_l81978209605,fv_l91978209605,fv_l101978209605,fv_l111978209605,fv_l121978209605,fv_l131978209605)}))	2.0
+2024-04-06 15:17:21,645 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(lineitem(){lineitem(fv_l11982958205,fv_l_pk1982958205,fv_l21982958205,fv_l31982958205,fv_l_q1982958205,fv_l_ep1982958205,fv_l41982958205,fv_l51982958205,fv_l61982958205,fv_l71982958205,fv_l81982958205,fv_l91982958205,fv_l101982958205,fv_l111982958205,fv_l121982958205,fv_l131982958205)}),APPLYRULE(RPrime(){RPrime(fv_l_ep1982958205,fv_l_pk1982958205,fv_l_q1982958205)}))	2.0
 Plan found with cost: 2.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
+Plan written to /home/bglavic/pdq/examples/out.xml
 
-------------------2024-03-08 21:34:33------------------
+------------------2024-04-06 15:17:22------------------

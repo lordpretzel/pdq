@@ -1,7 +1,7 @@
-------------------2024-03-08 17:33:57------------------
+------------------2024-04-06 15:07:03------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 17:33:59,427 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_return1919834117,fv_l_linestat1919834117,fv_l_quant1919834117,fv_l_extp1919834117,fv_l_disc1919834117,fv_l_tax1919834117,fv_x11919834117)}),APPLYRULE(lineitem(){lineitem(fv_x11919834117,fv_x21919834117,fv_x31919834117,fv_x41919834117,fv_l_quant1919834117,fv_l_extp1919834117,fv_l_disc1919834117,fv_l_tax1919834117,fv_l_return1919834117,fv_l_linestat1919834117,fv_l_shipdate1919834117,fv_x51919834117,fv_x61919834117,fv_x71919834117,fv_x81919834117,fv_x91919834117)}))	2.0
+2024-04-06 15:07:07,647 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_return1091781053,fv_l_linestat1091781053,fv_l_quant1091781053,fv_l_extp1091781053,fv_l_disc1091781053,fv_l_tax1091781053,fv_x11091781053)}),APPLYRULE(lineitem(){lineitem(fv_x11091781053,fv_x21091781053,fv_x31091781053,fv_x41091781053,fv_l_quant1091781053,fv_l_extp1091781053,fv_l_disc1091781053,fv_l_tax1091781053,fv_l_return1091781053,fv_l_linestat1091781053,fv_l_shipdate1091781053,fv_x51091781053,fv_x61091781053,fv_x71091781053,fv_x81091781053,fv_x91091781053)}))	2.0
 Plan found with cost: 2.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
+Plan written to /home/bglavic/pdq/examples/out.xml
 
-------------------2024-03-08 17:33:59------------------
+------------------2024-04-06 15:07:07------------------

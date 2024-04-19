@@ -1,7 +1,7 @@
-------------------2024-03-08 17:34:11------------------
+------------------2024-04-06 15:08:32------------------
 WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
-2024-03-08 17:34:13,557 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(lineitem(){lineitem(fv_l_okey1400973979,fv_x11400973979,fv_x21400973979,fv_x31400973979,fv_x41400973979,fv_x51400973979,fv_x61400973979,fv_x71400973979,fv_x81400973979,fv_x91400973979,fv_x101400973979,fv_l_comm_date1400973979,fv_l_receipt_date1400973979,fv_x111400973979,fv_x121400973979,fv_x131400973979)}),APPLYRULE(RPrime(){RPrime(v_o_opriority1400973979)})),APPLYRULE(orders(){orders(fv_l_okey1400973979,fv_x11400973979,fv_x21400973979,fv_x31400973979,v_o_odate1400973979,v_o_opriority1400973979,fv_x41400973979,fv_x51400973979,fv_x61400973979)}))	3.0
+2024-04-06 15:08:35,849 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(BINARY(APPLYRULE(RPrime(){RPrime(v_o_opriority1746578747)}),APPLYRULE(orders(){orders(fv_l_okey1746578747,fv_x11746578747,fv_x21746578747,fv_x31746578747,v_o_odate1746578747,v_o_opriority1746578747,fv_x41746578747,fv_x51746578747,fv_x61746578747)})),APPLYRULE(lineitem(){lineitem(fv_l_okey1746578747,fv_x11746578747,fv_x21746578747,fv_x31746578747,fv_x41746578747,fv_x51746578747,fv_x61746578747,fv_x71746578747,fv_x81746578747,fv_x91746578747,fv_x101746578747,fv_l_comm_date1746578747,fv_l_receipt_date1746578747,fv_x111746578747,fv_x121746578747,fv_x131746578747)}))	3.0
 Plan found with cost: 3.0
-Plan written to /home/perm/PDQ_TEST/pdq/examples/out.xml
+Plan written to /home/bglavic/pdq/examples/out.xml
 
-------------------2024-03-08 17:34:13------------------
+------------------2024-04-06 15:08:36------------------

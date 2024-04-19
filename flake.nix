@@ -21,6 +21,12 @@
           #   {
           #     file = ./mvn2nix-lock.json;
           #   };
+
+          pythonEnv = pkgs.python311.withPackages (p: with p; [       
+            pip
+            sqlparse
+            lark
+          ]);
           
           # Utility to run a script easily in the flakes app
           simple_script = name: add_deps: text: let
@@ -29,6 +35,7 @@
               runtimeInputs = with pkgs; [
                 jdk11
                 maven
+                pythonEnv
               ] ++ add_deps;
             };
           in {
@@ -81,7 +88,7 @@
                   nativeBuildInputs = with pkgs; [
                     jdk11
                     maven
-                    python311
+                    pythonEnv
                   ];
                 };
           }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+  <body>
+    			<atom name="customer">
+				<variable name="c_ck" />
+				<variable name="c1" />
+				<variable name="c2" />
+				<variable name="c_nk" />
+				<variable name="c3" />
+				<variable name="c4" />
+				<variable name="c5" />
+				<variable name="c6" />
+			</atom>
+			<atom name="orders">
+				<variable name="o_ok" />
+				<variable name="c_ck" />
+				<variable name="o1" />
+				<variable name="o2" />
+				<variable name="o_od" />
+				<variable name="o3" />
+				<variable name="o4" />
+				<variable name="o5" />
+				<variable name="o6" />
+			</atom>
+			<atom name="lineitem">
+				<variable name="o_ok" />
+				<variable name="l1" />
+				<variable name="l_sk" />
+				<variable name="l2" />
+				<variable name="l3" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
+				<variable name="l5" />
+				<variable name="l6" />
+				<variable name="l7" />
+				<variable name="l8" />
+				<variable name="l9" />
+				<variable name="l10" />
+				<variable name="l11" />
+				<variable name="l12" />
+				<variable name="l13" />
+			</atom>
+			<atom name="supplier">
+				<variable name="l_sk" />
+				<variable name="s1" />
+				<variable name="s2" />
+				<variable name="c_nk" />
+				<variable name="s3" />
+				<variable name="s4" />
+				<variable name="s5" />
+			</atom>
+			<atom name="nation">
+				<variable name="c_nk" />
+				<variable name="n_n" />
+				<variable name="n_rk" />
+				<variable name="n1" />
+			</atom>
+			<atom name="region">
+				<variable name="n_rk" />
+				<variable name="'ASIA'" />
+				<variable name="r2" />
+			</atom>
+			<atom name="RPrime">
+				<variable name="n_n" />
+				<variable name="l_ep" />
+				<variable name="l_d" />
+			</atom>
+  </body>
+  	<head name="prov_nation">
+		<variable name="c_nk" />
+		<variable name="n_n" />
+		<variable name="n_rk" />
+		<variable name="n1" />
+	</head>
+</query>

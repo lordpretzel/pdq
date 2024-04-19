@@ -1,0 +1,7 @@
+------------------2024-04-06 15:08:20------------------
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+2024-04-06 15:08:25,191 TRACE [main] (DAGExplorer.java:129) - 	+ BEST CONFIGURATION	BINARY(APPLYRULE(RPrime(){RPrime(fv_l_orderkey744316958,v_o_orderdate744316958,v_o_shippriority744316958,fv_l_extendedprice744316958,fv_l_discount744316958)}),APPLYRULE(lineitem(){lineitem(fv_l_orderkey744316958,fv_X1744316958,fv_X2744316958,fv_X3744316958,fv_X4744316958,fv_l_extendedprice744316958,fv_l_discount744316958,fv_X5744316958,fv_X6744316958,fv_X7744316958,fv_l_shipdate744316958,fv_X8744316958,fv_X9744316958,fv_X10744316958,fv_X11744316958,fv_X12744316958)}))	2.0
+Plan found with cost: 2.0
+Plan written to /home/bglavic/pdq/examples/out.xml
+
+------------------2024-04-06 15:08:25------------------
